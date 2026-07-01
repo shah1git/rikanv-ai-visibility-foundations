@@ -54,3 +54,8 @@
 - Theme: Systemic Markdown Guardrails
 - Status: completed
 - Purpose: add repo-level agent rules and Markdown integrity validation so compressed Markdown regressions do not repeat.
+
+- review-019-site-import-run-001.md
+  Theme: Site Import Run 001
+  Status: created
+  Purpose: first agent import from rikanv.ru base scope.

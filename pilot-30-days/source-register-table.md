@@ -294,3 +294,17 @@ Source Register фиксирует, откуда взяты данные. Без
 - Цены и наличие volatile; всегда проверять дату.
 - Line page не подтверждает model-level specs, если характеристика относится только к конкретной модели.
 - Сторонние источники не добавлять в первый пилот без отдельного разрешения.
+
+## Site Import Run 001 Source Verification
+
+Дата проверки: 2026-07-02.
+
+| source_id | URL | product_or_line | source_type | run_001_status | notes |
+|---|---|---|---|---|---|
+| src_rikanv_ru_ovod_l25_20260701 | https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-ovod-l25 | RikaNV Ovod L25 | official_product_page | processed | Official public source; volatile price and availability must be rechecked. |
+| src_rikanv_ru_lesnik_line_20260701 | https://rikanv.ru/lines/lesnik | RikaNV Lesnik | official_line_page | processed | Line page verifies line-level facts and model links only. |
+| src_rikanv_ru_lesnik2_650l_20260701 | https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-lesnik2-650l | RikaNV Lesnik2 650L | official_product_page | processed | Official product page can verify model-level specs. |
+| src_rikanv_ru_surok_l15_20260701 | https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-surok-l15 | RikaNV Surok L15 | official_product_page | processed | Observation product page; riflescope-only fields remain N/A. |
+| src_rikanv_ru_hypnose_line_20260701 | https://rikanv.ru/lines/hypnose | RikaNV Hypnose | official_line_page | processed | Line page verifies line-level facts and Hypnose2 model links. |
+| src_rikanv_ru_hypnose2_650l_20260701 | https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-hypnose2-650l | RikaNV Hypnose2 650L | official_product_page | processed | Official product page can verify model-level specs. |
+| TODO_no_source_id_for_hypnose2_line_url | https://rikanv.ru/lines/hypnose2 | RikaNV Hypnose2 | official_line_page | failed | Separate line URL returned 404 during this run; do not create claims from this failed URL. |

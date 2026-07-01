@@ -225,3 +225,17 @@ Official line page не подтверждает конкретные харак
 - `status`: draft / accepted / rejected / outdated.
 - Сравнительные claims требуют тестов, competitor sources и bias check.
 - Для claims о превосходстве, надежности, полевой эффективности и сравнении с конкурентами нужны отдельные `test_report`, `field_test` или `comparison_result`.
+
+## Site Import Run 001 Evidence Verification
+
+Дата проверки: 2026-07-02.
+
+| evidence_id | source_id | related_product | evidence_type | run_001_status | verifies | limits |
+|---|---|---|---|---|---|---|
+| ev_rikanv_ru_ovod_l25_specs_20260701 | src_rikanv_ru_ovod_l25_20260701 | RikaNV Ovod L25 | official_product_page | processed | Official model specs visible on page. | Does not verify field performance or competitor superiority. |
+| ev_rikanv_ru_lesnik_line_20260701 | src_rikanv_ru_lesnik_line_20260701 | RikaNV Lesnik | official_line_page | processed | Line-level existence and model links. | Does not verify model-level specs for all Lesnik products. |
+| ev_rikanv_ru_lesnik2_650l_specs_20260701 | src_rikanv_ru_lesnik2_650l_20260701 | RikaNV Lesnik2 650L | official_product_page | processed | Official model specs visible on page. | Does not verify field stability, real-world range or superiority. |
+| ev_rikanv_ru_surok_l15_specs_20260701 | src_rikanv_ru_surok_l15_20260701 | RikaNV Surok L15 | official_product_page | processed | Official observation product specs visible on page. | Does not verify field performance or competitor superiority. |
+| ev_rikanv_ru_hypnose_line_20260701 | src_rikanv_ru_hypnose_line_20260701 | RikaNV Hypnose | official_line_page | processed | Line-level existence and Hypnose2 model links. | Does not verify model-level specs for all Hypnose products. |
+| ev_rikanv_ru_hypnose2_line_20260701 | src_rikanv_ru_hypnose_line_20260701 | RikaNV Hypnose2 | official_line_page | partial | Hypnose page lists Hypnose2 models. | Separate Hypnose2 line URL was not found. |
+| ev_rikanv_ru_hypnose2_650l_specs_20260701 | src_rikanv_ru_hypnose2_650l_20260701 | RikaNV Hypnose2 650L | official_product_page | processed | Official model specs visible on page. | Does not verify field performance or competitor superiority. |

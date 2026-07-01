@@ -285,3 +285,101 @@
 - extracted_fields: `640×512`; `20/60mm F0.9`; detection `1000/3000m`.
 - volatile_fields: price, availability.
 - not_verified_by_this_source: selected Hypnose2 pilot model; line-level specs for Hypnose2; final comparison.
+
+## Site Import Run 001 Snapshot
+
+date_checked: 2026-07-02
+
+This snapshot records structured extraction from official rikanv.ru pages only.
+It avoids long copied page text and does not treat marketing phrases as verified claims.
+
+### Ovod L25 product page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_ovod_l25_20260701 |
+| URL | https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-ovod-l25 |
+| status | processed |
+| product_kind | product_model |
+| category | thermal_riflescope |
+| extracted_fields | sensor 256x192; lens 25 mm F0.9; pixel 12 um; detection 1300 m; AMOLED 1024x768; IP67; up to 10 h; ballistic calculator; 6 zeroing profiles; recoil 6000 J; Picatinny rail |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty |
+| not_verified_by_this_source | field performance; competitor superiority; service reliability |
+
+### Lesnik line page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_lesnik_line_20260701 |
+| URL | https://rikanv.ru/lines/lesnik |
+| status | processed |
+| product_kind | product_line |
+| category | thermal_riflescope |
+| extracted_fields | line page lists Lesnik2 335L, 360L, 360L PRO, 650L, 650L PRO, 660L, 660L PRO |
+| volatile_fields | prices; availability; promotions; model availability |
+| not_verified_by_this_source | concrete model specs unless repeated on concrete product page |
+
+### Lesnik2 650L product page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_lesnik2_650l_20260701 |
+| URL | https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-lesnik2-650l |
+| status | processed |
+| product_kind | product_model |
+| category | thermal_riflescope |
+| extracted_fields | sensor 640x512; lens 50 mm F1.0; pixel 12 um; NETD <=18 mK; LRF 1200 m; ballistic calculator; recoil 6000 J; up to 16 h; IP67; Picatinny rail |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty |
+| not_verified_by_this_source | real field range; zero stability; competitor superiority |
+
+### Surok L15 product page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_surok_l15_20260701 |
+| URL | https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-surok-l15 |
+| status | processed |
+| product_kind | product_model |
+| category | observation_thermal |
+| extracted_fields | observation thermal camera with video recording; sensor 256x192; lens 15 mm F0.9; detection 750 m; FOV 11.7 x 8.8 degrees; AMOLED 1024x768; EIS; 18650 battery; IP67; up to 10 h |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty |
+| not_verified_by_this_source | field performance; competitor superiority; riflescope-only features |
+
+### Hypnose line page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_hypnose_line_20260701 |
+| URL | https://rikanv.ru/lines/hypnose |
+| status | processed |
+| product_kind | product_line |
+| category | observation_thermal |
+| extracted_fields | line page lists Hypnose2 335L, Hypnose2 650L, Hypnose2 660D |
+| volatile_fields | prices; availability; promotions; model availability |
+| not_verified_by_this_source | concrete model specs unless repeated on concrete product page |
+
+### Hypnose2 line page attempt
+
+| Field | Value |
+|---|---|
+| source_id | TODO_no_source_id_for_hypnose2_line_url |
+| URL | https://rikanv.ru/lines/hypnose2 |
+| status | failed |
+| product_kind | product_line |
+| category | observation_thermal |
+| extracted_fields | none |
+| volatile_fields | none |
+| not_verified_by_this_source | all Hypnose2 line-level claims from this specific URL |
+
+### Hypnose2 650L product page
+
+| Field | Value |
+|---|---|
+| source_id | src_rikanv_ru_hypnose2_650l_20260701 |
+| URL | https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-hypnose2-650l |
+| status | processed |
+| product_kind | product_model |
+| category | observation_thermal |
+| extracted_fields | sensor 640x512; lens 50 mm F0.9; NETD <=18 mK; LRF 1000 m; detection 2600 m; USB-C video output; AMOLED 1024x768; IP67 |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty |
+| not_verified_by_this_source | field performance; competitor superiority; product-line claims beyond this model |

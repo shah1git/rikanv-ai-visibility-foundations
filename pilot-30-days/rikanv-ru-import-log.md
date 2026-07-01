@@ -82,3 +82,38 @@
 - Hypnose2 model-level claims for the first pilot use RikaNV Hypnose2 650L.
 - Hypnose/Hypnose2 model-level specs require concrete model pages.
 - Marketing phrases from line pages are not converted into verified claims.
+
+## Site Import Run 001
+
+Дата проверки: 2026-07-02.
+
+### Scope
+
+- RikaNV Ovod L25.
+- RikaNV Lesnik.
+- RikaNV Lesnik2 650L.
+- RikaNV Surok L15.
+- RikaNV Hypnose.
+- RikaNV Hypnose2.
+- RikaNV Hypnose2 650L.
+
+### URL checks
+
+| URL | Product or line | Status | Notes |
+|---|---|---|---|
+| https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-ovod-l25 | RikaNV Ovod L25 | processed | Official product page found. |
+| https://rikanv.ru/lines/lesnik | RikaNV Lesnik | processed | Official line page found. |
+| https://rikanv.ru/catalog/teplovizionnye-pritsely/rikanv-lesnik2-650l | RikaNV Lesnik2 650L | processed | Official product page found. |
+| https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-surok-l15 | RikaNV Surok L15 | processed | Official product page found. |
+| https://rikanv.ru/lines/hypnose | RikaNV Hypnose | processed | Official line page found. |
+| https://rikanv.ru/lines/hypnose2 | RikaNV Hypnose2 | failed | Separate line URL returned 404 during this run. |
+| https://rikanv.ru/catalog/teplovizory-nablyudeniya/rikanv-hypnose2-650l | RikaNV Hypnose2 650L | processed | Official product page found. |
+
+### Import notes
+
+- Existing 20260701 source_id and evidence_id values were reused where they already matched official rikanv.ru pages.
+- No external sources were used.
+- No existing 30 pilot claims were overwritten.
+- Hypnose2 line remains product_line by human decision, but separate line URL was not found during this run.
+- Hypnose line page lists Hypnose2 models and can support only cautious line-level handling.
+- Official detection and LRF values are official specifications, not proof of real field performance.

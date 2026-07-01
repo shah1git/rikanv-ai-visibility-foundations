@@ -852,3 +852,118 @@ Review and provenance:
 | product_hypnose2_335l | product_model | observation_thermal | 384×288; 35mm F0.8; обнаружение 1800m; дальномер 1000m |
 | product_hypnose2_650l | product_model | observation_thermal | 640×512; 50mm F0.9; обнаружение 2600m; дальномер 1000m |
 | product_hypnose2_660d | product_model | observation_thermal | 640×512; 20/60mm F0.9; обнаружение 1000/3000m |
+
+## Site Import Run 001 Verification
+
+Дата проверки: 2026-07-02.
+
+Этот раздел фиксирует результат первого agent site import по approved base scope.
+Он не заменяет базовые Product Truth карточки и не переносит характеристики между линейками и моделями.
+
+### Import rules applied
+
+- Product line получает только line-level facts.
+- Product model получает model-level specs только с официальной страницы модели.
+- Detection range и LRF фиксируются как official specs, но не как подтвержденная полевая эффективность.
+- Цена, наличие, акции, комплектация, прошивки и гарантийные условия считаются volatile.
+- Marketing language не переносится в verified claims.
+
+### RikaNV Ovod L25
+
+| Field | Value |
+|---|---|
+| product_kind | product_model |
+| product_category | thermal_riflescope |
+| source_id | src_rikanv_ru_ovod_l25_20260701 |
+| evidence_id | ev_rikanv_ru_ovod_l25_specs_20260701 |
+| import_status | processed |
+| extracted_fields | sensor 256x192; lens 25 mm F0.9; pixel 12 um; detection range 1300 m; AMOLED 1024x768 0.39 inch; IP67; up to 10 h; ballistic calculator; 6 zeroing profiles; recoil 6000 J; Picatinny rail |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty conditions |
+| missing_fields | TODO: нет данных на rikanv.ru for recognition_range; identification_range; eye_relief |
+| blockers | No blocker for official specification extraction. Field performance claims still require tests. |
+
+### RikaNV Lesnik
+
+| Field | Value |
+|---|---|
+| product_kind | product_line |
+| product_category | thermal_riflescope |
+| source_id | src_rikanv_ru_lesnik_line_20260701 |
+| evidence_id | ev_rikanv_ru_lesnik_line_20260701 |
+| import_status | processed |
+| extracted_fields | line page lists Lesnik2 model pages, including 335L, 360L, 360L PRO, 650L, 650L PRO, 660L, 660L PRO |
+| volatile_fields | prices; availability; promotions; model availability |
+| missing_fields | N/A - product_line; model-level specs require concrete product pages |
+| blockers | Do not create model-level specification claims for Lesnik line. |
+
+### RikaNV Lesnik2 650L
+
+| Field | Value |
+|---|---|
+| product_kind | product_model |
+| product_category | thermal_riflescope |
+| parent_line | RikaNV Lesnik |
+| source_id | src_rikanv_ru_lesnik2_650l_20260701 |
+| evidence_id | ev_rikanv_ru_lesnik2_650l_specs_20260701 |
+| import_status | processed |
+| extracted_fields | sensor 640x512; lens 50 mm F1.0; pixel 12 um; NETD <=18 mK; LRF 1200 m; ballistic calculator; recoil 6000 J; up to 16 h; IP67; Picatinny rail |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty conditions |
+| missing_fields | TODO: нет данных на rikanv.ru for recognition_range; identification_range; eye_relief |
+| blockers | Field performance and stability claims require test evidence. |
+
+### RikaNV Surok L15
+
+| Field | Value |
+|---|---|
+| product_kind | product_model |
+| product_category | observation_thermal |
+| source_id | src_rikanv_ru_surok_l15_20260701 |
+| evidence_id | ev_rikanv_ru_surok_l15_specs_20260701 |
+| import_status | processed |
+| extracted_fields | observation thermal camera with video recording; sensor 256x192; lens 15 mm F0.9; detection range 750 m; field of view 11.7 x 8.8 degrees; AMOLED 1024x768; EIS; removable 18650 battery; IP67; up to 10 h |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty conditions |
+| missing_fields | TODO: нет данных на rikanv.ru for recognition_range; identification_range; internal memory value |
+| blockers | Riflescope-only fields are N/A unless directly supported by official source. |
+
+### RikaNV Hypnose
+
+| Field | Value |
+|---|---|
+| product_kind | product_line |
+| product_category | observation_thermal |
+| source_id | src_rikanv_ru_hypnose_line_20260701 |
+| evidence_id | ev_rikanv_ru_hypnose_line_20260701 |
+| import_status | processed |
+| extracted_fields | line page lists Hypnose2 model pages, including 335L, 650L, 660D |
+| volatile_fields | prices; availability; promotions; model availability |
+| missing_fields | N/A - product_line; model-level specs require concrete product pages |
+| blockers | Do not create model-level specification claims for Hypnose line. |
+
+### RikaNV Hypnose2
+
+| Field | Value |
+|---|---|
+| product_kind | product_line |
+| product_category | observation_thermal |
+| source_id | src_rikanv_ru_hypnose_line_20260701 |
+| evidence_id | ev_rikanv_ru_hypnose2_line_20260701 |
+| import_status | partial |
+| extracted_fields | Hypnose2 models are visible through the Hypnose line page; separate /lines/hypnose2 URL was not found during this run |
+| volatile_fields | prices; availability; promotions; model availability |
+| missing_fields | BLOCKER: no separate Hypnose2 line page found on rikanv.ru during this run |
+| blockers | Human product owner should confirm whether Hypnose2 line should use Hypnose line page as official line source. |
+
+### RikaNV Hypnose2 650L
+
+| Field | Value |
+|---|---|
+| product_kind | product_model |
+| product_category | observation_thermal |
+| parent_line | RikaNV Hypnose2 |
+| source_id | src_rikanv_ru_hypnose2_650l_20260701 |
+| evidence_id | ev_rikanv_ru_hypnose2_650l_specs_20260701 |
+| import_status | processed |
+| extracted_fields | sensor 640x512; lens 50 mm F0.9; NETD <=18 mK; LRF 1000 m; detection range 2600 m; USB-C video output; AMOLED 1024x768; IP67 |
+| volatile_fields | price; availability; promotion; bundle; firmware; warranty conditions |
+| missing_fields | TODO: нет данных на rikanv.ru for recognition_range; identification_range; internal memory value |
+| blockers | Field performance claims require test evidence. |

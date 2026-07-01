@@ -96,6 +96,23 @@ API, CMS или другую техническую платформу.
 
 Проект не публикует автоматически без human approval.
 
+## Markdown Guardrails
+
+Перед тем как сообщать, что Markdown formatting исправлен, агент обязан
+запустить локальную проверку:
+
+```bash
+python tools/validate-markdown-integrity.py
+git diff --check
+```
+
+Если изменения запушены, remote readiness подтверждается только raw GitHub
+проверкой по точному commit hash.
+
+Repo-level правила для агентов описаны в [AGENTS.md](AGENTS.md).
+Подробные операционные правила находятся в
+[docs/00-agent-operating-rules.md](docs/00-agent-operating-rules.md).
+
 ## Как начать работу
 
 1. Открыть [START-HERE.md](START-HERE.md).

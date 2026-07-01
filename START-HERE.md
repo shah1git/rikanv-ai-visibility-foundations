@@ -144,6 +144,18 @@ AI visibility retest
 | 6 | Провести Human Exception Review | Human decisions only for exceptions |
 | 7 | Подготовить draft plan | First draft tasks for Content Draft Agent |
 
+## Markdown integrity gate
+
+Перед Site Import Agent любые Markdown-изменения должны проходить:
+
+```bash
+python tools/validate-markdown-integrity.py
+git diff --check
+```
+
+После push Markdown readiness подтверждается только remote raw validation по
+точному commit hash.
+
 ## Главный следующий шаг
 
 Запустить Site Import Agent по approved `rikanv.ru` base scope.

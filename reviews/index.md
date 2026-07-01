@@ -20,6 +20,7 @@
 | [review-014-agent-first-consistency-patch.md](review-014-agent-first-consistency-patch.md) | review | Agent-First Consistency Patch | completed |
 | [review-015-agent-first-markdown-and-wording-repair.md](review-015-agent-first-markdown-and-wording-repair.md) | review | Agent-First Markdown and Wording Repair | completed |
 | [review-016-heredoc-markdown-repair.md](review-016-heredoc-markdown-repair.md) | review | Heredoc Markdown Repair | completed |
+| [review-018-systemic-markdown-guardrails.md](review-018-systemic-markdown-guardrails.md) | review | Systemic Markdown Guardrails | completed |
 
 ## Numbering Note
 
@@ -46,3 +47,10 @@
 - Theme: Heredoc Markdown Repair
 - Status: completed
 - Purpose: rewrite key agent-first files with explicit newline characters after external raw validation reported compression.
+
+## Review 018 Entry
+
+- file: [review-018-systemic-markdown-guardrails.md](review-018-systemic-markdown-guardrails.md)
+- Theme: Systemic Markdown Guardrails
+- Status: completed
+- Purpose: add repo-level agent rules and Markdown integrity validation so compressed Markdown regressions do not repeat.

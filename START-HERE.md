@@ -2,7 +2,7 @@
 
 ## Что мы делаем
 
-Запускаем 30-дневный agent-first пилот, чтобы проверить рабочий цикл:
+Запускаем 30-дневный agent-first, human-approved пилот, чтобы проверить рабочий цикл:
 
 Agent site import -> Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 
@@ -31,14 +31,15 @@ approver.
 
 ## Что НЕ делаем сейчас
 
-- Не пишем production automation и не создаем runtime.
+- Не строим production runtime.
+- Не выбираем фреймворк.
 - Не пишем код.
-- Не выбираем agent framework.
-- Не делаем PBN.
-- Не публикуем сравнения без данных.
+- Не публикуем автоматически без human approval.
 - Не используем rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры без отдельного разрешения.
-- Не пытаемся заполнить все 130 файлов.
-- Не начинаем с философии.
+- Не делаем PBN.
+- Не выдумываем характеристики.
+- Не публикуем claims без source/evidence.
+- Не превращаем marketing language в verified claims.
 
 ## Базовый Product Truth scope
 
@@ -78,7 +79,7 @@ approver.
 | Publication owner | Контент-ответственный / редактор RikaNV | Подготовка публикационного пакета; final approval у владельца проекта |
 | AI visibility owner | Маркетолог-аналитик / контент-аналитик; если отдельного человека нет — контент-ответственный | Baseline, answer log, metrics, gap analysis |
 
-## Agent-first core loop
+## Agent-first operating model
 
 1. Agent site import.
 2. Product Truth extraction.
@@ -100,6 +101,22 @@ Human exception review означает, что человек смотрит т
 - competitor comparison;
 - performance claims;
 - confidential or volatile claims.
+
+## Что делает человек
+
+Человек:
+
+- утверждает product scope;
+- решает taxonomy ambiguity;
+- проверяет blocked/high-risk claims;
+- дает дополнительные источники;
+- утверждает публикацию.
+
+Человек НЕ должен:
+
+- вручную переносить характеристики с `rikanv.ru`;
+- вручную писать черновики с нуля;
+- вручную проверять все простые specification claims, если они корректно связаны с official source/evidence.
 
 ## MVP на 30 дней
 
@@ -131,7 +148,7 @@ Human exception review означает, что человек смотрит т
 
 Запустить agent site import по официальным страницам `rikanv.ru` для базового scope.
 
-Не начинать с ручного написания статей. Сначала агент должен импортировать
+Не начинать с самостоятельного написания статей. Сначала агент должен импортировать
 официальные страницы, извлечь Product Truth, связать sources/evidence и создать
 claims. Человек подключается к exceptions и финальному approval.
 

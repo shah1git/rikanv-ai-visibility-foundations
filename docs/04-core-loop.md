@@ -116,7 +116,8 @@ Consistency Agent.
 
 ## 6. Human Exception Review
 
-Цель: не проверять все claims вручную, а рассмотреть только рискованные случаи.
+Цель: не делать полную проверку всех claims человеком, а рассмотреть только
+рискованные случаи.
 
 Человек смотрит claims:
 
@@ -134,8 +135,8 @@ Consistency Agent.
 Ответственная роль: Human Owner с участием technical reviewer и doctrine
 compliance owner.
 
-Типовые ошибки: превращать сессию в ручное переписывание всех данных, пропускать
-final publication approval.
+Типовые ошибки: превращать review в перенос данных вместо exception review,
+пропускать final publication approval.
 
 ## 7. Content Draft Generation
 

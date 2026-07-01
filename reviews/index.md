@@ -17,6 +17,7 @@
 | [review-011-claim-review-prep.md](review-011-claim-review-prep.md) | review | Claim Review Preparation | created |
 | [review-012-claim-review-markdown-fix.md](review-012-claim-review-markdown-fix.md) | review | Claim Review Markdown Fix | completed |
 | [review-013-agent-first-pivot.md](review-013-agent-first-pivot.md) | review | Agent-First Pivot | completed |
+| [review-014-agent-first-consistency-patch.md](review-014-agent-first-consistency-patch.md) | review | Agent-First Consistency Patch | completed |
 
 ## Review 008 Entry
 
@@ -59,6 +60,13 @@
 - Theme: Agent-First Pivot
 - Status: completed
 - Purpose: shift the operating model from manual-first to agent-first, human-approved.
+
+## Review 014 Entry
+
+- file: [review-014-agent-first-consistency-patch.md](review-014-agent-first-consistency-patch.md)
+- Theme: Agent-First Consistency Patch
+- Status: completed
+- Purpose: remove remaining manual-first contradictions from entry-point and operating docs.
 
 ## Numbering note
 

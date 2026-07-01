@@ -3,7 +3,7 @@
 ## Goal
 
 Классифицировать claims до human review, чтобы человек смотрел только
-исключения, а не все 30 claims вручную.
+exceptions, а не весь Claim Registry.
 
 ## Inputs
 
@@ -61,6 +61,7 @@ Blocked until explicit human approval.
 Human review is required for:
 
 - blocked claims;
+- `human_review_required`;
 - high-risk rewording;
 - competitor comparison;
 - performance claims beyond official specification wording;

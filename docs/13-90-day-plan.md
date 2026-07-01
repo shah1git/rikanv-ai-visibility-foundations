@@ -3,11 +3,44 @@
 План рассчитан на запуск agent-first, human-approved системы без выбора runtime
 и без разработки кода.
 
+## Agent-first 30-day pilot
+
+### Week 1
+
+- Site Import Agent обрабатывает `rikanv.ru` по базовому scope.
+- Product Truth Agent извлекает данные.
+- Claim Extraction Agent создает claims.
+- Evidence Linker Agent связывает source/evidence.
+- Agent Claim Review проставляет tiers/statuses.
+- Human смотрит только exceptions.
+
+### Week 2
+
+- Content Draft Agent готовит drafts:
+  - Ovod L25;
+  - Lesnik2 650L;
+  - Surok L15;
+  - Hypnose2 650L.
+- Doctrine Review Agent и Technical Consistency Agent делают pre-check.
+
+### Week 3
+
+- Human approves / sends back exceptions.
+- GEO/SEO Agent улучшает структуру.
+- Publisher/Repurposer Agent готовит версии для каналов.
+
+### Week 4
+
+- Собрать publication package.
+- Опубликовать 1-2 материала или довести их до ready for publication.
+- Провести AI visibility retest.
+- Сделать gap analysis.
+
 ## Дни 1-7
 
 Цели:
 - запустить agent import по `rikanv.ru`;
-- получить базовую Product Truth без ручного переноса характеристик;
+- получить базовую Product Truth без переноса характеристик человеком;
 - создать claims и evidence links агентами;
 - отправить человеку только exceptions;
 - подготовить первый AI visibility test.

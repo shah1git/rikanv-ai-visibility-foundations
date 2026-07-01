@@ -45,3 +45,4 @@ approved-for-draft claims, sources and evidence.
 - Do not use “лучший” or superiority language without evidence.
 - Do not publish.
 - Send draft to technical / doctrine pre-check.
+- Final publication approval is always human.

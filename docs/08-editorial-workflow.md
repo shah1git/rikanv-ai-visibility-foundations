@@ -2,9 +2,10 @@
 
 Редакционный процесс нужен, чтобы контент был полезным, проверяемым и безопасным для бренда.
 
-После agent-first pivot редакционный процесс начинается не с ручной идеи статьи,
-а с agent site import, Product Truth extraction и Claim Registry. Редактор
-управляет задачами и утверждением, но не переносит характеристики вручную.
+После agent-first pivot редакционный процесс начинается не с идеи статьи как
+первого действия, а с agent site import, Product Truth extraction и Claim
+Registry. Редактор управляет задачами и утверждением, но не переносит
+характеристики с сайта.
 
 ## 1. Trigger
 
@@ -84,7 +85,7 @@ approval:
 
 ## 10. Human Exception Review
 
-Человек смотрит не все claims вручную, а только:
+Человек смотрит не все claims, а только exceptions:
 
 - blocked_for_publication;
 - human_review_required;

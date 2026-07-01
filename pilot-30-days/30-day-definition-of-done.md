@@ -1,8 +1,43 @@
 # 30-Day Definition of Done
 
-## Минимальный успех
+## Overview
 
 Через 30 дней пилот считается успешным, если выполнены условия ниже.
+
+## Agent-first Week Gates
+
+### Week 1
+
+- Site Import Agent обработал `rikanv.ru` по базовому scope.
+- Product Truth Agent извлек данные.
+- Claim Extraction Agent создал claims.
+- Evidence Linker Agent связал source/evidence.
+- Agent Claim Review проставил tiers/statuses.
+- Human посмотрел только exceptions.
+
+### Week 2
+
+- Content Draft Agent подготовил drafts:
+  - Ovod L25;
+  - Lesnik2 650L;
+  - Surok L15;
+  - Hypnose2 650L.
+- Doctrine Review Agent и Technical Consistency Agent сделали pre-check.
+
+### Week 3
+
+- Human approved / sent back exceptions.
+- GEO/SEO Agent улучшил структуру.
+- Publisher/Repurposer Agent подготовил версии для каналов.
+
+### Week 4
+
+- Собран publication package.
+- 1-2 материала опубликованы или готовы к публикации.
+- Проведен AI visibility retest.
+- Создан gap analysis.
+
+## Минимальный успех
 
 - Заполнен Product Truth по Ovod L25 хотя бы на 70%.
 - Заполнен Product Truth по Lesnik:
@@ -17,7 +52,7 @@
 - Product Truth создан или обновлен агентом на основе source snapshot.
 - Создано 30 claims, из них минимум 10 `verified` или `verified line-level`.
 - Agent Claim Review проставил tiers, agent_review_status и risk flags.
-- Человек проверил только exceptions, а не все 30 claims вручную.
+- Человек проверил только exceptions, а не все 30 claims.
 - Проведен baseline по 20 запросам минимум в 3 AI-системах.
 - Baseline покрывает прицелы и наблюдательные приборы.
 - Baseline фиксирует ошибки смешения `product_line` и `product_model`.
@@ -67,7 +102,7 @@
 - Line-level claims смешаны с model-level specs.
 - Материалы опубликованы без doctrine compliance review.
 - Заполнить много шаблонов без реальных данных RikaNV.
-- Написать статьи вручную или агентом без claims.
+- Написать статьи человеком или агентом без claims.
 - Применить оружейные поля к Surok L15, Hypnose или Hypnose2 без official source.
 - Опубликовать сравнение с конкурентом без данных и bias check.
 - Провести AI baseline без сохранения ответов.
@@ -85,7 +120,7 @@
 - Сервисные данные нельзя использовать даже в обезличенном виде.
 - Сравнительные темы требуют данных, которых нет.
 - Команда пытается начать с публикаций, а не с Product Truth.
-- Команда пытается вручную переписывать весь сайт вместо agent import.
+- Команда пытается переписывать весь сайт человеком вместо agent import.
 - Команда хочет публиковать claims о надежности, влажности, тумане, дожде, стабильности СТП или реальной полевой дальности без тестов.
 
 ## Какие решения принять после 30 дней

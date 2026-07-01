@@ -5,6 +5,9 @@
 Описать общий pipeline, где агенты выполняют импорт, извлечение, review и
 черновики, а человек утверждает exceptions и публикацию.
 
+Pipeline не строит production runtime и не делает автоматическую публикацию.
+Агенты работают как управляемые роли/процессы.
+
 ## Pipeline
 
 ```text
@@ -49,6 +52,18 @@ AI visibility retest
 - Review blocked or high-risk claims.
 - Provide additional sources.
 - Approve publication.
+
+## Human Exceptions
+
+Human exception review covers:
+
+- `blocked_for_publication`;
+- `human_review_required`;
+- high-risk `needs_rewording`;
+- performance claims;
+- comparison claims;
+- volatile claims;
+- confidential / legal-sensitive claims.
 
 ## Non-Goals
 

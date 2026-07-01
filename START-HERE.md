@@ -2,48 +2,42 @@
 
 ## Что мы делаем
 
-Запускаем 30-дневный agent-first, human-approved пилот, чтобы проверить
-рабочий цикл:
+Запускаем 30-дневный agent-first, human-approved пилот.
 
-Agent site import -> Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
+Агенты делают:
 
-Проект не требует ручной подготовки текстов. Основная работа выполняется
-агентами на основе `rikanv.ru` и других разрешенных источников. Человек
-участвует как владелец решений, reviewer спорных claims и final publication
-approver.
+- site import;
+- Product Truth extraction;
+- Claim extraction;
+- Evidence linking;
+- Agent Claim Review;
+- Content Draft;
+- GEO/SEO formatting.
+
+Человек делает:
+
+- утверждает product scope;
+- решает taxonomy ambiguity;
+- проверяет exceptions;
+- дает дополнительные sources;
+- утверждает финальную публикацию.
 
 `rikanv.ru` является primary public source для первого agent import.
 
-Фокус пилота — тепловизионная оптика RikaNV: тепловизионные прицелы и приборы
-наблюдения.
-
-В первом пилоте не смешиваем категории:
-
-- `thermal_riflescope` — тепловизионные прицелы;
-- `observation_thermal` — тепловизоры, камеры и монокуляры для наблюдения.
-
-Также не смешиваем уровень продукта:
-
-- `product_line` — линейка;
-- `product_model` — конкретная модель.
-
 ## RikaNV Doctrine
 
-Проект следует RikaNV Doctrine. Все Product Truth, Claims, контент, сравнения и
-AI Visibility действия должны проходить doctrine compliance check.
+Проект следует RikaNV Doctrine.
 
-Для первого пилота это означает: факты только из разрешенных источников, без
-маркетинговых эпитетов, без выдуманных характеристик, без смешения прицелов и
-наблюдательных приборов.
+Все Product Truth, Claims, контент, сравнения и AI Visibility действия должны
+проходить doctrine compliance check.
 
 ## Что НЕ делаем сейчас
 
 - Не строим production runtime.
-- Не выбираем фреймворк.
-- Не пишем код.
+- Не выбираем framework.
+- Не пишем код приложения.
 - Не публикуем автоматически без human approval.
-- Не используем rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры
-  без отдельного разрешения.
+- Не используем rikasale.ru и сторонние сайты без отдельного разрешения.
 - Не делаем PBN.
 - Не выдумываем характеристики.
 - Не публикуем claims без source/evidence.
@@ -51,122 +45,108 @@ AI Visibility действия должны проходить doctrine complian
 
 ## Базовый Product Truth scope
 
-1. RikaNV Ovod L25 — конкретная модель прицела.
-2. RikaNV Lesnik — базовая линейка прицелов.
-3. RikaNV Lesnik2 650L — выбранная базовая модель Lesnik для первого model-level
-   Product Truth pilot.
-4. RikaNV Surok L15 — конкретная модель наблюдательного тепловизора.
-5. RikaNV Hypnose — продуктовая линейка наблюдательных приборов.
-6. RikaNV Hypnose2 — `product_line`, актуальное поколение / подлинейка внутри
-   направления RikaNV Hypnose.
-7. RikaNV Hypnose2 650L — выбранная базовая модель Hypnose2 для первого
-   model-level Product Truth pilot.
+| Product or line | product_kind | product_category | Pilot role |
+|:---|:---|:---|:---|
+| RikaNV Ovod L25 | product_model | thermal_riflescope | Base product |
+| RikaNV Lesnik | product_line | thermal_riflescope | Base line |
+| RikaNV Lesnik2 650L | product_model | thermal_riflescope | Selected Lesnik model |
+| RikaNV Surok L15 | product_model | observation_thermal | Base observation product |
+| RikaNV Hypnose | product_line | observation_thermal | Base line |
+| RikaNV Hypnose2 | product_line | observation_thermal | Generation / subline |
+| RikaNV Hypnose2 650L | product_model | observation_thermal | Selected Hypnose2 model |
 
-Линейка не равна модели. Verified specification claims создаются только для
-конкретных моделей, если характеристика явно подтверждена официальной страницей
-модели.
+Правила:
 
-Для `product_line` допустимы только line-level claims: назначение линейки,
-категория, список моделей, общая структура.
+- линейка не равна модели;
+- verified model-level specs допустимы только для конкретных моделей;
+- line-level claims не должны превращаться в model-level specs.
 
 ## Human product decisions for pilot
 
 - Base Lesnik model: RikaNV Lesnik2 650L.
-- Reason: сильная и понятная модель линейки Lesnik для первого model-level
-  Product Truth. Если коммерческий приоритет позже сместится на PRO-версию, это
-  нужно оформить отдельным решением.
-- Hypnose2 taxonomy: `product_line`, актуальное поколение / подлинейка внутри направления RikaNV Hypnose.
 - Base Hypnose2 model: RikaNV Hypnose2 650L.
-- Reason: сильная и понятная модель наблюдательной линейки для первого model-level Product Truth.
+- Hypnose2 taxonomy: product_line, актуальное поколение / подлинейка внутри направления RikaNV Hypnose.
 
-Эти причины выбора не являются claims о превосходстве. Технические claims по
-выбранным моделям остаются проверяемыми только через official product pages и
-evidence.
+Эти решения не являются claims о превосходстве.
 
 ## Owners
 
-| Роль | Owner | Ответственность |
-|:---|:---|---:|
-| Pilot owner | Владелец проекта RikaNV AI Visibility / руководитель проекта | Общий ход 30-дневного пилота, решения по scope, финальная эскалация |
-| Product Truth owner | Технический продуктовый ответственный RikaNV; временно владелец проекта + технический специалист по приборам | Product Truth, source/evidence/claim связка, модельные решения |
-| Technical reviewer | Ведущий технический специалист / сервисный инженер RikaNV | Проверка specs, claims, ограничений, технических формулировок |
-| Doctrine compliance owner | Владелец проекта RikaNV AI Visibility | Doctrine compliance review на первом месяце пилота |
-| Publication owner | Контент-ответственный / редактор RikaNV | Подготовка публикационного пакета; final approval у владельца проекта |
-| AI visibility owner | Маркетолог-аналитик / контент-аналитик; если отдельного человека нет — контент-ответственный | Baseline, answer log, metrics, gap analysis |
+| Role | Owner | Responsibility |
+|:---|:---|:---|
+| Pilot owner | Владелец проекта RikaNV AI Visibility | Scope, escalation, final direction |
+| Product Truth owner | Технический продуктовый ответственный RikaNV | Product Truth, source/evidence/claim связка |
+| Technical reviewer | Ведущий технический специалист / сервисный инженер | Specs, claims, limitations |
+| Doctrine compliance owner | Владелец проекта на первом месяце | Doctrine compliance review |
+| Publication owner | Контент-ответственный / редактор | Publication package, final approval через владельца |
+| AI visibility owner | Маркетолог-аналитик / контент-аналитик | Baseline, answer log, metrics, gap analysis |
 
 ## Agent-first operating model
 
-1. Agent site import.
-2. Product Truth extraction.
-3. Claim extraction.
-4. Evidence linking.
-5. Agent claim review.
-6. Human exception review.
-7. Content draft generation.
-8. Technical / doctrine pre-check.
-9. Human publication approval.
-10. Publication.
-11. AI visibility retest.
+```text
+Agent site import
+↓
+Product Truth extraction
+↓
+Claim extraction
+↓
+Evidence linking
+↓
+Agent claim review
+↓
+Human exception review
+↓
+Content draft generation
+↓
+Technical / doctrine pre-check
+↓
+Human publication approval
+↓
+Publication
+↓
+AI visibility retest
+```
 
-Human exception review означает, что человек смотрит только claims:
+## Human exception review
+
+Человек смотрит только:
 
 - `blocked_for_publication`;
 - `human_review_required`;
 - `needs_rewording` with high risk;
-- competitor comparison;
 - performance claims;
-- confidential or volatile claims.
-
-## Что делает человек
-
-Человек:
-
-- утверждает product scope;
-- решает taxonomy ambiguity;
-- проверяет blocked/high-risk claims;
-- дает дополнительные источники;
-- утверждает публикацию.
-
-Человек НЕ должен:
-
-- вручную переносить характеристики с `rikanv.ru`;
-- вручную писать черновики с нуля;
-- вручную проверять все простые specification claims, если они корректно связаны
-  с official source/evidence.
+- comparison claims;
+- volatile claims;
+- confidential / legal-sensitive claims.
 
 ## MVP на 30 дней
 
-1. Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
-2. Source Register по официальным страницам `https://rikanv.ru/`.
-3. Evidence Register.
-4. 30 draft/verified claims с разделением `product_line` и `product_model`, созданных агентами и проверенных через agent claim review.
-5. Baseline на 20 AI-запросах: прицелы + наблюдательные тепловизоры.
-6. 5 priority content tasks.
-7. 4 agent-generated drafts по выбранным продуктам.
-8. Technical / doctrine pre-check.
-9. Human exception review.
+1. Agent import по `rikanv.ru` для базового product scope.
+2. Product Truth extraction по выбранным продуктам и линейкам.
+3. Source Register и Evidence Register.
+4. 30 draft/verified claims без изменения product taxonomy.
+5. Agent Claim Review с tiers, statuses and risk flags.
+6. Human exception review.
+7. AI baseline на 20 запросах.
+8. Drafts по Ovod L25, Lesnik2 650L, Surok L15, Hypnose2 650L.
+9. Technical / doctrine pre-check.
 10. Human publication approval.
 11. Первый отчет.
 
 ## Первые 7 дней
 
 | День | Что сделать | Результат |
-|:---|:---|---:|
-| 1 | Запустить agent site import | Source snapshot, Product Truth extraction draft, doctrine status |
-| 2 | Проверить Product Truth extraction | Product Truth по базовым объектам; явные TODO и ambiguous fields |
-| 3 | Выполнить claim extraction и evidence linking | 30 pilot claims связаны с sources/evidence или помечены TODO |
-| 4 | Провести agent claim review | Claims получили tiers, agent_review_status и risk flags |
-| 5 | Провести human exception review | Человек смотрит только risky/blocked/ambiguous claims |
-| 6 | Запустить AI baseline по 20 запросам | Answer log, Mention Rate, Recommendation Rate, category errors |
-| 7 | Сформировать agent-generated draft plan | Первые drafts по Ovod L25, Lesnik2 650L, Surok L15, Hypnose2 650L |
+|:---|:---|:---|
+| 1 | Запустить Site Import Agent | Source snapshot and import blockers |
+| 2 | Запустить Product Truth Extraction Agent | Product Truth draft and TODO fields |
+| 3 | Запустить Claim Extraction Agent | Candidate claims from official sources |
+| 4 | Запустить Evidence Linker Agent | Source/evidence links and gaps |
+| 5 | Запустить Agent Claim Review | Claim tiers, statuses and exception list |
+| 6 | Провести Human Exception Review | Human decisions only for exceptions |
+| 7 | Подготовить draft plan | First draft tasks for Content Draft Agent |
 
 ## Главный следующий шаг
 
-Запустить agent site import по официальным страницам `rikanv.ru` для базового scope.
-
-Не начинать с самостоятельного написания статей. Сначала агент должен импортировать
-официальные страницы, извлечь Product Truth, связать sources/evidence и создать
-claims. Человек подключается к exceptions и финальному approval.
+Запустить Site Import Agent по approved `rikanv.ru` base scope.
 
 ## Publication restrictions
 

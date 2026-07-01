@@ -23,7 +23,7 @@ Lesnik/Hypnose2, хотя решения уже приняты:
 ## 3. Formatting Checks
 
 | Check | Result | Notes |
-|:---|:---|---:|
+|:---|:---|:---|
 | git diff --check | pass | No whitespace errors before commit. |
 | no lines >300 chars except URLs | pass | Checked allowed files. |
 | no glued headings | pass | Checked key agent-first files. |
@@ -34,9 +34,9 @@ Lesnik/Hypnose2, хотя решения уже приняты:
 ## 4. Wording Fixes
 
 | File | Old issue | New wording |
-|:---|:---|---:|
+|:---|:---|:---|
 | `README.md` | Lesnik wording looked like model choice was still open | Подтверждение актуальности выбранной модели Lesnik2 650L для пилота |
-| `README.md` | Hypnose2 wording looked like taxonomy/model choice was still open | Подтверждение актуальности выбранной модели Hypnose2 650L для пилота |
+| `README.md` | Hypnose2 wording looked like model choice was still open | Подтверждение актуальности выбранной модели Hypnose2 650L для пилота |
 | `README.md` | Public use of official data was implicit | Подтверждение публичной пригодности данных с `rikanv.ru` |
 
 ## 5. What Was Not Changed

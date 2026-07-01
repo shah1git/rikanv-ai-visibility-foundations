@@ -29,12 +29,12 @@ agent-first, human-approved.
 ## 3. Contradictions Fixed
 
 | Old wording/problem | New wording/fix | File |
-|:---|:---|---:|
+|:---|:---|:---|
 | Manual-first pilot could be inferred | Agent-first, human-approved pilot | `README.md`, `START-HERE.md` |
-| “Do not automate” style restriction could be misread as no agents | Do not build production runtime or publish automatically | `START-HERE.md` |
-| Manual data transfer as primary path | Site Import Agent + Product Truth Extraction Agent | `README.md`, `day-1-product-truth-start.md` |
-| Full human review of claims as default | Human exception review only | `docs/04-core-loop.md`, `docs/08-editorial-workflow.md` |
-| Day 1 as Product Truth Start session | Day 1 as Agent Site Import Start | `pilot-30-days/day-1-product-truth-start.md` |
+| “Do not automate” wording could be misread as no agents | Do not build production runtime or publish automatically | `START-HERE.md` |
+| Manual data transfer as primary path | Site Import Agent and Product Truth Extraction Agent | `README.md`, Day 1 doc |
+| Full human review of claims as default | Human exception review only | Core loop and editorial workflow |
+| Day 1 as Product Truth Start session | Day 1 as Agent Site Import Start | Day 1 doc |
 | Unclear source discovery scope | Discover only within `rikanv.ru`; external domains blocked | Site import prompt and workflow |
 
 ## 4. What Did Not Change

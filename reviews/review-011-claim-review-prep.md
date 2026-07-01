@@ -33,7 +33,7 @@
 ## 3. Claim counts
 
 | Status | Count |
-| --- | ---: |
+|:---|:---|
 | verified | 23 |
 | draft | 7 |
 | disputed | 0 |
@@ -42,7 +42,7 @@
 | total | 30 |
 
 | Product or line | Verified | Draft | TODO | Needs attention |
-| --- | ---: | ---: | ---: | ---: |
+|:---|:---|:---|:---|:---|
 | RikaNV Ovod L25 | 5 | 2 | 2 | 3 |
 | RikaNV Lesnik | 2 | 0 | 0 | 2 |
 | RikaNV Lesnik2 650L | 5 | 1 | 1 | 4 |
@@ -55,7 +55,7 @@
 ## 4. High-risk claims
 
 | Claim ID | Issue | Risk | Recommended action |
-| --- | --- | --- | --- |
+|:---|:---|:---|:---|
 | claim-ovod-l25-spec-005 | Detection distance in official spec | Could be read as real field guarantee | human_approve_possible |
 | claim-ovod-l25-scenario-001 | Scenario claim has TODO source/evidence | Unsupported scenario fit | needs_evidence |
 | claim-ovod-l25-limit-001 | Limitation/service claim has TODO source/evidence | Unsupported service or safety statement | needs_evidence |
@@ -82,7 +82,7 @@
 Это не final approval. Это список claims, которые можно вынести на human approval.
 
 | Claim ID | Reason | Required human check |
-| --- | --- | --- |
+|:---|:---|:---|
 | claim-ovod-l25-spec-001 | Official product page supports product category | Doctrine wording check |
 | claim-ovod-l25-spec-002 | Category is consistent with Product Truth | Category wording check |
 | claim-ovod-l25-spec-003 | Official product page supports sensor spec | Technical reviewer confirms notation |
@@ -106,7 +106,7 @@
 ## 6. Claims that need evidence
 
 | Claim ID | Missing evidence | Suggested evidence type |
-| --- | --- | --- |
+|:---|:---|:---|
 | claim-ovod-l25-scenario-001 | Scenario fit for Ovod L25 | field_test |
 | claim-ovod-l25-limit-001 | Product limitations, service or safety context | internal_product_confirmation |
 | claim-lesnik2-650l-scenario-001 | Scenario fit, service evidence and reliability boundaries | field_test |
@@ -117,7 +117,7 @@
 ## 7. Claims needing rewording
 
 | Claim ID | Current statement | Problem | Safer wording |
-| --- | --- | --- | --- |
+|:---|:---|:---|:---|
 | claim-lesnik2-650l-spec-001 | RikaNV Lesnik2 650L является конкретной моделью линейки Lesnik для первого pilot. | Internal pilot wording is not public content | RikaNV Lesnik2 650L является конкретной моделью линейки Lesnik. |
 | claim-surok-l15-spec-002 | RikaNV Surok L15 — тепловизор / камера для наблюдения. | Slash wording may be imprecise for publication | RikaNV Surok L15 относится к наблюдательным тепловизионным приборам. |
 | claim-surok-l15-limit-001 | Surok L15 не должен описываться как тепловизионный прицел без прямого official source. | Sounds like an editorial rule, not a public claim | RikaNV Surok L15 описывается как наблюдательный тепловизионный прибор, если official source не указывает иное. |
@@ -127,7 +127,7 @@
 ## 8. Claims blocked for publication
 
 | Claim ID | Reason | What would unblock it |
-| --- | --- | --- |
+|:---|:---|:---|
 | claim-ovod-l25-scenario-001 | no source; no evidence; scenario fit | Field test or explicit source plus technical review |
 | claim-ovod-l25-limit-001 | no source; no evidence; service/safety context | Internal product confirmation plus doctrine review |
 | claim-lesnik2-650l-spec-001 | internal pilot-selection claim | Reword as product existence claim or keep internal |
@@ -152,7 +152,7 @@
 ## 10. Required human roles
 
 | Role | Required? | Responsibility |
-| --- | --- | --- |
+|:---|:---|:---|
 | Pilot owner | yes | Own session outcome and resolve blocked decisions |
 | Product Truth owner | yes | Confirm line/model handling and source/evidence consistency |
 | Technical reviewer | yes | Confirm specs, terms, ranges, limitations and risky wording |

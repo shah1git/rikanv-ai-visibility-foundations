@@ -30,7 +30,7 @@
 ### claim-ovod-l25-spec-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-spec-001` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -50,7 +50,7 @@
 ### claim-ovod-l25-spec-002
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-spec-002` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -70,7 +70,7 @@
 ### claim-ovod-l25-spec-003
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-spec-003` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -90,7 +90,7 @@
 ### claim-ovod-l25-spec-004
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-spec-004` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -110,7 +110,7 @@
 ### claim-ovod-l25-spec-005
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-spec-005` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -130,7 +130,7 @@
 ### claim-ovod-l25-scenario-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-scenario-001` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -150,7 +150,7 @@
 ### claim-ovod-l25-limit-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-ovod-l25-limit-001` |
 | product_or_line | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -170,7 +170,7 @@
 ### claim-lesnik-line-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik-line-001` |
 | product_or_line | RikaNV Lesnik |
 | product_kind | product_line |
@@ -190,7 +190,7 @@
 ### claim-lesnik-line-002
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik-line-002` |
 | product_or_line | RikaNV Lesnik |
 | product_kind | product_line |
@@ -210,7 +210,7 @@
 ### claim-lesnik2-650l-spec-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-spec-001` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -230,7 +230,7 @@
 ### claim-lesnik2-650l-spec-002
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-spec-002` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -250,7 +250,7 @@
 ### claim-lesnik2-650l-spec-003
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-spec-003` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -270,7 +270,7 @@
 ### claim-lesnik2-650l-spec-004
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-spec-004` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -290,7 +290,7 @@
 ### claim-lesnik2-650l-spec-005
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-spec-005` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -310,7 +310,7 @@
 ### claim-lesnik2-650l-scenario-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-lesnik2-650l-scenario-001` |
 | product_or_line | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -330,7 +330,7 @@
 ### claim-surok-l15-spec-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-spec-001` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -350,7 +350,7 @@
 ### claim-surok-l15-spec-002
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-spec-002` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -370,7 +370,7 @@
 ### claim-surok-l15-spec-003
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-spec-003` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -390,7 +390,7 @@
 ### claim-surok-l15-spec-004
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-spec-004` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -410,7 +410,7 @@
 ### claim-surok-l15-scenario-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-scenario-001` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -430,7 +430,7 @@
 ### claim-surok-l15-limit-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-limit-001` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -450,7 +450,7 @@
 ### claim-surok-l15-usability-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-surok-l15-usability-001` |
 | product_or_line | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -470,7 +470,7 @@
 ### claim-hypnose-line-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose-line-001` |
 | product_or_line | RikaNV Hypnose |
 | product_kind | product_line |
@@ -490,7 +490,7 @@
 ### claim-hypnose2-line-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-line-001` |
 | product_or_line | RikaNV Hypnose2 |
 | product_kind | product_line |
@@ -510,7 +510,7 @@
 ### claim-hypnose2-650l-spec-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-spec-001` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -530,7 +530,7 @@
 ### claim-hypnose2-650l-spec-002
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-spec-002` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -550,7 +550,7 @@
 ### claim-hypnose2-650l-spec-003
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-spec-003` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -570,7 +570,7 @@
 ### claim-hypnose2-650l-spec-004
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-spec-004` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -590,7 +590,7 @@
 ### claim-hypnose2-650l-spec-005
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-spec-005` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -610,7 +610,7 @@
 ### claim-hypnose2-650l-scenario-001
 
 | Field | Value |
-| --- | --- |
+|:---|:---|
 | claim_id | `claim-hypnose2-650l-scenario-001` |
 | product_or_line | RikaNV Hypnose2 650L |
 | product_kind | product_model |

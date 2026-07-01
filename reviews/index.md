@@ -5,7 +5,7 @@
 ## Current review files
 
 | file | type | purpose | status |
-| --- | --- | --- | --- |
+|:---|:---|:---|:---|
 | [action-plan-001.md](action-plan-001.md) | action plan | Первый 30-дневный план ручного пилота | historical; use with current START-HERE |
 | [review-001-spine.md](review-001-spine.md) | review | Spine Review несущего скелета проекта | completed |
 | [review-005-product-priority-and-line-correction.md](review-005-product-priority-and-line-correction.md) | review | Коррекция product priority, Lesnik и line/model handling | completed |
@@ -15,6 +15,7 @@
 | [review-009-real-markdown-linebreak-fix.md](review-009-real-markdown-linebreak-fix.md) | review | Real Markdown Linebreak Fix | completed |
 | [review-010-remote-verified-markdown-repair.md](review-010-remote-verified-markdown-repair.md) | review | Remote-Verified Markdown Repair | completed |
 | [review-011-claim-review-prep.md](review-011-claim-review-prep.md) | review | Claim Review Preparation | created |
+| [review-012-claim-review-markdown-fix.md](review-012-claim-review-markdown-fix.md) | review | Claim Review Markdown Fix | completed |
 
 ## Review 008 Entry
 
@@ -43,6 +44,13 @@
 - Theme: Claim Review Preparation
 - Status: created
 - Purpose: prepare human review of 30 pilot claims.
+
+## Review 012 Entry
+
+- file: [review-012-claim-review-markdown-fix.md](review-012-claim-review-markdown-fix.md)
+- Theme: Claim Review Markdown Fix
+- Status: completed
+- Purpose: make Claim Review Prep files readable before human session.
 
 ## Numbering note
 

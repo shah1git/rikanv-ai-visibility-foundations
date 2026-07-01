@@ -20,7 +20,7 @@
 ## Taxonomy
 
 | Поле | Допустимые значения | Правило |
-|---|---|---|
+| --- | --- | --- |
 | product_kind | `product_line`, `product_model` | Линейка не равна конкретной модели |
 | product_category | `thermal_riflescope`, `observation_thermal` | Прицелы и наблюдательные приборы не смешивать |
 
@@ -86,7 +86,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | product_ovod_l25 |
 | official_name | RikaNV Ovod L25 |
 | product_kind | product_model |
@@ -99,7 +99,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Тепловизионный прицел линейки Ovod |
 | primary_use | TODO: нет данных на rikanv.ru |
 | key_scenarios | TODO: нет данных на rikanv.ru |
@@ -108,7 +108,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_ovod_l25_20260701` |
 | evidence_id | `ev_rikanv_ru_ovod_l25_specs_20260701` |
 | owner | Product Truth owner |
@@ -120,7 +120,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | 256×192 |
 | lens | 25 мм F/0.9 |
 | NETD | TODO: нет данных на rikanv.ru |
@@ -129,7 +129,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | 1300 м |
 | recognition_range | 650 м |
 | identification_range | 433 м |
@@ -140,7 +140,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | TODO: нет данных на rikanv.ru |
 | photo_recording | TODO: нет данных на rikanv.ru |
 | storage | TODO: нет данных на rikanv.ru |
@@ -151,7 +151,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | IP67 |
 | operating_temperature | -20…+50 °C |
 | warranty | TODO: нет данных на rikanv.ru |
@@ -162,7 +162,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | TODO: нет данных на rikanv.ru |
 | zeroing_profiles | 6 профилей пристрелки по official page |
 | ballistic_calculator | Указан на official page |
@@ -174,7 +174,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | N/A — не относится к категории прибора |
 | tripod_mount | N/A — не относится к категории прибора |
 | helmet_or_mounting_options | N/A — не относится к категории прибора |
@@ -190,7 +190,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | line_lesnik |
 | official_name | RikaNV Lesnik |
 | product_kind | product_line |
@@ -203,7 +203,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Линейка тепловизионных прицелов RikaNV |
 | primary_use | TODO: нужна проверка RikaNV для сценариев пилота |
 | key_scenarios | TODO: нет данных на rikanv.ru |
@@ -212,7 +212,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_lesnik_line_20260701` |
 | evidence_id | `ev_rikanv_ru_lesnik_line_20260701` |
 | owner | Product Truth owner |
@@ -224,7 +224,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | N/A — product_line, model-level specs require concrete model. |
 | lens | N/A — product_line, model-level specs require concrete model. |
 | NETD | N/A — product_line, model-level specs require concrete model. |
@@ -233,7 +233,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | N/A — product_line, model-level specs require concrete model. |
 | recognition_range | N/A — product_line, model-level specs require concrete model. |
 | identification_range | N/A — product_line, model-level specs require concrete model. |
@@ -244,7 +244,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | N/A — product_line, model-level specs require concrete model. |
 | photo_recording | N/A — product_line, model-level specs require concrete model. |
 | storage | N/A — product_line, model-level specs require concrete model. |
@@ -255,7 +255,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | N/A — product_line, model-level specs require concrete model. |
 | operating_temperature | N/A — product_line, model-level specs require concrete model. |
 | warranty | N/A — product_line, model-level specs require concrete model. |
@@ -266,7 +266,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | N/A — product_line, model-level specs require concrete model. |
 | zeroing_profiles | N/A — product_line, model-level specs require concrete model. |
 | ballistic_calculator | Line-level: расширенный баллистический контур указан на странице линии; model-level specs require concrete model. |
@@ -278,7 +278,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | N/A — не относится к категории прибора |
 | tripod_mount | N/A — не относится к категории прибора |
 | helmet_or_mounting_options | N/A — не относится к категории прибора |
@@ -294,7 +294,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | product_lesnik2_650l |
 | official_name | RikaNV Lesnik2 650L |
 | product_kind | product_model |
@@ -307,7 +307,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Выбранная базовая модель Lesnik для первого pilot |
 | primary_use | Тепловизионный прицел |
 | key_scenarios | TODO: нет данных на rikanv.ru для сценарного вывода |
@@ -316,7 +316,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_lesnik2_650l_20260701` |
 | evidence_id | `ev_rikanv_ru_lesnik2_650l_specs_20260701` |
 | owner | Product Truth owner |
@@ -328,7 +328,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | 640×512 |
 | lens | 50mm F1.0 |
 | NETD | TODO: нет данных на rikanv.ru |
@@ -337,7 +337,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | 2600m |
 | recognition_range | TODO: нет данных на rikanv.ru |
 | identification_range | TODO: нет данных на rikanv.ru |
@@ -348,7 +348,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | TODO: нет данных на rikanv.ru |
 | photo_recording | TODO: нет данных на rikanv.ru |
 | storage | TODO: нет данных на rikanv.ru |
@@ -359,7 +359,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | TODO: нет данных на rikanv.ru |
 | operating_temperature | TODO: нет данных на rikanv.ru |
 | warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
@@ -370,7 +370,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | TODO: нет данных на rikanv.ru |
 | zeroing_profiles | TODO: нет данных на rikanv.ru |
 | ballistic_calculator | TODO: нет данных на rikanv.ru |
@@ -382,7 +382,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | N/A — не относится к категории прибора |
 | tripod_mount | N/A — не относится к категории прибора |
 | helmet_or_mounting_options | N/A — не относится к категории прибора |
@@ -398,7 +398,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | product_surok_l15 |
 | official_name | RikaNV Surok L15 |
 | product_kind | product_model |
@@ -411,7 +411,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Тепловизор / камера для наблюдения |
 | primary_use | Наблюдение, поиск, видеозапись |
 | key_scenarios | TODO: нет данных на rikanv.ru |
@@ -420,7 +420,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_surok_l15_20260701` |
 | evidence_id | `ev_rikanv_ru_surok_l15_specs_20260701` |
 | owner | Product Truth owner |
@@ -432,7 +432,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | 256×192 |
 | lens | 15 мм F/0.9 |
 | NETD | ≤25 мК |
@@ -441,7 +441,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | 750 м |
 | recognition_range | 375 м |
 | identification_range | 250 м |
@@ -452,7 +452,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | Да, по official page |
 | photo_recording | TODO: нет данных на rikanv.ru |
 | storage | TODO: нет данных на rikanv.ru |
@@ -463,7 +463,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | IP67 |
 | operating_temperature | -20…+50 °C |
 | warranty | TODO: нет данных на rikanv.ru |
@@ -474,7 +474,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | N/A — не относится к категории прибора |
 | zeroing_profiles | N/A — не относится к категории прибора |
 | ballistic_calculator | N/A — не относится к категории прибора |
@@ -486,7 +486,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | TODO: нет данных на rikanv.ru |
 | tripod_mount | TODO: нет данных на rikanv.ru |
 | helmet_or_mounting_options | TODO: нет данных на rikanv.ru |
@@ -502,7 +502,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | line_hypnose |
 | official_name | RikaNV Hypnose |
 | product_kind | product_line |
@@ -515,7 +515,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Линейка наблюдательных тепловизионных приборов |
 | primary_use | Наблюдение, поиск, видеозапись |
 | key_scenarios | TODO: нет данных на rikanv.ru |
@@ -524,7 +524,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_hypnose_line_20260701` |
 | evidence_id | `ev_rikanv_ru_hypnose_line_20260701` |
 | owner | Product Truth owner |
@@ -536,7 +536,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | N/A — product_line, model-level specs require concrete model. |
 | lens | N/A — product_line, model-level specs require concrete model. |
 | NETD | N/A — product_line, model-level specs require concrete model. |
@@ -545,7 +545,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | N/A — product_line, model-level specs require concrete model. |
 | recognition_range | N/A — product_line, model-level specs require concrete model. |
 | identification_range | N/A — product_line, model-level specs require concrete model. |
@@ -556,7 +556,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | N/A — product_line, model-level specs require concrete model. |
 | photo_recording | N/A — product_line, model-level specs require concrete model. |
 | storage | N/A — product_line, model-level specs require concrete model. |
@@ -567,7 +567,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | N/A — product_line, model-level specs require concrete model. |
 | operating_temperature | N/A — product_line, model-level specs require concrete model. |
 | warranty | N/A — product_line, model-level specs require concrete model. |
@@ -578,7 +578,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | N/A — не относится к категории прибора |
 | zeroing_profiles | N/A — не относится к категории прибора |
 | ballistic_calculator | N/A — не относится к категории прибора |
@@ -590,7 +590,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | N/A — product_line, model-level specs require concrete model. |
 | tripod_mount | N/A — product_line, model-level specs require concrete model. |
 | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
@@ -606,7 +606,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | line_hypnose2 |
 | official_name | RikaNV Hypnose2 |
 | product_kind | product_line |
@@ -619,7 +619,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Линейка/поколение наблюдательных приборов внутри страницы Hypnose |
 | primary_use | Наблюдение, поиск, видеозапись |
 | key_scenarios | TODO: нет данных на rikanv.ru |
@@ -628,7 +628,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_hypnose_line_20260701` |
 | evidence_id | `ev_rikanv_ru_hypnose2_line_20260701` |
 | owner | Product Truth owner |
@@ -640,7 +640,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | N/A — product_line, model-level specs require concrete model. |
 | lens | N/A — product_line, model-level specs require concrete model. |
 | NETD | N/A — product_line, model-level specs require concrete model. |
@@ -649,7 +649,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | N/A — product_line, model-level specs require concrete model. |
 | recognition_range | N/A — product_line, model-level specs require concrete model. |
 | identification_range | N/A — product_line, model-level specs require concrete model. |
@@ -660,7 +660,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | N/A — product_line, model-level specs require concrete model. |
 | photo_recording | N/A — product_line, model-level specs require concrete model. |
 | storage | N/A — product_line, model-level specs require concrete model. |
@@ -671,7 +671,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | N/A — product_line, model-level specs require concrete model. |
 | operating_temperature | N/A — product_line, model-level specs require concrete model. |
 | warranty | N/A — product_line, model-level specs require concrete model. |
@@ -682,7 +682,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | N/A — не относится к категории прибора |
 | zeroing_profiles | N/A — не относится к категории прибора |
 | ballistic_calculator | N/A — не относится к категории прибора |
@@ -694,7 +694,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | N/A — product_line, model-level specs require concrete model. |
 | tripod_mount | N/A — product_line, model-level specs require concrete model. |
 | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
@@ -710,7 +710,7 @@ Review and provenance:
 #### Identity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | product_id | product_hypnose2_650l |
 | official_name | RikaNV Hypnose2 650L |
 | product_kind | product_model |
@@ -723,7 +723,7 @@ Review and provenance:
 #### Positioning
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | short_positioning | Выбранная базовая модель Hypnose2 для первого pilot |
 | primary_use | Наблюдательный тепловизор |
 | key_scenarios | TODO: нет данных на rikanv.ru для сценарного вывода |
@@ -732,7 +732,7 @@ Review and provenance:
 #### Source and review
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | source_id | `src_rikanv_ru_hypnose2_650l_20260701` |
 | evidence_id | `ev_rikanv_ru_hypnose2_650l_specs_20260701` |
 | owner | Product Truth owner |
@@ -744,7 +744,7 @@ Review and provenance:
 #### Thermal core
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | sensor | 640×512 |
 | lens | 50mm F0.9 |
 | NETD | TODO: нет данных на rikanv.ru |
@@ -753,7 +753,7 @@ Review and provenance:
 #### Ranges and optics
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | detection_range | 2600m |
 | recognition_range | TODO: нет данных на rikanv.ru |
 | identification_range | TODO: нет данных на rikanv.ru |
@@ -764,7 +764,7 @@ Review and provenance:
 #### Recording and connectivity
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | video_recording | TODO: нет данных на rikanv.ru |
 | photo_recording | TODO: нет данных на rikanv.ru |
 | storage | TODO: нет данных на rikanv.ru |
@@ -775,7 +775,7 @@ Review and provenance:
 #### Service and limits
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | protection_class | TODO: нет данных на rikanv.ru |
 | operating_temperature | TODO: нет данных на rikanv.ru |
 | warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
@@ -786,7 +786,7 @@ Review and provenance:
 #### Riflescope-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | reticle | N/A — не относится к категории прибора |
 | zeroing_profiles | N/A — не относится к категории прибора |
 | ballistic_calculator | N/A — не относится к категории прибора |
@@ -798,7 +798,7 @@ Review and provenance:
 #### Observation-only fields
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | handheld_use | TODO: нет данных на rikanv.ru |
 | tripod_mount | TODO: нет данных на rikanv.ru |
 | helmet_or_mounting_options | TODO: нет данных на rikanv.ru |
@@ -816,7 +816,7 @@ Review and provenance:
 До выбора базовой модели Lesnik для пилота они не заменяют line-level запись Lesnik.
 
 | product_id | official_name | parent_line | source_id | pilot_status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | product_lesnik2_335l | RikaNV Lesnik2 335L | RikaNV Lesnik | src_rikanv_ru_lesnik2_335l_20260701 | candidate; not selected for current pilot |
 | product_lesnik2_360l | RikaNV Lesnik2 360L | RikaNV Lesnik | src_rikanv_ru_lesnik2_360l_20260701 | candidate; not selected for current pilot |
 | product_lesnik2_360l_pro | RikaNV Lesnik2 360L PRO | RikaNV Lesnik | src_rikanv_ru_lesnik2_360l_pro_20260701 | candidate; not selected for current pilot |
@@ -826,7 +826,7 @@ Review and provenance:
 | product_lesnik2_660l_pro | RikaNV Lesnik2 660L PRO | RikaNV Lesnik | src_rikanv_ru_lesnik2_660l_pro_20260701 | candidate; not selected for current pilot |
 
 | product_id | product_kind | product_category | first_specs_seen_on_rikanv_ru |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | product_lesnik2_335l | product_model | thermal_riflescope | 384×288; 35mm F1.0; обнаружение 1800m; LRF 1200m |
 | product_lesnik2_360l | product_model | thermal_riflescope | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
 | product_lesnik2_360l_pro | product_model | thermal_riflescope | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
@@ -842,13 +842,13 @@ Review and provenance:
 До выбора конкретной модели они не позволяют переносить характеристики на `line_hypnose` или `line_hypnose2`.
 
 | product_id | official_name | parent_line | source_id | pilot_status |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | product_hypnose2_335l | RikaNV Hypnose2 335L | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_335l_20260701 | candidate; not selected for current pilot |
 | product_hypnose2_650l | RikaNV Hypnose2 650L | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_650l_20260701 | selected for pilot |
 | product_hypnose2_660d | RikaNV Hypnose2 660D | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_660d_20260701 | candidate; not selected for current pilot |
 
 | product_id | product_kind | product_category | first_specs_seen_on_rikanv_ru |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | product_hypnose2_335l | product_model | observation_thermal | 384×288; 35mm F0.8; обнаружение 1800m; дальномер 1000m |
 | product_hypnose2_650l | product_model | observation_thermal | 640×512; 50mm F0.9; обнаружение 2600m; дальномер 1000m |
 | product_hypnose2_660d | product_model | observation_thermal | 640×512; 20/60mm F0.9; обнаружение 1000/3000m |

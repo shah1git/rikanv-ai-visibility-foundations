@@ -39,7 +39,7 @@
 ## 3. Validation checks
 
 | Check | Result | Notes |
-|---|---|---|
+| --- | --- | --- |
 | git diff --check | pass | No whitespace errors |
 | no lines >300 chars except URLs | pass | 0 violations in checked files |
 | README line count >14 | pass | 112 lines |

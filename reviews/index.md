@@ -5,7 +5,7 @@
 ## Current review files
 
 | file | type | purpose | status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | [action-plan-001.md](action-plan-001.md) | action plan | Первый 30-дневный план ручного пилота | historical; use with current START-HERE |
 | [review-001-spine.md](review-001-spine.md) | review | Spine Review несущего скелета проекта | completed |
 | [review-005-product-priority-and-line-correction.md](review-005-product-priority-and-line-correction.md) | review | Коррекция product priority, Lesnik и line/model handling | completed |
@@ -13,6 +13,7 @@
 | [review-007-human-product-decisions-applied.md](review-007-human-product-decisions-applied.md) | review | Применение human product decisions к 30-дневному пилоту | completed |
 | [review-008-markdown-render-fix.md](review-008-markdown-render-fix.md) | review | Markdown Render Fix | superseded by review-009 |
 | [review-009-real-markdown-linebreak-fix.md](review-009-real-markdown-linebreak-fix.md) | review | Real Markdown Linebreak Fix | completed |
+| [review-010-remote-verified-markdown-repair.md](review-010-remote-verified-markdown-repair.md) | review | Remote-Verified Markdown Repair | completed |
 
 ## Review 008 Entry
 
@@ -28,6 +29,13 @@
 - Status: completed
 - Purpose: actually restore linebreak-safe Markdown before Claim Review Prep.
 
+## Review 010 Entry
+
+- file: [review-010-remote-verified-markdown-repair.md](review-010-remote-verified-markdown-repair.md)
+- Theme: Remote-Verified Markdown Repair
+- Status: completed
+- Purpose: confirm Markdown linebreaks through raw GitHub after push.
+
 ## Numbering note
 
 `review-002`, `review-003` и `review-004` отсутствуют в текущем репозитории. Они не считаются потерянными обязательными документами.
@@ -42,3 +50,5 @@
 
 `review-009` заменяет статус `review-008` как фактическая проверка переносов
 строк после внешней raw GitHub проверки.
+
+`review-010` фиксирует remote raw validation через `raw.githubusercontent.com`.

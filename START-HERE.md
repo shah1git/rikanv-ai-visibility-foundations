@@ -63,7 +63,7 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 ## Owners
 
 | Роль | Owner | Ответственность |
-|---|---|---|
+| --- | --- | --- |
 | Pilot owner | Владелец проекта RikaNV AI Visibility / руководитель проекта | Общий ход 30-дневного пилота, решения по scope, финальная эскалация |
 | Product Truth owner | Технический продуктовый ответственный RikaNV; временно владелец проекта + технический специалист по приборам | Product Truth, source/evidence/claim связка, модельные решения |
 | Technical reviewer | Ведущий технический специалист / сервисный инженер RikaNV | Проверка specs, claims, ограничений, технических формулировок |
@@ -88,7 +88,7 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 ## Первые 7 дней
 
 | День | Что сделать | Результат |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Провести Product Truth Start | Первая таблица по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose/Hypnose2, Hypnose2 650L; owners; reviewers; doctrine status |
 | 2 | Собрать источники только с `rikanv.ru` | Source Register по базовым линиям и найденным моделям |
 | 3 | Собрать evidence | Evidence Register по product pages и line pages; явные gaps |

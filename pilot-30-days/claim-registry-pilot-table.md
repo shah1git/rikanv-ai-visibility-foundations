@@ -39,7 +39,7 @@
 ## Claim counts
 
 | Metric | Value |
-|---|---|
+| --- | --- |
 | total claims | 30 |
 | verified | 23 |
 | draft | 7 |
@@ -51,7 +51,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-spec-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-spec-001` |
 | claim_type | specification |
 | statement | RikaNV Ovod L25 является тепловизионным прицелом. |
@@ -71,7 +71,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-spec-002
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-spec-002` |
 | claim_type | specification |
 | statement | RikaNV Ovod L25 относится к категории `thermal_riflescope`. |
@@ -91,7 +91,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-spec-003
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-spec-003` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Ovod L25 указан сенсор 256×192. |
@@ -111,7 +111,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-spec-004
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-spec-004` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Ovod L25 указан объектив 25 мм F/0.9. |
@@ -131,7 +131,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-spec-005
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-spec-005` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Ovod L25 указана дальность обнаружения 1300 м. |
@@ -151,7 +151,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-scenario-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-scenario-001` |
 | claim_type | scenario_fit |
 | statement | TODO: нет данных на rikanv.ru для сценарного вывода по Ovod L25. |
@@ -171,7 +171,7 @@ Group: A. RikaNV Ovod L25 — 7 claims
 ### claim-ovod-l25-limit-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-ovod-l25-limit-001` |
 | claim_type | limitation |
 | statement | TODO: нет данных на rikanv.ru по ограничениям, service/safety и условиям применения Ovod L25. |
@@ -195,7 +195,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik-line-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik-line-001` |
 | claim_type | specification |
 | statement | RikaNV Lesnik является линейкой тепловизионных прицелов RikaNV. |
@@ -215,7 +215,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik-line-002
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik-line-002` |
 | claim_type | specification |
 | statement | На странице линии Lesnik на rikanv.ru перечислены конкретные модели Lesnik2. |
@@ -235,7 +235,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-spec-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-spec-001` |
 | claim_type | specification |
 | statement | RikaNV Lesnik2 650L является конкретной моделью линейки Lesnik для первого pilot. |
@@ -255,7 +255,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-spec-002
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-spec-002` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Lesnik2 650L указан сенсор 640×512. |
@@ -275,7 +275,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-spec-003
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-spec-003` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Lesnik2 650L указан объектив 50mm F1.0. |
@@ -295,7 +295,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-spec-004
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-spec-004` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Lesnik2 650L указана дальность обнаружения 2600m. |
@@ -315,7 +315,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-spec-005
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-spec-005` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Lesnik2 650L указан LRF 1200m. |
@@ -335,7 +335,7 @@ Group note: Lesnik остается `product_line`. RikaNV Lesnik2 650L выбр
 ### claim-lesnik2-650l-scenario-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-lesnik2-650l-scenario-001` |
 | claim_type | scenario_fit |
 | statement | TODO: нет данных на rikanv.ru для сценарного вывода по Lesnik2 650L. |
@@ -357,7 +357,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-spec-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-spec-001` |
 | claim_type | specification |
 | statement | RikaNV Surok L15 относится к наблюдательным тепловизионным приборам, а не к прицелам. |
@@ -377,7 +377,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-spec-002
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-spec-002` |
 | claim_type | specification |
 | statement | RikaNV Surok L15 — тепловизор / камера для наблюдения. |
@@ -397,7 +397,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-spec-003
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-spec-003` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Surok L15 указан сенсор 256×192. |
@@ -417,7 +417,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-spec-004
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-spec-004` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Surok L15 указан объектив 15 мм F/0.9. |
@@ -437,7 +437,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-scenario-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-scenario-001` |
 | claim_type | scenario_fit |
 | statement | TODO: нет данных на rikanv.ru для сценарного вывода по Surok L15. |
@@ -457,7 +457,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-limit-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-limit-001` |
 | claim_type | limitation |
 | statement | Surok L15 не должен описываться как тепловизионный прицел без прямого official source. |
@@ -477,7 +477,7 @@ Group: C. RikaNV Surok L15 — 7 claims
 ### claim-surok-l15-usability-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-surok-l15-usability-001` |
 | claim_type | usability |
 | statement | TODO: нет данных на rikanv.ru по usability Surok L15. |
@@ -501,7 +501,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose-line-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose-line-001` |
 | claim_type | specification |
 | statement | RikaNV Hypnose является продуктовой линейкой наблюдательных тепловизионных приборов. |
@@ -521,7 +521,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-line-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-line-001` |
 | claim_type | specification |
 | statement | RikaNV Hypnose2 ведется в пилоте как `product_line`, актуальное поколение / подлинейка внутри направления RikaNV Hypnose. |
@@ -541,7 +541,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-spec-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-spec-001` |
 | claim_type | specification |
 | statement | RikaNV Hypnose2 650L является конкретной моделью линейки Hypnose2 для первого pilot. |
@@ -561,7 +561,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-spec-002
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-spec-002` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Hypnose2 650L указан сенсор 640×512. |
@@ -581,7 +581,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-spec-003
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-spec-003` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Hypnose2 650L указан объектив 50mm F0.9. |
@@ -601,7 +601,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-spec-004
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-spec-004` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Hypnose2 650L указана дальность обнаружения 2600m. |
@@ -621,7 +621,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-spec-005
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-spec-005` |
 | claim_type | specification |
 | statement | На странице rikanv.ru для RikaNV Hypnose2 650L указан дальномер 1000m. |
@@ -641,7 +641,7 @@ Group note: Hypnose и Hypnose2 в пилоте обрабатываются к�
 ### claim-hypnose2-650l-scenario-001
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | claim_id | `claim-hypnose2-650l-scenario-001` |
 | claim_type | scenario_fit |
 | statement | TODO: нет данных на rikanv.ru для сценарного вывода по Hypnose2 650L. |

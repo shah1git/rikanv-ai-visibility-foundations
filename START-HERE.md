@@ -2,7 +2,8 @@
 
 ## Что мы делаем
 
-Запускаем 30-дневный agent-first, human-approved пилот, чтобы проверить рабочий цикл:
+Запускаем 30-дневный agent-first, human-approved пилот, чтобы проверить
+рабочий цикл:
 
 Agent site import -> Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 
@@ -13,7 +14,10 @@ approver.
 
 `rikanv.ru` является primary public source для первого agent import.
 
-Фокус пилота — тепловизионная оптика RikaNV: тепловизионные прицелы и приборы наблюдения. В первом пилоте не смешиваем категории:
+Фокус пилота — тепловизионная оптика RikaNV: тепловизионные прицелы и приборы
+наблюдения.
+
+В первом пилоте не смешиваем категории:
 
 - `thermal_riflescope` — тепловизионные прицелы;
 - `observation_thermal` — тепловизоры, камеры и монокуляры для наблюдения.
@@ -25,9 +29,12 @@ approver.
 
 ## RikaNV Doctrine
 
-Проект следует RikaNV Doctrine. Все Product Truth, Claims, контент, сравнения и AI Visibility действия должны проходить doctrine compliance check.
+Проект следует RikaNV Doctrine. Все Product Truth, Claims, контент, сравнения и
+AI Visibility действия должны проходить doctrine compliance check.
 
-Для первого пилота это означает: факты только из разрешенных источников, без маркетинговых эпитетов, без выдуманных характеристик, без смешения прицелов и наблюдательных приборов.
+Для первого пилота это означает: факты только из разрешенных источников, без
+маркетинговых эпитетов, без выдуманных характеристик, без смешения прицелов и
+наблюдательных приборов.
 
 ## Что НЕ делаем сейчас
 
@@ -35,7 +42,8 @@ approver.
 - Не выбираем фреймворк.
 - Не пишем код.
 - Не публикуем автоматически без human approval.
-- Не используем rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры без отдельного разрешения.
+- Не используем rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры
+  без отдельного разрешения.
 - Не делаем PBN.
 - Не выдумываем характеристики.
 - Не публикуем claims без source/evidence.
@@ -45,11 +53,14 @@ approver.
 
 1. RikaNV Ovod L25 — конкретная модель прицела.
 2. RikaNV Lesnik — базовая линейка прицелов.
-3. RikaNV Lesnik2 650L — выбранная базовая модель Lesnik для первого model-level Product Truth pilot.
+3. RikaNV Lesnik2 650L — выбранная базовая модель Lesnik для первого model-level
+   Product Truth pilot.
 4. RikaNV Surok L15 — конкретная модель наблюдательного тепловизора.
 5. RikaNV Hypnose — продуктовая линейка наблюдательных приборов.
-6. RikaNV Hypnose2 — `product_line`, актуальное поколение / подлинейка внутри направления RikaNV Hypnose.
-7. RikaNV Hypnose2 650L — выбранная базовая модель Hypnose2 для первого model-level Product Truth pilot.
+6. RikaNV Hypnose2 — `product_line`, актуальное поколение / подлинейка внутри
+   направления RikaNV Hypnose.
+7. RikaNV Hypnose2 650L — выбранная базовая модель Hypnose2 для первого
+   model-level Product Truth pilot.
 
 Линейка не равна модели. Verified specification claims создаются только для
 конкретных моделей, если характеристика явно подтверждена официальной страницей
@@ -61,17 +72,21 @@ approver.
 ## Human product decisions for pilot
 
 - Base Lesnik model: RikaNV Lesnik2 650L.
-- Reason: сильная и понятная модель линейки Lesnik для первого model-level Product Truth. Если коммерческий приоритет позже сместится на PRO-версию, это нужно оформить отдельным решением.
+- Reason: сильная и понятная модель линейки Lesnik для первого model-level
+  Product Truth. Если коммерческий приоритет позже сместится на PRO-версию, это
+  нужно оформить отдельным решением.
 - Hypnose2 taxonomy: `product_line`, актуальное поколение / подлинейка внутри направления RikaNV Hypnose.
 - Base Hypnose2 model: RikaNV Hypnose2 650L.
 - Reason: сильная и понятная модель наблюдательной линейки для первого model-level Product Truth.
 
-Эти причины выбора не являются claims о превосходстве. Технические claims по выбранным моделям остаются проверяемыми только через official product pages и evidence.
+Эти причины выбора не являются claims о превосходстве. Технические claims по
+выбранным моделям остаются проверяемыми только через official product pages и
+evidence.
 
 ## Owners
 
 | Роль | Owner | Ответственность |
-| --- | --- | --- |
+|:---|:---|---:|
 | Pilot owner | Владелец проекта RikaNV AI Visibility / руководитель проекта | Общий ход 30-дневного пилота, решения по scope, финальная эскалация |
 | Product Truth owner | Технический продуктовый ответственный RikaNV; временно владелец проекта + технический специалист по приборам | Product Truth, source/evidence/claim связка, модельные решения |
 | Technical reviewer | Ведущий технический специалист / сервисный инженер RikaNV | Проверка specs, claims, ограничений, технических формулировок |
@@ -116,7 +131,8 @@ Human exception review означает, что человек смотрит т
 
 - вручную переносить характеристики с `rikanv.ru`;
 - вручную писать черновики с нуля;
-- вручную проверять все простые specification claims, если они корректно связаны с official source/evidence.
+- вручную проверять все простые specification claims, если они корректно связаны
+  с official source/evidence.
 
 ## MVP на 30 дней
 
@@ -135,7 +151,7 @@ Human exception review означает, что человек смотрит т
 ## Первые 7 дней
 
 | День | Что сделать | Результат |
-| --- | --- | --- |
+|:---|:---|---:|
 | 1 | Запустить agent site import | Source snapshot, Product Truth extraction draft, doctrine status |
 | 2 | Проверить Product Truth extraction | Product Truth по базовым объектам; явные TODO и ambiguous fields |
 | 3 | Выполнить claim extraction и evidence linking | 30 pilot claims связаны с sources/evidence или помечены TODO |

@@ -18,6 +18,7 @@
 | [review-012-claim-review-markdown-fix.md](review-012-claim-review-markdown-fix.md) | review | Claim Review Markdown Fix | completed |
 | [review-013-agent-first-pivot.md](review-013-agent-first-pivot.md) | review | Agent-First Pivot | completed |
 | [review-014-agent-first-consistency-patch.md](review-014-agent-first-consistency-patch.md) | review | Agent-First Consistency Patch | completed |
+| [review-015-agent-first-markdown-and-wording-repair.md](review-015-agent-first-markdown-and-wording-repair.md) | review | Agent-First Markdown and Wording Repair | completed |
 
 ## Review 008 Entry
 
@@ -67,6 +68,13 @@
 - Theme: Agent-First Consistency Patch
 - Status: completed
 - Purpose: remove remaining manual-first contradictions from entry-point and operating docs.
+
+## Review 015 Entry
+
+- file: [review-015-agent-first-markdown-and-wording-repair.md](review-015-agent-first-markdown-and-wording-repair.md)
+- Theme: Agent-First Markdown and Wording Repair
+- Status: completed
+- Purpose: make agent-first pivot files GitHub-readable and fix residual wording before Site Import Agent.
 
 ## Numbering note
 

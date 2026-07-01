@@ -53,7 +53,10 @@ Line-level claims не должны превращаться в model-level spec
 
 Статья может устареть, быть неточной или смешивать факты с выводами. Claim Registry хранит проверяемые утверждения отдельно от форматов публикации.
 
-Один verified claim может использоваться в статье, FAQ, видео, Telegram-посте, PDF, дилерском материале и карточке продукта. Если claim устарел или оспорен, обновляются все производные материалы.
+Один verified claim может использоваться в статье, FAQ, видео, Telegram-посте,
+PDF, дилерском материале и карточке продукта.
+
+Если claim устарел или оспорен, обновляются все производные материалы.
 
 Главное правило: сначала Product Truth, Evidence Base и Claim Registry, потом Content Factory.
 
@@ -64,7 +67,9 @@ Line-level claims не должны превращаться в model-level spec
 3. Claim Registry — база проверяемых утверждений со статусами, источниками, evidence, ответственными и датами review.
 4. Content Factory — производство статей, FAQ, сравнений, тестов, видео-сценариев, постов, PDF и дилерских материалов из claims.
 5. AI Visibility Lab — регулярная проверка того, как AI-системы отвечают на целевые запросы, где упоминают RikaNV, где ошибаются и какие gaps нужно закрывать.
-6. Digital Staff — операционная модель цифровых ролей: исследователь, автор, технический reviewer, аналитик AI-видимости и другие роли с четкими входами, выходами и ограничениями.
+6. Digital Staff — операционная модель цифровых ролей: исследователь, автор,
+   technical reviewer, аналитик AI-видимости и другие роли с четкими входами,
+   выходами и ограничениями.
 
 ## RikaNV Doctrine
 
@@ -114,8 +119,9 @@ API, CMS или другую техническую платформу.
 
 ## Какие данные нужны от RikaNV
 
-- Подтверждение базовой модели Lesnik для model-level Product Truth.
-- Подтверждение статуса Hypnose2 как линейки и выбор модели Hypnose2 только для следующего шага, если это потребуется.
+- Подтверждение актуальности выбранной модели Lesnik2 650L для пилота.
+- Подтверждение актуальности выбранной модели Hypnose2 650L для пилота.
+- Подтверждение публичной пригодности данных с `rikanv.ru`.
 - Официальные характеристики Ovod L25, Surok L15 и выбранных конкретных моделей с `rikanv.ru`.
 - Официальные инструкции, паспорта, прошивки и changelog.
 - Фото, видео, полевые тесты и методики испытаний.
@@ -138,11 +144,16 @@ API, CMS или другую техническую платформу.
 
 ## Основной цикл
 
-Agent site import → Product Truth extraction → Claim extraction → Evidence linking → Agent claim review → Human exception review → Content draft generation → Technical / doctrine pre-check → Human publication approval → Publication → AI visibility retest.
+Agent site import → Product Truth extraction → Claim extraction → Evidence
+linking → Agent claim review → Human exception review → Content draft
+generation → Technical / doctrine pre-check → Human publication approval →
+Publication → AI visibility retest.
 
 Human exception review означает, что человек смотрит только claims со статусами
 `blocked_for_publication`, `human_review_required`, `needs_rewording` с высоким
 риском, claims о конкурентах, performance claims, confidential claims и volatile
 claims.
 
-Цель цикла — не обмануть AI-системы, а создать качественную, проверяемую и полезную информационную среду, где RikaNV заслуженно выглядит авторитетным источником.
+Цель цикла — не обмануть AI-системы, а создать качественную, проверяемую и
+полезную информационную среду, где RikaNV заслуженно выглядит авторитетным
+источником.

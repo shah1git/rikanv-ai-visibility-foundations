@@ -1,25 +1,30 @@
 # План на 90 дней
 
-План рассчитан на запуск практической системы без выбора runtime и без разработки кода.
+План рассчитан на запуск agent-first, human-approved системы без выбора runtime
+и без разработки кода.
 
 ## Дни 1-7
 
 Цели:
-- собрать базовую Product Truth;
-- утвердить правила claims;
+- запустить agent import по `rikanv.ru`;
+- получить базовую Product Truth без ручного переноса характеристик;
+- создать claims и evidence links агентами;
+- отправить человеку только exceptions;
 - подготовить первый AI visibility test.
 
 Задачи:
 - подтвердить приоритет первого пилота: Ovod L25, Lesnik, Surok L15, Hypnose, Hypnose2;
 - разделить категории `thermal_riflescope` и `observation_thermal`;
 - разделить `product_line` и `product_model`;
-- собрать характеристики Ovod L25, Surok L15 и выбранных конкретных моделей с `rikanv.ru`;
-- зафиксировать line-level Product Truth по Lesnik, Hypnose и Hypnose2;
-- завести source register и evidence register;
-- заполнить первые product profiles;
-- создать 30-50 draft claims;
+- Site Import Agent импортирует страницы `rikanv.ru` по выбранным объектам;
+- Product Truth Agent извлекает характеристики Ovod L25, Surok L15 и выбранных конкретных моделей;
+- Product Truth Agent фиксирует line-level Product Truth по Lesnik, Hypnose и Hypnose2;
+- Evidence Linker Agent заводит source register и evidence register;
+- Claim Extraction Agent создает 30-50 draft/verified candidate claims;
+- Agent Claim Review присваивает tiers, risk flags и review statuses;
+- человек смотрит только exceptions;
 - утвердить первый query set на 20 запросов по прицелам и наблюдательным тепловизорам;
-- выбрать первые 4 материала: Ovod L25, Lesnik, Surok L15, Hypnose/Hypnose2.
+- выбрать первые 4 draft materials: Ovod L25, Lesnik2 650L, Surok L15, Hypnose2 650L.
 
 Артефакты:
 - заполненные product profiles;
@@ -32,15 +37,18 @@
 В первом пилоте Lesnik является базовым приоритетом. Если конкретная модель Lesnik не выбрана, фиксируется blocker, а не перенос в later.
 
 Люди:
-- технический эксперт;
-- маркетинг-владелец;
-- сервисный специалист;
-- ответственный за публикации.
+- pilot owner;
+- technical reviewer;
+- doctrine compliance owner;
+- publication owner;
+- AI visibility owner.
 
 Можно через AI:
-- структурировать источники;
+- импортировать и структурировать источники;
+- извлекать Product Truth;
 - выделять claims;
-- готовить черновики задач;
+- связывать evidence;
+- делать agent claim review;
 - формировать вопросы к эксперту.
 
 Критерии готовности:
@@ -51,14 +59,18 @@
 ## Дни 8-30
 
 Цели:
-- запустить первые публикации;
+- подготовить первые agent-generated drafts;
+- провести technical / doctrine pre-check;
 - провести первый baseline AI visibility;
-- собрать сервисные и тестовые gaps.
+- вывести на человека только спорные claims и публикационные решения.
 
 Задачи:
-- подготовить 5-10 материалов;
-- провести technical review и bias check;
-- опубликовать approved материалы;
+- Content Draft Agent готовит drafts по Ovod L25, Lesnik2 650L, Surok L15 и Hypnose2 650L;
+- GEO/SEO Agent структурирует drafts для людей, поиска и AI;
+- Technical Consistency Agent и Doctrine Review Agent проводят pre-check;
+- человек утверждает или возвращает только exceptions;
+- Publisher/Repurposer Agent готовит approved versions для каналов;
+- опубликовать 1-2 approved материала или довести их до publication-ready;
 - провести baseline test по 20 запросам;
 - создать backlog gaps;
 - подготовить 2-3 тестовых отчета.
@@ -77,7 +89,7 @@
 - владелец сайта/каналов.
 
 Можно через AI:
-- черновики статей из verified claims;
+- черновики материалов из approved-for-draft claims;
 - адаптация approved content под каналы;
 - анализ AI-ответов;
 - подготовка таблиц gaps.

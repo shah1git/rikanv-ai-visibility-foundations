@@ -1,22 +1,30 @@
 # 30-Day Pilot Workspace
 
-Эта папка — рабочий стол 30-дневного ручного пилота. Это не полная документация проекта и не новый большой раздел.
+Эта папка — рабочий стол 30-дневного agent-first пилота. Это не полная
+документация проекта и не новый большой раздел.
 
-Здесь лежат только файлы, которые нужны, чтобы начать работу: Product Truth, sources, evidence, первые claims, первый AI baseline и первые content tasks.
+Здесь лежат только файлы, которые нужны, чтобы начать работу: source snapshots,
+Product Truth, sources, evidence, первые claims, agent claim review board,
+первый AI baseline и первые content tasks.
+
+Основная работа выполняется агентами на основе `rikanv.ru`. Человек утверждает
+приоритеты, смотрит exceptions и дает final publication approval.
 
 ## Что должно быть сделано
 
-- Заполнить Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
+- Agent imports official `rikanv.ru` pages for Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 and Hypnose2 650L.
+- Product Truth Agent заполняет Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
 - Разделить продукты по категориям: `thermal_riflescope` и `observation_thermal`.
 - Разделить уровень продукта: `product_line` и `product_model`.
-- Собрать Source Register только по официальным источникам `rikanv.ru`.
-- Собрать Evidence Register.
-- Создать 30 pilot claims.
+- Evidence Linker Agent собирает Source Register только по официальным источникам `rikanv.ru`.
+- Evidence Linker Agent собирает Evidence Register.
+- Claim Extraction Agent создает 30 pilot claims.
+- Agent Claim Review assigns tiers, risk flags and review statuses.
+- Человек смотрит только exceptions.
 - Провести baseline по 20 AI-запросам минимум в 3 AI-системах.
 - Создать 5 priority content tasks.
-- Подготовить 2-3 материала на основе claims.
-- Провести technical review.
-- Провести doctrine compliance review.
+- Content Draft Agent готовит 4 drafts на основе claims.
+- Провести technical / doctrine pre-check.
 - Получить human approval перед публикацией.
 - Подготовить короткий отчет по пилоту.
 
@@ -30,9 +38,11 @@
 - Прицелы не смешаны с наблюдательными приборами.
 - Есть первые sources и evidence с `rikanv.ru`.
 - Есть 30 claims, из них минимум 10 прошли technical review как `verified` или `verified line-level`.
-- Baseline AI-видимости проведен вручную и покрывает обе категории.
+- Baseline AI-видимости проведен AI Visibility Analyst Agent и покрывает обе категории.
 - Понятно, какие gaps нужно закрывать контентом.
-- Есть 2-3 материала в статусе draft/review/approved.
+- Agent Claim Review Board показывает, какие claims можно использовать в drafts,
+  а какие требуют evidence, rewording или human exception review.
+- Есть 4 материала в статусе draft/review/approved.
 
 ## Что запрещено делать в пилоте
 
@@ -43,8 +53,7 @@
 - Создавать PBN, дорвеи или сетку рерайтов.
 - Использовать rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры без отдельного разрешения.
 - Публиковать сравнения с конкурентами без sources, evidence, technical review, doctrine check и bias check.
-- Автоматизировать процесс до ручной проверки.
-- Запускать agent framework или выбирать runtime.
+- Создавать runtime, SDK-интеграции или agent framework до доказанного процесса.
 - Считать AI-ответ источником истины.
 - Публиковать материалы без human approval.
 

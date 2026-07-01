@@ -4,6 +4,9 @@
 
 Зафиксировать, когда и как человек утверждает материал перед публикацией.
 
+Agent-first pipeline уменьшает ручную работу, но не отменяет final human
+publication approval.
+
 ## Human Approval обязателен
 
 - Перед публикацией.
@@ -13,6 +16,18 @@
 - При данных из переписки с поставщиками.
 - При сервисных инструкциях.
 - При материалах на основе отзывов клиентов.
+
+## Human Exception Review
+
+До финального approval человек смотрит только exceptions:
+
+- `blocked_for_publication`;
+- `human_review_required`;
+- `needs_rewording` with high risk;
+- competitor comparison;
+- performance claims;
+- confidential or volatile claims;
+- line/model ambiguity.
 
 ## Шаги
 
@@ -26,5 +41,6 @@
 ## Ошибки
 
 - Считать AI-review финальным approval.
+- Считать agent claim review финальным approval.
 - Утверждать материал без technical review.
 - Публиковать “временно”, если claims не проверены.

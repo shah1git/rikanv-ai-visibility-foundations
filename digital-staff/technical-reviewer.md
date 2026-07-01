@@ -4,9 +4,13 @@
 
 Проверять технические утверждения, характеристики, методики тестов, таблицы и ограничения.
 
+В agent-first pipeline роль работает как Technical Consistency Agent для
+pre-check и как human technical reviewer для спорных claims.
+
 ## Responsibilities
 
 - Проверять claims.
+- Проверять agent-extracted Product Truth.
 - Проверять терминологию.
 - Проверять физику и техническую логику.
 - Отправлять материал на доработку при ошибках.
@@ -18,6 +22,7 @@
 - Claims.
 - Sources.
 - Evidence.
+- Agent Claim Review Board.
 - Test reports.
 
 ## Outputs
@@ -43,6 +48,7 @@
 - Может блокировать материал.
 - Может переводить claim к human owner для verified decision.
 - Не может публиковать материал.
+- Не может считать pre-check финальным publication approval.
 
 ## Human Approval Required When
 

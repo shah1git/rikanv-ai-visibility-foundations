@@ -8,6 +8,9 @@
 
 Проверь материал на рекламные натяжки, скрытые ограничения и нечестные сравнения.
 
+В agent-first pipeline bias check применяется к agent-generated drafts и
+comparison drafts до human approval.
+
 ## Проверить
 
 - Есть ли рекламные формулировки без evidence.
@@ -24,6 +27,7 @@
 - Не усиливай маркетинговые формулировки.
 - Предлагай конкретные правки.
 - Если сравнение нельзя публиковать честно, предложи перевести в research task.
+- Competitor claims и superiority claims должны идти на human exception review.
 
 ## Выход
 

@@ -4,6 +4,10 @@
 
 Измерять ответы AI-систем по целевым запросам, считать метрики и превращать gaps в content tasks.
 
+В agent-first pipeline AI Visibility Analyst Agent превращает gaps не только в
+content tasks, но и в agent tasks: site import, Product Truth update, claim
+extraction, evidence request или draft update.
+
 ## Responsibilities
 
 - Вести query set.
@@ -25,6 +29,7 @@
 - Metrics report.
 - Gap analysis.
 - Content task recommendations.
+- Agent task recommendations.
 
 ## Capabilities
 
@@ -44,6 +49,7 @@
 - Может создавать gap tasks.
 - Не может обещать попадание в AI-ответы.
 - Не может менять Product Truth.
+- Не может считать AI-ответ источником истины.
 
 ## Human Approval Required When
 

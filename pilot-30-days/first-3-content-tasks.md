@@ -1,6 +1,12 @@
 # First Priority Content Tasks
 
-Это первые задачи на материалы. Здесь не пишутся сами статьи. Материалы можно готовить только после Product Truth, sources, evidence и claims.
+Это первые задачи на материалы. Здесь не пишутся сами статьи.
+
+В agent-first pilot черновики готовит Content Draft Agent только после Product
+Truth extraction, source/evidence linking и Agent Claim Review. Человек
+утверждает exceptions и final publication approval.
+
+Материалы можно готовить только после Product Truth, sources, evidence и claims.
 
 Файл исторически называется `first-3-content-tasks.md`, но после human product decisions в пилоте стало 5 priority content tasks.
 
@@ -114,6 +120,7 @@
 ## Правила
 
 - Не писать материал без claims.
+- Content Draft Agent использует только claims с подходящим `agent_review_status`.
 - Не публиковать без technical review, doctrine compliance review и human approval.
 - Если данных не хватает, задача остается в `blocked` или `draft`.
 - Сравнения с конкурентами не публиковать в первом пакете без отдельного разрешения, evidence и bias check.

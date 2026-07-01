@@ -1,181 +1,214 @@
 # Основной цикл
 
-Цикл связывает AI-видимость, факты, редакционный процесс и публикацию.
+Проект работает по модели agent-first, human-approved.
+
+Агенты выполняют основную операционную работу: импорт, извлечение Product Truth,
+создание claims, evidence linking, предварительный review и подготовку
+черновиков. Человек участвует как владелец решений, reviewer исключений и
+final publication approver.
 
 ```text
-AI visibility test
+Agent site import
 ↓
-gap analysis
+Product Truth extraction
 ↓
-content task
+Claim extraction
 ↓
-evidence gathering
+Evidence linking
 ↓
-claim creation
+Agent claim review
 ↓
-content draft
+Human exception review
 ↓
-technical review
+Content draft generation
 ↓
-bias check
+Technical / doctrine pre-check
 ↓
-human approval
+Human publication approval
 ↓
-publication
+Publication
 ↓
-retest AI visibility
+AI visibility retest
 ```
 
-## 1. AI Visibility Test
+## 1. Agent Site Import
 
-Цель: понять, как AI-системы отвечают на целевые запросы.
+Цель: получить структурированный snapshot разрешенных источников, прежде всего
+официальных страниц `rikanv.ru`.
 
-Входы: тестовый набор запросов, список AI-систем, правила фиксации ответов.
+Входы: URL, allowed source policy, product taxonomy, текущий Product Truth.
 
-Выходы: answer log, метрики Mention Rate, Recommendation Rate, Error Rate, Competitor Gap.
+Выходы: source snapshot, source records, список недоступных страниц, TODO.
 
-Ответственная роль: AI Visibility Analyst.
+Ответственная роль: Site Import Agent.
 
-Где нужен человек: утверждение тестового набора и интерпретация спорных выводов.
+Где нужен человек: если источник спорный, закрытый, не относится к `rikanv.ru`
+или требует разрешения.
 
-Типовые ошибки: менять запросы каждый месяц без версии, фиксировать только удачные ответы, не сохранять дату и условия теста.
+Типовые ошибки: брать данные с дилерских сайтов без разрешения, не фиксировать
+дату проверки, переносить маркетинговые эпитеты как факты.
 
-## 2. Gap Analysis
+## 2. Product Truth Extraction
 
-Цель: понять, почему RikaNV не упоминается, упоминается с ошибками или проигрывает конкурентам в AI-ответах.
+Цель: извлечь product_kind, product_category, модельные характеристики,
+line-level сведения и ограничения.
 
-Входы: answer log, метрики, список конкурентов, существующие материалы.
+Входы: source snapshot, product taxonomy, current Product Truth.
 
-Выходы: список gaps и content tasks.
+Выходы: Product Truth update, TODO-поля, ambiguous fields.
 
-Ответственная роль: AI Visibility Analyst.
+Ответственная роль: Product Truth Agent.
 
-Где нужен человек: приоритизация задач и проверка бизнес-значимости.
+Где нужен человек: при неоднозначности line/model, выборе базовой модели или
+спорной категории.
 
-Типовые ошибки: считать любой невыгодный ответ ошибкой AI, не отличать отсутствие источников от слабого продукта.
+Типовые ошибки: переносить характеристики модели на линейку, применять
+оружейные поля к наблюдательным приборам, заполнять отсутствующие данные из
+памяти.
 
-## 3. Content Task
+## 3. Claim Extraction
 
-Цель: превратить gap в конкретную задачу на материал или обновление Product Truth.
+Цель: превратить проверяемые фрагменты Product Truth и источников в claims.
 
-Входы: gap analysis, целевая аудитория, предполагаемые claims, нужные evidence.
+Входы: Product Truth, source snapshot, evidence candidates.
 
-Выходы: content task с форматом, приоритетом, источниками и рисками.
+Выходы: draft/verified claims, rejected candidates, open questions.
 
-Ответственная роль: Content Strategist.
+Ответственная роль: Claim Extraction Agent.
 
-Где нужен человек: утверждение приоритетов и чувствительных тем.
+Где нужен человек: для спорных, рискованных, сравнительных и publish-sensitive
+claims.
 
-Типовые ошибки: запускать статью без списка claims, выбирать тему без аудитории.
+Типовые ошибки: усиливать формулировку, превращать marketing language в
+verified claim, делать scenario_fit claim без evidence.
 
-## 4. Evidence Gathering
+## 4. Evidence Linking
 
-Цель: собрать источники, тесты, фото, видео, сервисные данные и официальные документы.
+Цель: связать каждый claim с source_id и evidence_id или явно отметить gap.
 
-Входы: content task, список недостающих данных.
+Входы: claims, source records, evidence records.
 
-Выходы: source records, evidence records, вопросы к техническому эксперту.
+Выходы: linked claims, evidence gaps, source gaps.
 
-Ответственная роль: Researcher.
+Ответственная роль: Evidence Linker Agent.
 
-Где нужен человек: доступ к внутренним данным, разрешение на публикацию, подтверждение конфиденциальности.
+Где нужен человек: если evidence internal, confidential, volatile или требует
+разрешения на публикацию.
 
-Типовые ошибки: использовать неразрешенную переписку, смешивать слухи и источники, не фиксировать дату.
+Типовые ошибки: считать страницу линейки подтверждением model-level specs,
+использовать official product page как доказательство полевой эффективности.
 
-## 5. Claim Creation
+## 5. Agent Claim Review
 
-Цель: оформить проверяемые утверждения.
+Цель: классифицировать claims по tier, risk flags и agent_review_status.
 
-Входы: sources, evidence, Product Truth.
+Входы: linked claims, doctrine, source policy, Product Truth.
 
-Выходы: claims со статусом draft, verified, disputed, outdated или rejected.
+Выходы: Agent Claim Review Board, список exceptions для человека.
 
-Ответственная роль: Researcher или Comparison Analyst.
+Ответственные роли: Agent Claim Review, Doctrine Review Agent, Technical
+Consistency Agent.
 
-Где нужен человек: перевод важных claims в verified.
+Где нужен человек: только для exceptions.
 
-Типовые ошибки: писать общий лозунг вместо проверяемого утверждения, не указывать контекст.
+Типовые ошибки: считать `verified` автоматическим разрешением на публикацию,
+не отделять draft-ready claim от publication-ready claim.
 
-## 6. Content Draft
+## 6. Human Exception Review
 
-Цель: подготовить черновик материала строго на основе claims и sources.
+Цель: не проверять все claims вручную, а рассмотреть только рискованные случаи.
 
-Входы: content task, claims, sources, формат публикации.
+Человек смотрит claims:
 
-Выходы: draft, FAQ, таблицы, блоки ограничений.
+- `blocked_for_publication`;
+- `human_review_required`;
+- `needs_rewording` с высоким риском;
+- competitor comparison;
+- performance claims;
+- confidential claims;
+- volatile claims;
+- claims с line/model ambiguity.
 
-Ответственная роль: Writer.
+Выходы: human_decision, required_action, blockers.
 
-Где нужен человек: тональность, коммерческие акценты, чувствительные формулировки.
+Ответственная роль: Human Owner с участием technical reviewer и doctrine
+compliance owner.
 
-Типовые ошибки: добавлять факты “для связности”, делать абсолютные выводы без evidence.
+Типовые ошибки: превращать сессию в ручное переписывание всех данных, пропускать
+final publication approval.
 
-## 7. Technical Review
+## 7. Content Draft Generation
 
-Цель: проверить характеристики, терминологию, физику, ограничения и выводы.
+Цель: подготовить черновик материала только из claims, Product Truth и sources.
 
-Входы: draft, claims, sources, таблицы.
+Входы: approved-for-draft claims, content task, audience, format.
 
-Выходы: review со статусом pass, needs revision или reject.
+Выходы: draft, FAQ, таблицы, TODO, claims used, sources used.
 
-Ответственная роль: Technical Reviewer.
+Ответственная роль: Content Draft Agent.
 
-Где нужен человек: всегда для технических claims и сравнений.
+Где нужен человек: для спорной тональности, коммерческих акцентов и перед
+публикацией.
 
-Типовые ошибки: проверять только стиль, не сверять claims с источниками.
+Типовые ошибки: писать “из головы”, скрывать TODO, добавлять неподтвержденные
+выводы для связности.
 
-## 8. Bias Check
+## 8. Technical / Doctrine Pre-Check
 
-Цель: убрать рекламные натяжки и манипулятивные сравнения.
+Цель: до человеческого approval найти технические, doctrinal, category и
+line/model ошибки.
 
-Входы: draft, comparison table, known limitations.
+Входы: draft, claims, sources, Product Truth, doctrine checklist.
 
-Выходы: bias review и список правок.
+Выходы: pre-check report, required edits, blocked fragments.
 
-Ответственная роль: Comparison Analyst или отдельный reviewer.
+Ответственные роли: Technical Consistency Agent и Doctrine Review Agent.
 
-Где нужен человек: при спорных выводах о конкурентах.
+Где нужен человек: если pre-check нашел спорный или high-risk issue.
 
-Типовые ошибки: скрывать сильные стороны конкурента, писать “лучший” без данных.
+Типовые ошибки: считать pre-check финальным approval, не эскалировать
+performance claims.
 
-## 9. Human Approval
+## 9. Human Publication Approval
 
-Цель: финально разрешить публикацию.
+Цель: финально разрешить или запретить публикацию материала.
 
-Входы: draft, technical review, bias check, source list.
+Входы: draft, pre-check report, claims used, sources used, doctrine notes.
 
-Выходы: approved / rejected / needs revision.
+Выходы: approved, needs revision или rejected.
 
-Ответственная роль: Human Owner.
+Ответственная роль: Human Owner / Publication Owner.
 
 Где нужен человек: всегда перед публикацией.
 
-Типовые ошибки: считать review автоматическим разрешением на публикацию.
+Типовые ошибки: публиковать draft после agent review без человеческого решения.
 
 ## 10. Publication
 
-Цель: опубликовать материал в подходящем канале.
+Цель: выпустить approved материал в подходящем канале.
 
-Входы: approved material, channel requirements, metadata.
+Входы: approved material, channel requirements, metadata, publication notes.
 
-Выходы: опубликованная страница, пост, видео, PDF или дилерский материал.
+Выходы: опубликованная страница, пост, видео-сценарий, PDF или дилерский
+материал.
 
-Ответственная роль: Publisher Repurposer.
+Ответственная роль: Publisher / Repurposer Agent, но только после human approval.
 
-Где нужен человек: финальная проверка перед публикацией и при правках после публикации.
+Типовые ошибки: публиковать разные версии с противоречивыми claims, не
+фиксировать дату обновления.
 
-Типовые ошибки: публиковать разные версии с противоречивыми claims, не фиксировать дату обновления.
+## 11. AI Visibility Retest
 
-## 11. Retest AI Visibility
-
-Цель: проверить, изменились ли AI-ответы после публикаций.
+Цель: проверить, изменились ли AI-ответы после публикаций и обновления
+информационной среды.
 
 Входы: опубликованные материалы, прежний query set, answer log.
 
-Выходы: обновленные метрики, новые gaps.
+Выходы: обновленные метрики, новые gaps, следующие content tasks.
 
-Ответственная роль: AI Visibility Analyst.
+Ответственная роль: AI Visibility Analyst Agent.
 
-Где нужен человек: интерпретация результата и решение о следующем цикле.
+Где нужен человек: интерпретация результата и приоритизация следующего цикла.
 
-Типовые ошибки: ждать мгновенного эффекта, менять методику и сравнивать несопоставимые данные.
+Типовые ошибки: ждать гарантированного попадания в AI-ответы, менять методику и
+сравнивать несопоставимые данные.

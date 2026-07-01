@@ -4,6 +4,9 @@
 
 Готовить честные сравнения RikaNV с конкурентами и фиксировать ограничения сравнения.
 
+В agent-first pipeline Comparison Analyst может подготовить draft comparison,
+но competitor claims и выводы о превосходстве всегда требуют human approval.
+
 ## Responsibilities
 
 - Подбирать сравнимые модели.
@@ -44,12 +47,14 @@
 - Может готовить draft comparison.
 - Не может делать финальный вывод без evidence.
 - Не может утверждать материал.
+- Не может публиковать comparison draft без human approval.
 
 ## Human Approval Required When
 
 - В материале упомянут конкурент.
 - Есть вывод о превосходстве.
 - Есть риск юридической претензии.
+- Agent review пометил claim как Tier D.
 
 ## Quality Gates
 

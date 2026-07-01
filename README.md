@@ -8,23 +8,34 @@ RikaNV AI Visibility Foundations — практический фундамент
 обоснованнее упоминали RikaNV при запросах о тепловизионных прицелах и
 приборах наблюдения.
 
+Операционная модель проекта: agent-first, human-approved.
+
+Проект не требует ручной подготовки текстов. Основная работа выполняется
+агентами на основе `rikanv.ru` и других разрешенных источников. Человек
+участвует как владелец решений, reviewer спорных claims и final publication
+approver.
+
+`rikanv.ru` является primary public source для первого agent import.
+
 Основа проекта — не поток статей, а проверяемая информационная среда:
 Product Truth, sources, evidence, claims, review-процессы и регулярная
 проверка AI-ответов.
 
 ## Главный вход
 
-Главный вход в ручную работу: [START-HERE.md](START-HERE.md).
+Главный вход в agent-first пилот: [START-HERE.md](START-HERE.md).
 
 ## Базовый Product Truth scope
 
-Первый ручной пилот работает с такими объектами:
+Первый agent-first пилот работает с такими объектами:
 
 1. RikaNV Ovod L25 — конкретная модель прицела, `product_model`, `thermal_riflescope`.
 2. RikaNV Lesnik — базовая линейка прицелов, `product_line`, `thermal_riflescope`.
-3. RikaNV Surok L15 — конкретная модель наблюдательного тепловизора, `product_model`, `observation_thermal`.
-4. RikaNV Hypnose — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
-5. RikaNV Hypnose2 — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
+3. RikaNV Lesnik2 650L — выбранная модель Lesnik, `product_model`, `thermal_riflescope`.
+4. RikaNV Surok L15 — конкретная модель наблюдательного тепловизора, `product_model`, `observation_thermal`.
+5. RikaNV Hypnose — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
+6. RikaNV Hypnose2 — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
+7. RikaNV Hypnose2 650L — выбранная модель Hypnose2, `product_model`, `observation_thermal`.
 
 Линейка не равна модели. Verified model-level specs допускаются только для
 конкретных моделей, если характеристика явно подтверждена официальной страницей
@@ -68,19 +79,26 @@ AI Visibility действия должны проходить doctrine complian
 независимые сайты или манипулятивные сравнения.
 
 Проект не придумывает характеристики приборов, не заменяет технического
-эксперта и не автоматизирует публикации без проверки человека.
+эксперта и не публикует материалы без проверки человека.
 
 На MVP-этапе проект не выбирает runtime, agent framework, SDK, API, CMS или другую техническую платформу. Здесь создаются только Markdown-документы, шаблоны, схемы, чеклисты, промпты, backlog, ADR и гипотезы.
 
 ## Как начать работу
 
 1. Открыть [START-HERE.md](START-HERE.md).
-2. Провести Day 1 Product Truth Start: [pilot-30-days/day-1-product-truth-start.md](pilot-30-days/day-1-product-truth-start.md).
-3. Заполнить рабочую таблицу: [pilot-30-days/product-truth-table.md](pilot-30-days/product-truth-table.md).
-4. Зарегистрировать официальные источники: [pilot-30-days/source-register-table.md](pilot-30-days/source-register-table.md).
-5. Связать evidence с источниками: [pilot-30-days/evidence-register-table.md](pilot-30-days/evidence-register-table.md).
-6. Создать первые 30 pilot claims: [pilot-30-days/claim-registry-pilot-table.md](pilot-30-days/claim-registry-pilot-table.md).
-7. Провести первый ручной AI baseline: [pilot-30-days/ai-baseline-20-queries.md](pilot-30-days/ai-baseline-20-queries.md).
+2. Запустить agent site import по `rikanv.ru`.
+3. Сформировать Product Truth extraction:
+   [pilot-30-days/product-truth-table.md](pilot-30-days/product-truth-table.md).
+4. Зарегистрировать официальные источники:
+   [pilot-30-days/source-register-table.md](pilot-30-days/source-register-table.md).
+5. Связать evidence с источниками:
+   [pilot-30-days/evidence-register-table.md](pilot-30-days/evidence-register-table.md).
+6. Извлечь первые 30 pilot claims:
+   [pilot-30-days/claim-registry-pilot-table.md](pilot-30-days/claim-registry-pilot-table.md).
+7. Провести agent claim review и вынести exceptions на человека:
+   [pilot-30-days/claim-review-session-board.md](pilot-30-days/claim-review-session-board.md).
+8. Провести первый AI baseline:
+   [pilot-30-days/ai-baseline-20-queries.md](pilot-30-days/ai-baseline-20-queries.md).
 
 ## Какие данные нужны от RikaNV
 
@@ -97,16 +115,21 @@ AI Visibility действия должны проходить doctrine complian
 
 ## Первые 7 дней
 
-1. Провести Product Truth Start по Ovod L25, Lesnik, Surok L15, Hypnose и Hypnose2.
-2. Проверить официальные источники только на `rikanv.ru`.
-3. Заполнить Product Truth без переноса характеристик между line/model.
-4. Создать Source Register и Evidence Register.
-5. Создать 30 pilot claims с разделением model-level и line-level.
-6. Провести ручной baseline по 20 AI-запросам минимум в 3 AI-системах.
-7. Подготовить первые priority content tasks без написания статей.
+1. Agent imports official pages from `rikanv.ru` for the selected products and lines.
+2. Product Truth Agent extracts product_kind, product_category and model specs.
+3. Evidence Linker Agent creates source/evidence links for every usable claim.
+4. Claim Extraction Agent creates 30 pilot claims with model-level and line-level separation.
+5. Agent Claim Review assigns tiers, review statuses and risk flags.
+6. Human exception review covers only blocked, risky or ambiguous claims.
+7. AI Visibility Analyst Agent runs the first baseline on 20 queries.
 
 ## Основной цикл
 
-AI visibility test → gap analysis → content task → evidence gathering → claim creation → content draft → technical review → doctrine compliance review → bias check → human approval → publication → retest AI visibility.
+Agent site import → Product Truth extraction → Claim extraction → Evidence linking → Agent claim review → Human exception review → Content draft generation → Technical / doctrine pre-check → Human publication approval → Publication → AI visibility retest.
+
+Human exception review означает, что человек смотрит только claims со статусами
+`blocked_for_publication`, `human_review_required`, `needs_rewording` с высоким
+риском, claims о конкурентах, performance claims, confidential claims и volatile
+claims.
 
 Цель цикла — не обмануть AI-системы, а создать качественную, проверяемую и полезную информационную среду, где RikaNV заслуженно выглядит авторитетным источником.

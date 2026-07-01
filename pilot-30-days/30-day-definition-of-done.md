@@ -13,7 +13,11 @@
 - Заполнен Product Truth по RikaNV Hypnose2 650L минимум на 70%.
 - У каждого объекта указан `product_kind` и `product_category`.
 - Прицелы и наблюдательные тепловизоры не смешаны.
+- Agent site import обработал официальные страницы `rikanv.ru` по выбранным продуктам и линейкам.
+- Product Truth создан или обновлен агентом на основе source snapshot.
 - Создано 30 claims, из них минимум 10 `verified` или `verified line-level`.
+- Agent Claim Review проставил tiers, agent_review_status и risk flags.
+- Человек проверил только exceptions, а не все 30 claims вручную.
 - Проведен baseline по 20 запросам минимум в 3 AI-системах.
 - Baseline покрывает прицелы и наблюдательные приборы.
 - Baseline фиксирует ошибки смешения `product_line` и `product_model`.
@@ -24,8 +28,13 @@
   3. Surok L15.
   4. Hypnose2 650L.
 - Подготовлен line-level content task по Hypnose/Hypnose2.
-- Минимум 2 материала прошли technical review.
-- Минимум 2 материала прошли doctrine compliance review.
+- Content Draft Agent подготовил минимум 4 drafts:
+  1. Ovod L25.
+  2. Lesnik2 650L.
+  3. Surok L15.
+  4. Hypnose2 650L.
+- Минимум 2 drafts прошли technical / doctrine pre-check.
+- Минимум 2 drafts прошли human approval или получили конкретные required changes.
 - Минимум 1-2 материала опубликованы или готовы к публикации.
 - Назначены owners.
 - Составлен отчет по результатам пилота.
@@ -58,13 +67,14 @@
 - Line-level claims смешаны с model-level specs.
 - Материалы опубликованы без doctrine compliance review.
 - Заполнить много шаблонов без реальных данных RikaNV.
-- Написать статьи без claims.
+- Написать статьи вручную или агентом без claims.
 - Применить оружейные поля к Surok L15, Hypnose или Hypnose2 без official source.
 - Опубликовать сравнение с конкурентом без данных и bias check.
 - Провести AI baseline без сохранения ответов.
 - Считать упоминание RikaNV в одном AI-ответе доказательством результата.
 - Получить 30 draft claims без источников и считать их verified.
-- Начать автоматизацию до завершения ручного пилота.
+- Создать runtime или agent framework вместо проверки agent-first операционного процесса.
+- Считать agent review финальным publication approval.
 
 ## Что может остановить пилот
 
@@ -75,6 +85,7 @@
 - Сервисные данные нельзя использовать даже в обезличенном виде.
 - Сравнительные темы требуют данных, которых нет.
 - Команда пытается начать с публикаций, а не с Product Truth.
+- Команда пытается вручную переписывать весь сайт вместо agent import.
 - Команда хочет публиковать claims о надежности, влажности, тумане, дожде, стабильности СТП или реальной полевой дальности без тестов.
 
 ## Какие решения принять после 30 дней

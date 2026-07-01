@@ -2,9 +2,16 @@
 
 ## Что мы делаем
 
-Запускаем 30-дневный ручной пилот, чтобы проверить рабочий цикл:
+Запускаем 30-дневный agent-first пилот, чтобы проверить рабочий цикл:
 
-Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
+Agent site import -> Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
+
+Проект не требует ручной подготовки текстов. Основная работа выполняется
+агентами на основе `rikanv.ru` и других разрешенных источников. Человек
+участвует как владелец решений, reviewer спорных claims и final publication
+approver.
+
+`rikanv.ru` является primary public source для первого agent import.
 
 Фокус пилота — тепловизионная оптика RikaNV: тепловизионные прицелы и приборы наблюдения. В первом пилоте не смешиваем категории:
 
@@ -24,9 +31,9 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 
 ## Что НЕ делаем сейчас
 
-- Не автоматизируем.
+- Не пишем production automation и не создаем runtime.
 - Не пишем код.
-- Не запускаем агентов.
+- Не выбираем agent framework.
 - Не делаем PBN.
 - Не публикуем сравнения без данных.
 - Не используем rikasale.ru, дилерские сайты, маркетплейсы или сторонние обзоры без отдельного разрешения.
@@ -71,37 +78,62 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 | Publication owner | Контент-ответственный / редактор RikaNV | Подготовка публикационного пакета; final approval у владельца проекта |
 | AI visibility owner | Маркетолог-аналитик / контент-аналитик; если отдельного человека нет — контент-ответственный | Baseline, answer log, metrics, gap analysis |
 
+## Agent-first core loop
+
+1. Agent site import.
+2. Product Truth extraction.
+3. Claim extraction.
+4. Evidence linking.
+5. Agent claim review.
+6. Human exception review.
+7. Content draft generation.
+8. Technical / doctrine pre-check.
+9. Human publication approval.
+10. Publication.
+11. AI visibility retest.
+
+Human exception review означает, что человек смотрит только claims:
+
+- `blocked_for_publication`;
+- `human_review_required`;
+- `needs_rewording` with high risk;
+- competitor comparison;
+- performance claims;
+- confidential or volatile claims.
+
 ## MVP на 30 дней
 
 1. Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
 2. Source Register по официальным страницам `https://rikanv.ru/`.
 3. Evidence Register.
-4. 30 draft/verified claims с разделением `product_line` и `product_model`.
+4. 30 draft/verified claims с разделением `product_line` и `product_model`, созданных агентами и проверенных через agent claim review.
 5. Baseline на 20 AI-запросах: прицелы + наблюдательные тепловизоры.
 6. 5 priority content tasks.
-7. 2-3 подготовленных материала.
-8. Technical review.
-9. Doctrine compliance review.
-10. Human approval.
+7. 4 agent-generated drafts по выбранным продуктам.
+8. Technical / doctrine pre-check.
+9. Human exception review.
+10. Human publication approval.
 11. Первый отчет.
 
 ## Первые 7 дней
 
 | День | Что сделать | Результат |
 | --- | --- | --- |
-| 1 | Провести Product Truth Start | Первая таблица по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose/Hypnose2, Hypnose2 650L; owners; reviewers; doctrine status |
-| 2 | Собрать источники только с `rikanv.ru` | Source Register по базовым линиям и найденным моделям |
-| 3 | Собрать evidence | Evidence Register по product pages и line pages; явные gaps |
-| 4 | Создать 30 pilot claims | Claims разделены на model-level и line-level |
-| 5 | Провести technical и doctrine triage claims | Понятно, какие claims draft, verified, verified line-level или blocked |
-| 6 | Провести baseline по 20 AI-запросам | Answer log, Mention Rate, Recommendation Rate, category errors |
-| 7 | Создать priority content tasks | Первые задачи по Ovod L25, Lesnik2 650L, Surok L15, Hypnose2 650L и line-level Hypnose/Hypnose2 |
+| 1 | Запустить agent site import | Source snapshot, Product Truth extraction draft, doctrine status |
+| 2 | Проверить Product Truth extraction | Product Truth по базовым объектам; явные TODO и ambiguous fields |
+| 3 | Выполнить claim extraction и evidence linking | 30 pilot claims связаны с sources/evidence или помечены TODO |
+| 4 | Провести agent claim review | Claims получили tiers, agent_review_status и risk flags |
+| 5 | Провести human exception review | Человек смотрит только risky/blocked/ambiguous claims |
+| 6 | Запустить AI baseline по 20 запросам | Answer log, Mention Rate, Recommendation Rate, category errors |
+| 7 | Сформировать agent-generated draft plan | Первые drafts по Ovod L25, Lesnik2 650L, Surok L15, Hypnose2 650L |
 
 ## Главный следующий шаг
 
-Провести 2-часовую сессию Product Truth Start.
+Запустить agent site import по официальным страницам `rikanv.ru` для базового scope.
 
-Не начинать с написания статей. Сначала нужно заполнить Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L, собрать sources/evidence с `rikanv.ru` и создать первые claims.
+Не начинать с ручного написания статей. Сначала агент должен импортировать
+официальные страницы, извлечь Product Truth, связать sources/evidence и создать
+claims. Человек подключается к exceptions и финальному approval.
 
 ## Publication restrictions
 
@@ -122,10 +154,11 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 
 ## Какие файлы открыть первыми
 
-- [Day 1: Product Truth Start](pilot-30-days/day-1-product-truth-start.md)
+- [Day 1: Agent Site Import Start](pilot-30-days/day-1-product-truth-start.md)
 - [Product Truth Table](pilot-30-days/product-truth-table.md)
 - [Source Register Table](pilot-30-days/source-register-table.md)
 - [Evidence Register Table](pilot-30-days/evidence-register-table.md)
 - [Claim Registry Pilot Table](pilot-30-days/claim-registry-pilot-table.md)
+- [Agent Claim Review Board](pilot-30-days/claim-review-session-board.md)
 - [AI Baseline 20 Queries](pilot-30-days/ai-baseline-20-queries.md)
 - [First Priority Content Tasks](pilot-30-days/first-3-content-tasks.md)

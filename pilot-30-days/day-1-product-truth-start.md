@@ -1,10 +1,16 @@
-# Day 1: Product Truth Start
+# Day 1: Agent Site Import Start
 
 ## Цель сессии
 
-Заполнить первую версию Product Truth по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
+Запустить первый agent site import и получить черновую Product Truth extraction
+по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2 и Hypnose2 650L.
 
-Результат сессии должен быть практическим: первая таблица продуктов, первые sources/evidence, первые draft claims, owners, doctrine status и следующие действия.
+Результат сессии должен быть практическим: source snapshot, Product Truth
+extraction draft, первые sources/evidence, первые claims, owners, doctrine
+status, exceptions и следующие действия.
+
+Человек не переносит характеристики вручную. Он проверяет, что агент использует
+правильные URL, не смешивает line/model и не выходит за allowed source policy.
 
 ## Участники
 
@@ -38,19 +44,22 @@
 | Время | Тема | Что сделать |
 |---|---|---|
 | 0-10 минут | Категории и уровни продукта | Уточнить `thermal_riflescope`, `observation_thermal`, `product_line`, `product_model`; зафиксировать, что линейка не равна модели |
-| 10-30 минут | RikaNV Ovod L25 | Заполнить Product Truth как `product_model` и `thermal_riflescope` |
-| 30-55 минут | RikaNV Lesnik / Lesnik2 650L | Подтвердить, что Lesnik — базовый приоритет; заполнить Lesnik line-level и Lesnik2 650L как выбранную `product_model` |
-| 55-80 минут | RikaNV Surok L15 | Заполнить Product Truth как `product_model` и `observation_thermal`; оружейные поля отметить `N/A`, если они не относятся к прибору |
-| 80-100 минут | RikaNV Hypnose / Hypnose2 / Hypnose2 650L | Подтвердить, что Hypnose и Hypnose2 — линейки; заполнить Hypnose2 650L как выбранную `product_model`; не смешивать линейку и модель |
-| 100-110 минут | Source/evidence | Занести официальные страницы `rikanv.ru` в source/evidence registers |
-| 110-120 минут | Claims, owners, blockers, doctrine status | Создать минимум 10 draft claims, назначить owners/reviewers, зафиксировать doctrine status и blockers |
+| 10-30 минут | Agent import URLs | Проверить список официальных URL `rikanv.ru` для Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose, Hypnose2, Hypnose2 650L |
+| 30-50 минут | Product Truth extraction | Агент извлекает identity, category, specs, line-level fields и TODO |
+| 50-70 минут | Source/evidence linking | Агент создает source/evidence records и отмечает gaps |
+| 70-90 минут | Claim extraction | Агент создает первые claims без ручного переписывания характеристик |
+| 90-105 минут | Agent claim review | Агент присваивает tiers, risk flags и agent_review_status |
+| 105-115 минут | Human exception triage | Человек смотрит только blocked, high-risk, volatile, line/model ambiguity |
+| 115-120 минут | Owners, blockers, next actions | Зафиксировать owners, doctrine status, publication restrictions и следующий import/review шаг |
 
 ## Результаты сессии
 
-- Заполнена первая Product Truth таблица по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose/Hypnose2 и Hypnose2 650L.
-- Создан Source Register.
-- Создан Evidence Register.
-- Создано минимум 10 draft claims.
+- Создан source snapshot по официальным страницам `rikanv.ru`.
+- Сформирована первая Product Truth extraction по Ovod L25, Lesnik, Lesnik2 650L, Surok L15, Hypnose/Hypnose2 и Hypnose2 650L.
+- Создан или обновлен Source Register.
+- Создан или обновлен Evidence Register.
+- Создано минимум 10 agent-extracted claims.
+- Agent Claim Review присвоил tiers/statuses/risk flags.
 - Зафиксированы blockers по отсутствующим тестам, сервисным данным, volatile data и publication restrictions.
 - Назначены owner, reviewer и doctrine compliance owner.
 - Выбраны первые priority content tasks.
@@ -69,7 +78,9 @@
 - Нет выдуманных характеристик.
 - Есть source rows по официальным страницам `rikanv.ru`.
 - Есть evidence rows по официальным страницам `rikanv.ru`.
-- Есть минимум 10 draft claims.
+- Есть минимум 10 agent-extracted claims.
+- Agent review отметил claims, которые можно использовать в drafts, и claims,
+  которые требуют human exception review.
 - Для каждого claim указан owner и reviewer.
 - Назначены ответственные за Product Truth, technical review, doctrine compliance, content и AI baseline.
 - Выбраны первые priority content tasks.

@@ -16,6 +16,7 @@
 | [review-010-remote-verified-markdown-repair.md](review-010-remote-verified-markdown-repair.md) | review | Remote-Verified Markdown Repair | completed |
 | [review-011-claim-review-prep.md](review-011-claim-review-prep.md) | review | Claim Review Preparation | created |
 | [review-012-claim-review-markdown-fix.md](review-012-claim-review-markdown-fix.md) | review | Claim Review Markdown Fix | completed |
+| [review-013-agent-first-pivot.md](review-013-agent-first-pivot.md) | review | Agent-First Pivot | completed |
 
 ## Review 008 Entry
 
@@ -51,6 +52,13 @@
 - Theme: Claim Review Markdown Fix
 - Status: completed
 - Purpose: make Claim Review Prep files readable before human session.
+
+## Review 013 Entry
+
+- file: [review-013-agent-first-pivot.md](review-013-agent-first-pivot.md)
+- Theme: Agent-First Pivot
+- Status: completed
+- Purpose: shift the operating model from manual-first to agent-first, human-approved.
 
 ## Numbering note
 

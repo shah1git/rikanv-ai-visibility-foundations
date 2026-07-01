@@ -14,6 +14,7 @@
 | [review-008-markdown-render-fix.md](review-008-markdown-render-fix.md) | review | Markdown Render Fix | superseded by review-009 |
 | [review-009-real-markdown-linebreak-fix.md](review-009-real-markdown-linebreak-fix.md) | review | Real Markdown Linebreak Fix | completed |
 | [review-010-remote-verified-markdown-repair.md](review-010-remote-verified-markdown-repair.md) | review | Remote-Verified Markdown Repair | completed |
+| [review-011-claim-review-prep.md](review-011-claim-review-prep.md) | review | Claim Review Preparation | created |
 
 ## Review 008 Entry
 
@@ -35,6 +36,13 @@
 - Theme: Remote-Verified Markdown Repair
 - Status: completed
 - Purpose: confirm Markdown linebreaks through raw GitHub after push.
+
+## Review 011 Entry
+
+- file: [review-011-claim-review-prep.md](review-011-claim-review-prep.md)
+- Theme: Claim Review Preparation
+- Status: created
+- Purpose: prepare human review of 30 pilot claims.
 
 ## Numbering note
 

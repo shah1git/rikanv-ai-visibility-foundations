@@ -1,5 +1,8 @@
 # Review 008: Markdown Render Fix
 
+Status note: this review is superseded by
+`review-009-real-markdown-linebreak-fix.md`.
+
 ## 1. Scope
 
 Отформатированы файлы:

@@ -11,14 +11,22 @@
 | [review-005-product-priority-and-line-correction.md](review-005-product-priority-and-line-correction.md) | review | Коррекция product priority, Lesnik и line/model handling | completed |
 | [review-006-repo-hygiene-and-provenance.md](review-006-repo-hygiene-and-provenance.md) | review | Repo Hygiene & Provenance Pass 001 | completed |
 | [review-007-human-product-decisions-applied.md](review-007-human-product-decisions-applied.md) | review | Применение human product decisions к 30-дневному пилоту | completed |
-| [review-008-markdown-render-fix.md](review-008-markdown-render-fix.md) | review | Markdown Render Fix | completed |
+| [review-008-markdown-render-fix.md](review-008-markdown-render-fix.md) | review | Markdown Render Fix | superseded by review-009 |
+| [review-009-real-markdown-linebreak-fix.md](review-009-real-markdown-linebreak-fix.md) | review | Real Markdown Linebreak Fix | completed |
 
 ## Review 008 Entry
 
 - file: [review-008-markdown-render-fix.md](review-008-markdown-render-fix.md)
 - Theme: Markdown Render Fix
-- Status: completed
+- Status: superseded by review-009
 - Purpose: make key Markdown files readable on GitHub before Claim Review.
+
+## Review 009 Entry
+
+- file: [review-009-real-markdown-linebreak-fix.md](review-009-real-markdown-linebreak-fix.md)
+- Theme: Real Markdown Linebreak Fix
+- Status: completed
+- Purpose: actually restore linebreak-safe Markdown before Claim Review Prep.
 
 ## Numbering note
 
@@ -32,4 +40,5 @@
 
 `review-008` создан как Markdown Render Fix перед Claim Review Prep.
 
-Purpose: make key Markdown files readable on GitHub before Claim Review.
+`review-009` заменяет статус `review-008` как фактическая проверка переносов
+строк после внешней raw GitHub проверки.

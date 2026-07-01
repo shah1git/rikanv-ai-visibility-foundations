@@ -1,16 +1,21 @@
 # Product Truth Table
 
-Эта таблица нужна для первого ручного пилота. Основной источник данных на этапе пилота — `https://rikanv.ru/`.
+Эта таблица нужна для первого ручного пилота.
 
-Если поля нет на `rikanv.ru`, писать: `TODO: нет данных на rikanv.ru`.
+Основной источник данных на этапе пилота — `https://rikanv.ru/`.
 
-Если нужна внутренняя проверка RikaNV, писать: `TODO: нужна проверка RikaNV`.
+## Rules
 
-Если поле не применимо к категории прибора, писать: `N/A — не относится к категории прибора`.
-
-Если объект является линейкой, в модельных полях писать: `N/A — product_line, model-level specs require concrete model.`
-
-Цена и наличие не записываются как постоянная характеристика. Их можно указывать только в `notes` с датой проверки и пометкой `volatile`.
+- Если поля нет на `rikanv.ru`, писать: `TODO: нет данных на rikanv.ru`.
+- Если нужна внутренняя проверка RikaNV, писать: `TODO: нужна проверка RikaNV`.
+- Если поле не применимо к категории прибора, писать: `N/A — не относится к категории прибора`.
+- Если объект является линейкой, в модельных полях писать:
+  `N/A — product_line, model-level specs require concrete model.`
+- Цена и наличие не записываются как постоянная характеристика.
+- Цена и наличие можно указывать только в `notes` с датой проверки и пометкой `volatile`.
+- Не писать “лучший”, “топовый”, “самый точный”, “не имеет аналогов”.
+- Не применять оружейные поля к наблюдательным приборам без прямого подтверждения на `rikanv.ru`.
+- Не переносить характеристики линейки на конкретную модель и наоборот.
 
 ## Taxonomy
 
@@ -74,33 +79,33 @@ Review and provenance:
 - `last_reviewed_at`
 - `notes`
 
-## Base Scope: Identity
+## Products and lines
 
-| product_id | official_name | product_kind | parent_line | product_category | product_line | model_status | current_or_legacy |
-|---|---|---|---|---|---|---|---|
-| product_ovod_l25 | RikaNV Ovod L25 | product_model | RikaNV Ovod | thermal_riflescope | Ovod | current | current |
-| line_lesnik | RikaNV Lesnik | product_line | N/A | thermal_riflescope | Lesnik | line-level | current |
-| product_lesnik2_650l | RikaNV Lesnik2 650L | product_model | RikaNV Lesnik | thermal_riflescope | Lesnik | selected for pilot | current |
-| product_surok_l15 | RikaNV Surok L15 | product_model | RikaNV Surok | observation_thermal | Surok | current | current |
-| line_hypnose | RikaNV Hypnose | product_line | N/A | observation_thermal | Hypnose | line-level | current |
-| line_hypnose2 | RikaNV Hypnose2 | product_line | N/A | observation_thermal | Hypnose2 | line-level | current |
-| product_hypnose2_650l | RikaNV Hypnose2 650L | product_model | RikaNV Hypnose2 | observation_thermal | Hypnose2 | selected for pilot | current |
+### RikaNV Ovod L25
 
-## Base Scope: Positioning
+#### Identity
 
-| product_id | short_positioning | primary_use | key_scenarios | not_recommended_for |
-|---|---|---|---|---|
-| product_ovod_l25 | Тепловизионный прицел линейки Ovod | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| line_lesnik | Линейка тепловизионных прицелов RikaNV | TODO: нужна проверка RikaNV для сценариев пилота | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_lesnik2_650l | Выбранная базовая модель Lesnik для первого pilot | Тепловизионный прицел | TODO: нет данных на rikanv.ru для сценарного вывода | TODO: нет данных на rikanv.ru |
-| product_surok_l15 | Тепловизор / камера для наблюдения | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| line_hypnose | Линейка наблюдательных тепловизионных приборов | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| line_hypnose2 | Линейка/поколение наблюдательных приборов внутри страницы Hypnose | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_hypnose2_650l | Выбранная базовая модель Hypnose2 для первого pilot | Наблюдательный тепловизор | TODO: нет данных на rikanv.ru для сценарного вывода | TODO: нет данных на rikanv.ru |
+| Field | Value |
+|---|---|
+| product_id | product_ovod_l25 |
+| official_name | RikaNV Ovod L25 |
+| product_kind | product_model |
+| parent_line | RikaNV Ovod |
+| product_category | thermal_riflescope |
+| product_line | Ovod |
+| model_status | current |
+| current_or_legacy | current |
 
-## Base Scope: Source And Review
+#### Positioning
 
-### `product_ovod_l25`
+| Field | Value |
+|---|---|
+| short_positioning | Тепловизионный прицел линейки Ovod |
+| primary_use | TODO: нет данных на rikanv.ru |
+| key_scenarios | TODO: нет данных на rikanv.ru |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -112,7 +117,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Цена и наличие volatile; проверять дату |
 
-### `line_lesnik`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | 256×192 |
+| lens | 25 мм F/0.9 |
+| NETD | TODO: нет данных на rikanv.ru |
+| display | TODO: нет данных на rikanv.ru |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | 1300 м |
+| recognition_range | 650 м |
+| identification_range | 433 м |
+| field_of_view | TODO: нет данных на rikanv.ru |
+| magnification | TODO: нет данных на rikanv.ru |
+| digital_zoom | TODO: нет данных на rikanv.ru |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | TODO: нет данных на rikanv.ru |
+| photo_recording | TODO: нет данных на rikanv.ru |
+| storage | TODO: нет данных на rikanv.ru |
+| Wi-Fi | TODO: нет данных на rikanv.ru |
+| app/connectivity | TODO: нет данных на rikanv.ru |
+| battery/power | 18650; до 10 часов по official page |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | IP67 |
+| operating_temperature | -20…+50 °C |
+| warranty | TODO: нет данных на rikanv.ru |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | TODO: нет данных на rikanv.ru |
+| zeroing_profiles | 6 профилей пристрелки по official page |
+| ballistic_calculator | Указан на official page |
+| LRF | TODO: нет данных на rikanv.ru |
+| recoil_rating | до 6000 Дж по official page |
+| eye_relief | TODO: нет данных на rikanv.ru |
+| mount | Picatinny Rail в комплекте по official page |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | N/A — не относится к категории прибора |
+| tripod_mount | N/A — не относится к категории прибора |
+| helmet_or_mounting_options | N/A — не относится к категории прибора |
+| observation_mode | N/A — не относится к категории прибора |
+| video_use_case | N/A — не относится к категории прибора |
+| search_use_case | N/A — не относится к категории прибора |
+| recording_format | N/A — не относится к категории прибора |
+| internal_memory | N/A — не относится к категории прибора |
+| target_audience_observation | N/A — не относится к категории прибора |
+
+### RikaNV Lesnik
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | line_lesnik |
+| official_name | RikaNV Lesnik |
+| product_kind | product_line |
+| parent_line | N/A |
+| product_category | thermal_riflescope |
+| product_line | Lesnik |
+| model_status | line-level |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Линейка тепловизионных прицелов RikaNV |
+| primary_use | TODO: нужна проверка RikaNV для сценариев пилота |
+| key_scenarios | TODO: нет данных на rikanv.ru |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -124,7 +221,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Базовый приоритет; model-level pilot ведется по Lesnik2 650L |
 
-### `product_lesnik2_650l`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | N/A — product_line, model-level specs require concrete model. |
+| lens | N/A — product_line, model-level specs require concrete model. |
+| NETD | N/A — product_line, model-level specs require concrete model. |
+| display | N/A — product_line, model-level specs require concrete model. |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | N/A — product_line, model-level specs require concrete model. |
+| recognition_range | N/A — product_line, model-level specs require concrete model. |
+| identification_range | N/A — product_line, model-level specs require concrete model. |
+| field_of_view | N/A — product_line, model-level specs require concrete model. |
+| magnification | N/A — product_line, model-level specs require concrete model. |
+| digital_zoom | N/A — product_line, model-level specs require concrete model. |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | N/A — product_line, model-level specs require concrete model. |
+| photo_recording | N/A — product_line, model-level specs require concrete model. |
+| storage | N/A — product_line, model-level specs require concrete model. |
+| Wi-Fi | N/A — product_line, model-level specs require concrete model. |
+| app/connectivity | N/A — product_line, model-level specs require concrete model. |
+| battery/power | N/A — product_line, model-level specs require concrete model. |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | N/A — product_line, model-level specs require concrete model. |
+| operating_temperature | N/A — product_line, model-level specs require concrete model. |
+| warranty | N/A — product_line, model-level specs require concrete model. |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | N/A — product_line, model-level specs require concrete model. |
+| zeroing_profiles | N/A — product_line, model-level specs require concrete model. |
+| ballistic_calculator | Line-level: расширенный баллистический контур указан на странице линии; model-level specs require concrete model. |
+| LRF | Line-level: модели с LRF перечислены на странице линии; model-level specs require concrete model. |
+| recoil_rating | N/A — product_line, model-level specs require concrete model. |
+| eye_relief | N/A — product_line, model-level specs require concrete model. |
+| mount | N/A — product_line, model-level specs require concrete model. |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | N/A — не относится к категории прибора |
+| tripod_mount | N/A — не относится к категории прибора |
+| helmet_or_mounting_options | N/A — не относится к категории прибора |
+| observation_mode | N/A — не относится к категории прибора |
+| video_use_case | N/A — не относится к категории прибора |
+| search_use_case | N/A — не относится к категории прибора |
+| recording_format | N/A — не относится к категории прибора |
+| internal_memory | N/A — не относится к категории прибора |
+| target_audience_observation | N/A — не относится к категории прибора |
+
+### RikaNV Lesnik2 650L
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | product_lesnik2_650l |
+| official_name | RikaNV Lesnik2 650L |
+| product_kind | product_model |
+| parent_line | RikaNV Lesnik |
+| product_category | thermal_riflescope |
+| product_line | Lesnik |
+| model_status | selected for pilot |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Выбранная базовая модель Lesnik для первого pilot |
+| primary_use | Тепловизионный прицел |
+| key_scenarios | TODO: нет данных на rikanv.ru для сценарного вывода |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -136,7 +325,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Выбран человеком RikaNV для первого model-level Product Truth; PRO-версия требует отдельного решения |
 
-### `product_surok_l15`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | 640×512 |
+| lens | 50mm F1.0 |
+| NETD | TODO: нет данных на rikanv.ru |
+| display | TODO: нет данных на rikanv.ru |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | 2600m |
+| recognition_range | TODO: нет данных на rikanv.ru |
+| identification_range | TODO: нет данных на rikanv.ru |
+| field_of_view | TODO: нет данных на rikanv.ru |
+| magnification | TODO: нет данных на rikanv.ru |
+| digital_zoom | TODO: нет данных на rikanv.ru |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | TODO: нет данных на rikanv.ru |
+| photo_recording | TODO: нет данных на rikanv.ru |
+| storage | TODO: нет данных на rikanv.ru |
+| Wi-Fi | TODO: нет данных на rikanv.ru |
+| app/connectivity | TODO: нет данных на rikanv.ru |
+| battery/power | TODO: нет данных на rikanv.ru |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | TODO: нет данных на rikanv.ru |
+| operating_temperature | TODO: нет данных на rikanv.ru |
+| warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | TODO: нет данных на rikanv.ru |
+| zeroing_profiles | TODO: нет данных на rikanv.ru |
+| ballistic_calculator | TODO: нет данных на rikanv.ru |
+| LRF | 1200m по official product page |
+| recoil_rating | TODO: нет данных на rikanv.ru |
+| eye_relief | TODO: нет данных на rikanv.ru |
+| mount | TODO: нет данных на rikanv.ru |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | N/A — не относится к категории прибора |
+| tripod_mount | N/A — не относится к категории прибора |
+| helmet_or_mounting_options | N/A — не относится к категории прибора |
+| observation_mode | N/A — не относится к категории прибора |
+| video_use_case | N/A — не относится к категории прибора |
+| search_use_case | N/A — не относится к категории прибора |
+| recording_format | N/A — не относится к категории прибора |
+| internal_memory | N/A — не относится к категории прибора |
+| target_audience_observation | N/A — не относится к категории прибора |
+
+### RikaNV Surok L15
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | product_surok_l15 |
+| official_name | RikaNV Surok L15 |
+| product_kind | product_model |
+| parent_line | RikaNV Surok |
+| product_category | observation_thermal |
+| product_line | Surok |
+| model_status | current |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Тепловизор / камера для наблюдения |
+| primary_use | Наблюдение, поиск, видеозапись |
+| key_scenarios | TODO: нет данных на rikanv.ru |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -148,7 +429,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Наблюдательный прибор; не заполнять оружейные поля без official source |
 
-### `line_hypnose`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | 256×192 |
+| lens | 15 мм F/0.9 |
+| NETD | ≤25 мК |
+| display | AMOLED 1024×768 |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | 750 м |
+| recognition_range | 375 м |
+| identification_range | 250 м |
+| field_of_view | 11.7°×8.8° |
+| magnification | TODO: нет данных на rikanv.ru |
+| digital_zoom | TODO: нет данных на rikanv.ru |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | Да, по official page |
+| photo_recording | TODO: нет данных на rikanv.ru |
+| storage | TODO: нет данных на rikanv.ru |
+| Wi-Fi | TODO: нет данных на rikanv.ru |
+| app/connectivity | TODO: нет данных на rikanv.ru |
+| battery/power | 18650; до 10 часов по official page |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | IP67 |
+| operating_temperature | -20…+50 °C |
+| warranty | TODO: нет данных на rikanv.ru |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | N/A — не относится к категории прибора |
+| zeroing_profiles | N/A — не относится к категории прибора |
+| ballistic_calculator | N/A — не относится к категории прибора |
+| LRF | N/A — не относится к категории прибора |
+| recoil_rating | N/A — не относится к категории прибора |
+| eye_relief | N/A — не относится к категории прибора |
+| mount | N/A — не относится к категории прибора |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | TODO: нет данных на rikanv.ru |
+| tripod_mount | TODO: нет данных на rikanv.ru |
+| helmet_or_mounting_options | TODO: нет данных на rikanv.ru |
+| observation_mode | наблюдение / поиск |
+| video_use_case | видеозапись наблюдения |
+| search_use_case | поиск и наблюдение |
+| recording_format | TODO: нет данных на rikanv.ru |
+| internal_memory | TODO: нет данных на rikanv.ru |
+| target_audience_observation | TODO: нет данных на rikanv.ru |
+
+### RikaNV Hypnose
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | line_hypnose |
+| official_name | RikaNV Hypnose |
+| product_kind | product_line |
+| parent_line | N/A |
+| product_category | observation_thermal |
+| product_line | Hypnose |
+| model_status | line-level |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Линейка наблюдательных тепловизионных приборов |
+| primary_use | Наблюдение, поиск, видеозапись |
+| key_scenarios | TODO: нет данных на rikanv.ru |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -160,7 +533,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Product line; не использовать как конкретную модель |
 
-### `line_hypnose2`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | N/A — product_line, model-level specs require concrete model. |
+| lens | N/A — product_line, model-level specs require concrete model. |
+| NETD | N/A — product_line, model-level specs require concrete model. |
+| display | N/A — product_line, model-level specs require concrete model. |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | N/A — product_line, model-level specs require concrete model. |
+| recognition_range | N/A — product_line, model-level specs require concrete model. |
+| identification_range | N/A — product_line, model-level specs require concrete model. |
+| field_of_view | N/A — product_line, model-level specs require concrete model. |
+| magnification | N/A — product_line, model-level specs require concrete model. |
+| digital_zoom | N/A — product_line, model-level specs require concrete model. |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | N/A — product_line, model-level specs require concrete model. |
+| photo_recording | N/A — product_line, model-level specs require concrete model. |
+| storage | N/A — product_line, model-level specs require concrete model. |
+| Wi-Fi | N/A — product_line, model-level specs require concrete model. |
+| app/connectivity | N/A — product_line, model-level specs require concrete model. |
+| battery/power | N/A — product_line, model-level specs require concrete model. |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | N/A — product_line, model-level specs require concrete model. |
+| operating_temperature | N/A — product_line, model-level specs require concrete model. |
+| warranty | N/A — product_line, model-level specs require concrete model. |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | N/A — не относится к категории прибора |
+| zeroing_profiles | N/A — не относится к категории прибора |
+| ballistic_calculator | N/A — не относится к категории прибора |
+| LRF | N/A — не относится к категории прибора |
+| recoil_rating | N/A — не относится к категории прибора |
+| eye_relief | N/A — не относится к категории прибора |
+| mount | N/A — не относится к категории прибора |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | N/A — product_line, model-level specs require concrete model. |
+| tripod_mount | N/A — product_line, model-level specs require concrete model. |
+| helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
+| observation_mode | Line-level: наблюдение и поиск по странице линии |
+| video_use_case | Line-level: видеозапись на встроенный носитель по странице линии |
+| search_use_case | Line-level: разведка местности, наблюдение и поиск по странице линии |
+| recording_format | N/A — product_line, model-level specs require concrete model. |
+| internal_memory | N/A — product_line, model-level specs require concrete model. |
+| target_audience_observation | TODO: нужна проверка RikaNV |
+
+### RikaNV Hypnose2
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | line_hypnose2 |
+| official_name | RikaNV Hypnose2 |
+| product_kind | product_line |
+| parent_line | N/A |
+| product_category | observation_thermal |
+| product_line | Hypnose2 |
+| model_status | line-level |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Линейка/поколение наблюдательных приборов внутри страницы Hypnose |
+| primary_use | Наблюдение, поиск, видеозапись |
+| key_scenarios | TODO: нет данных на rikanv.ru |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -172,7 +637,99 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Hypnose2 = product_line; актуальное поколение / подлинейка внутри направления RikaNV Hypnose |
 
-### `product_hypnose2_650l`
+#### Thermal core
+
+| Field | Value |
+|---|---|
+| sensor | N/A — product_line, model-level specs require concrete model. |
+| lens | N/A — product_line, model-level specs require concrete model. |
+| NETD | N/A — product_line, model-level specs require concrete model. |
+| display | N/A — product_line, model-level specs require concrete model. |
+
+#### Ranges and optics
+
+| Field | Value |
+|---|---|
+| detection_range | N/A — product_line, model-level specs require concrete model. |
+| recognition_range | N/A — product_line, model-level specs require concrete model. |
+| identification_range | N/A — product_line, model-level specs require concrete model. |
+| field_of_view | N/A — product_line, model-level specs require concrete model. |
+| magnification | N/A — product_line, model-level specs require concrete model. |
+| digital_zoom | N/A — product_line, model-level specs require concrete model. |
+
+#### Recording and connectivity
+
+| Field | Value |
+|---|---|
+| video_recording | N/A — product_line, model-level specs require concrete model. |
+| photo_recording | N/A — product_line, model-level specs require concrete model. |
+| storage | N/A — product_line, model-level specs require concrete model. |
+| Wi-Fi | N/A — product_line, model-level specs require concrete model. |
+| app/connectivity | N/A — product_line, model-level specs require concrete model. |
+| battery/power | N/A — product_line, model-level specs require concrete model. |
+
+#### Service and limits
+
+| Field | Value |
+|---|---|
+| protection_class | N/A — product_line, model-level specs require concrete model. |
+| operating_temperature | N/A — product_line, model-level specs require concrete model. |
+| warranty | N/A — product_line, model-level specs require concrete model. |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+#### Riflescope-only fields
+
+| Field | Value |
+|---|---|
+| reticle | N/A — не относится к категории прибора |
+| zeroing_profiles | N/A — не относится к категории прибора |
+| ballistic_calculator | N/A — не относится к категории прибора |
+| LRF | N/A — не относится к категории прибора |
+| recoil_rating | N/A — не относится к категории прибора |
+| eye_relief | N/A — не относится к категории прибора |
+| mount | N/A — не относится к категории прибора |
+
+#### Observation-only fields
+
+| Field | Value |
+|---|---|
+| handheld_use | N/A — product_line, model-level specs require concrete model. |
+| tripod_mount | N/A — product_line, model-level specs require concrete model. |
+| helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
+| observation_mode | Line-level: модели Hypnose2 перечислены на странице Hypnose |
+| video_use_case | Line-level: TODO: нужна проверка RikaNV |
+| search_use_case | Line-level: TODO: нужна проверка RikaNV |
+| recording_format | N/A — product_line, model-level specs require concrete model. |
+| internal_memory | N/A — product_line, model-level specs require concrete model. |
+| target_audience_observation | TODO: нужна проверка RikaNV |
+
+### RikaNV Hypnose2 650L
+
+#### Identity
+
+| Field | Value |
+|---|---|
+| product_id | product_hypnose2_650l |
+| official_name | RikaNV Hypnose2 650L |
+| product_kind | product_model |
+| parent_line | RikaNV Hypnose2 |
+| product_category | observation_thermal |
+| product_line | Hypnose2 |
+| model_status | selected for pilot |
+| current_or_legacy | current |
+
+#### Positioning
+
+| Field | Value |
+|---|---|
+| short_positioning | Выбранная базовая модель Hypnose2 для первого pilot |
+| primary_use | Наблюдательный тепловизор |
+| key_scenarios | TODO: нет данных на rikanv.ru для сценарного вывода |
+| not_recommended_for | TODO: нет данных на rikanv.ru |
+
+#### Source and review
 
 | Field | Value |
 |---|---|
@@ -184,83 +741,38 @@ Review and provenance:
 | last_reviewed_at | 2026-07-01 |
 | notes | Выбран человеком RikaNV для первого model-level Product Truth по Hypnose2 |
 
-## Product Line Defaults
-
-Для `product_line` все model-level spec поля получают значение:
-
-`N/A — product_line, model-level specs require concrete model.`
-
-Это правило применяется к:
-
-- `line_lesnik`
-- `line_hypnose`
-- `line_hypnose2`
-
-Исключение: line-level claims могут фиксировать категорию, назначение, список моделей или общую структуру линейки, если это прямо подтверждено official line page.
-
-## Model Specs: Thermal Core
-
-| product_id | sensor | lens | NETD | display |
-|---|---|---|---|---|
-| product_ovod_l25 | 256×192 | 25 мм F/0.9 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_lesnik2_650l | 640×512 | 50mm F1.0 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_surok_l15 | 256×192 | 15 мм F/0.9 | ≤25 мК | AMOLED 1024×768 |
-| product_hypnose2_650l | 640×512 | 50mm F0.9 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-## Model Specs: Ranges And Optics
-
-| product_id | detection_range | recognition_range | identification_range | field_of_view | magnification | digital_zoom |
-|---|---|---|---|---|---|---|
-| product_ovod_l25 | 1300 м | 650 м | 433 м | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_lesnik2_650l | 2600m | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_surok_l15 | 750 м | 375 м | 250 м | 11.7°×8.8° | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_hypnose2_650l | 2600m | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-## Model Specs: Recording And Connectivity
-
-| product_id | video_recording | photo_recording | storage | Wi-Fi | app/connectivity | battery/power |
-|---|---|---|---|---|---|---|
-| product_ovod_l25 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page |
-| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_surok_l15 | Да, по official page | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page |
-| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-## Model Specs: Service And Limits
-
-### `product_ovod_l25`
+#### Thermal core
 
 | Field | Value |
 |---|---|
-| protection_class | IP67 |
-| operating_temperature | -20…+50 °C |
-| warranty | TODO: нет данных на rikanv.ru |
-| service_notes | TODO: нет данных на rikanv.ru |
-| known_limitations | TODO: нет данных на rikanv.ru |
-| main_competitors | TODO: нет данных на rikanv.ru |
+| sensor | 640×512 |
+| lens | 50mm F0.9 |
+| NETD | TODO: нет данных на rikanv.ru |
+| display | TODO: нет данных на rikanv.ru |
 
-### `product_lesnik2_650l`
+#### Ranges and optics
 
 | Field | Value |
 |---|---|
-| protection_class | TODO: нет данных на rikanv.ru |
-| operating_temperature | TODO: нет данных на rikanv.ru |
-| warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
-| service_notes | TODO: нет данных на rikanv.ru |
-| known_limitations | TODO: нет данных на rikanv.ru |
-| main_competitors | TODO: нет данных на rikanv.ru |
+| detection_range | 2600m |
+| recognition_range | TODO: нет данных на rikanv.ru |
+| identification_range | TODO: нет данных на rikanv.ru |
+| field_of_view | TODO: нет данных на rikanv.ru |
+| magnification | TODO: нет данных на rikanv.ru |
+| digital_zoom | TODO: нет данных на rikanv.ru |
 
-### `product_surok_l15`
+#### Recording and connectivity
 
 | Field | Value |
 |---|---|
-| protection_class | IP67 |
-| operating_temperature | -20…+50 °C |
-| warranty | TODO: нет данных на rikanv.ru |
-| service_notes | TODO: нет данных на rikanv.ru |
-| known_limitations | TODO: нет данных на rikanv.ru |
-| main_competitors | TODO: нет данных на rikanv.ru |
+| video_recording | TODO: нет данных на rikanv.ru |
+| photo_recording | TODO: нет данных на rikanv.ru |
+| storage | TODO: нет данных на rikanv.ru |
+| Wi-Fi | TODO: нет данных на rikanv.ru |
+| app/connectivity | TODO: нет данных на rikanv.ru |
+| battery/power | TODO: нет данных на rikanv.ru |
 
-### `product_hypnose2_650l`
+#### Service and limits
 
 | Field | Value |
 |---|---|
@@ -271,77 +783,37 @@ Review and provenance:
 | known_limitations | TODO: нет данных на rikanv.ru |
 | main_competitors | TODO: нет данных на rikanv.ru |
 
-## Riflescope-Only Fields
+#### Riflescope-only fields
 
-Для `observation_thermal` эти поля получают значение:
-
-`N/A — не относится к категории прибора`
-
-| product_id | reticle | zeroing_profiles | ballistic_calculator | LRF |
-|---|---|---|---|---|
-| product_ovod_l25 | TODO: нет данных на rikanv.ru | 6 профилей пристрелки по official page | Указан на official page | TODO: нет данных на rikanv.ru |
-| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 1200m по official product page |
-
-| product_id | recoil_rating | eye_relief | mount |
-|---|---|---|---|
-| product_ovod_l25 | до 6000 Дж по official page | TODO: нет данных на rikanv.ru | Picatinny Rail в комплекте по official page |
-| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-Line-level notes for `line_lesnik`:
-
-| field | value |
+| Field | Value |
 |---|---|
-| reticle | N/A — product_line, model-level specs require concrete model. |
-| zeroing_profiles | N/A — product_line, model-level specs require concrete model. |
-| ballistic_calculator | Line-level: расширенный баллистический контур указан на странице линии; model-level specs require concrete model. |
-| LRF | Line-level: модели с LRF перечислены на странице линии; model-level specs require concrete model. |
-| recoil_rating | N/A — product_line, model-level specs require concrete model. |
-| eye_relief | N/A — product_line, model-level specs require concrete model. |
-| mount | N/A — product_line, model-level specs require concrete model. |
+| reticle | N/A — не относится к категории прибора |
+| zeroing_profiles | N/A — не относится к категории прибора |
+| ballistic_calculator | N/A — не относится к категории прибора |
+| LRF | N/A — не относится к категории прибора |
+| recoil_rating | N/A — не относится к категории прибора |
+| eye_relief | N/A — не относится к категории прибора |
+| mount | N/A — не относится к категории прибора |
 
-## Observation-Only Fields
+#### Observation-only fields
 
-Для `thermal_riflescope` эти поля получают значение:
-
-`N/A — не относится к категории прибора`
-
-| product_id | handheld_use | tripod_mount | helmet_or_mounting_options |
-|---|---|---|---|
-| product_surok_l15 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-| product_id | observation_mode | video_use_case | search_use_case |
-|---|---|---|---|
-| product_surok_l15 | наблюдение / поиск | видеозапись наблюдения | поиск и наблюдение |
-| product_hypnose2_650l | наблюдение | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-
-Line-level observation notes:
-
-| product_id | field | value |
-|---|---|---|
-| line_hypnose | handheld_use | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose | tripod_mount | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose | observation_mode | Line-level: наблюдение и поиск по странице линии |
-| line_hypnose | video_use_case | Line-level: видеозапись на встроенный носитель по странице линии |
-| line_hypnose | search_use_case | Line-level: разведка местности, наблюдение и поиск по странице линии |
-| line_hypnose2 | handheld_use | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose2 | tripod_mount | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose2 | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose2 | observation_mode | Line-level: модели Hypnose2 перечислены на странице Hypnose |
-| line_hypnose2 | video_use_case | Line-level: TODO: нужна проверка RikaNV |
-| line_hypnose2 | search_use_case | Line-level: TODO: нужна проверка RikaNV |
-
-| product_id | search_use_case | recording_format | internal_memory | target_audience_observation |
-|---|---|---|---|---|
-| product_surok_l15 | поиск и наблюдение | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| line_hypnose | see line-level observation notes | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
-| line_hypnose2 | see line-level observation notes | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
+| Field | Value |
+|---|---|
+| handheld_use | TODO: нет данных на rikanv.ru |
+| tripod_mount | TODO: нет данных на rikanv.ru |
+| helmet_or_mounting_options | TODO: нет данных на rikanv.ru |
+| observation_mode | наблюдение |
+| video_use_case | TODO: нет данных на rikanv.ru |
+| search_use_case | TODO: нет данных на rikanv.ru |
+| recording_format | TODO: нет данных на rikanv.ru |
+| internal_memory | TODO: нет данных на rikanv.ru |
+| target_audience_observation | TODO: нет данных на rikanv.ru |
 
 ## Found Lesnik Product Model Candidates
 
-Эти модели найдены на `rikanv.ru`. До выбора базовой модели Lesnik для пилота они не заменяют line-level запись Lesnik.
+Эти модели найдены на `rikanv.ru`.
+
+До выбора базовой модели Lesnik для пилота они не заменяют line-level запись Lesnik.
 
 | product_id | official_name | parent_line | source_id | pilot_status |
 |---|---|---|---|---|
@@ -365,7 +837,9 @@ Line-level observation notes:
 
 ## Found Hypnose/Hypnose2 Product Model Candidates
 
-Эти модели найдены на странице линии Hypnose и как отдельные product pages. До выбора конкретной модели они не позволяют переносить характеристики на `line_hypnose` или `line_hypnose2`.
+Эти модели найдены на странице линии Hypnose и как отдельные product pages.
+
+До выбора конкретной модели они не позволяют переносить характеристики на `line_hypnose` или `line_hypnose2`.
 
 | product_id | official_name | parent_line | source_id | pilot_status |
 |---|---|---|---|---|
@@ -378,14 +852,3 @@ Line-level observation notes:
 | product_hypnose2_335l | product_model | observation_thermal | 384×288; 35mm F0.8; обнаружение 1800m; дальномер 1000m |
 | product_hypnose2_650l | product_model | observation_thermal | 640×512; 50mm F0.9; обнаружение 2600m; дальномер 1000m |
 | product_hypnose2_660d | product_model | observation_thermal | 640×512; 20/60mm F0.9; обнаружение 1000/3000m |
-
-## Rules
-
-- `official_name` должен совпадать с официальным названием RikaNV на `rikanv.ru`.
-- `product_kind` и `product_category` обязательны.
-- `source_id` должен ссылаться на Source Register.
-- `evidence_id` должен ссылаться на Evidence Register.
-- `status` использовать как `draft`, пока данные не проверены.
-- Не писать “лучший”, “топовый”, “самый точный”, “не имеет аналогов”.
-- Не применять оружейные поля к наблюдательным приборам без прямого подтверждения на `rikanv.ru`.
-- Не переносить характеристики линейки на конкретную модель и наоборот.

@@ -74,3 +74,8 @@
   Theme: Content Draft Run 001
   Status: created
   Purpose: create four draft_only materials from approved-for-draft safe claims.
+
+- review-023-technical-doctrine-precheck-run-001.md
+  Theme: Technical and Doctrine Pre-Check Run 001
+  Status: created
+  Purpose: check draft_only materials before cleanup and publication package.

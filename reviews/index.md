@@ -59,3 +59,8 @@
   Theme: Site Import Run 001
   Status: created
   Purpose: first agent import from rikanv.ru base scope.
+
+- review-020-agent-claim-review-run-001.md
+  Theme: Agent Claim Review Run 001
+  Status: created
+  Purpose: review candidate claims from Site Import Run 001 and split draft-ready claims from human exceptions.

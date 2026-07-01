@@ -155,7 +155,12 @@ Volatile:
 
 READY FOR HUMAN PRODUCT DECISIONS.
 
-Репозиторий теперь пригоден для ручной работы: главный вход понятен, Product Truth scope согласован, source/evidence/claim связка проверена, Doctrine provenance зафиксирован. Следующий блок зависит не от документации, а от продуктовых решений и владельцев.
+Репозиторий теперь пригоден для ручной работы: главный вход понятен,
+Product Truth scope согласован, source/evidence/claim связка проверена,
+Doctrine provenance зафиксирован.
+
+Следующий блок зависит не от документации, а от продуктовых решений и
+владельцев.
 
 ## 10. Next human decisions
 

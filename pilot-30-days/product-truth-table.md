@@ -100,15 +100,89 @@ Review and provenance:
 
 ## Base Scope: Source And Review
 
-| product_id | source_id | evidence_id | owner | reviewer | status | last_reviewed_at | notes |
-|---|---|---|---|---|---|---|---|
-| product_ovod_l25 | src_rikanv_ru_ovod_l25_20260701 | ev_rikanv_ru_ovod_l25_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Цена и наличие volatile; проверять дату |
-| line_lesnik | src_rikanv_ru_lesnik_line_20260701 | ev_rikanv_ru_lesnik_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Базовый приоритет; model-level pilot ведется по Lesnik2 650L |
-| product_lesnik2_650l | src_rikanv_ru_lesnik2_650l_20260701 | ev_rikanv_ru_lesnik2_650l_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Выбран человеком RikaNV для первого model-level Product Truth; PRO-версия требует отдельного решения |
-| product_surok_l15 | src_rikanv_ru_surok_l15_20260701 | ev_rikanv_ru_surok_l15_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Наблюдательный прибор; не заполнять оружейные поля без official source |
-| line_hypnose | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Product line; не использовать как конкретную модель |
-| line_hypnose2 | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose2_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Hypnose2 = product_line; актуальное поколение / подлинейка внутри направления RikaNV Hypnose |
-| product_hypnose2_650l | src_rikanv_ru_hypnose2_650l_20260701 | ev_rikanv_ru_hypnose2_650l_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Выбран человеком RikaNV для первого model-level Product Truth по Hypnose2 |
+### `product_ovod_l25`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_ovod_l25_20260701` |
+| evidence_id | `ev_rikanv_ru_ovod_l25_specs_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Цена и наличие volatile; проверять дату |
+
+### `line_lesnik`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_lesnik_line_20260701` |
+| evidence_id | `ev_rikanv_ru_lesnik_line_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Базовый приоритет; model-level pilot ведется по Lesnik2 650L |
+
+### `product_lesnik2_650l`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_lesnik2_650l_20260701` |
+| evidence_id | `ev_rikanv_ru_lesnik2_650l_specs_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Выбран человеком RikaNV для первого model-level Product Truth; PRO-версия требует отдельного решения |
+
+### `product_surok_l15`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_surok_l15_20260701` |
+| evidence_id | `ev_rikanv_ru_surok_l15_specs_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Наблюдательный прибор; не заполнять оружейные поля без official source |
+
+### `line_hypnose`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_hypnose_line_20260701` |
+| evidence_id | `ev_rikanv_ru_hypnose_line_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Product line; не использовать как конкретную модель |
+
+### `line_hypnose2`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_hypnose_line_20260701` |
+| evidence_id | `ev_rikanv_ru_hypnose2_line_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Hypnose2 = product_line; актуальное поколение / подлинейка внутри направления RikaNV Hypnose |
+
+### `product_hypnose2_650l`
+
+| Field | Value |
+|---|---|
+| source_id | `src_rikanv_ru_hypnose2_650l_20260701` |
+| evidence_id | `ev_rikanv_ru_hypnose2_650l_specs_20260701` |
+| owner | Product Truth owner |
+| reviewer | Technical reviewer |
+| status | draft |
+| last_reviewed_at | 2026-07-01 |
+| notes | Выбран человеком RikaNV для первого model-level Product Truth по Hypnose2 |
 
 ## Product Line Defaults
 
@@ -153,12 +227,49 @@ Review and provenance:
 
 ## Model Specs: Service And Limits
 
-| product_id | protection_class | operating_temperature | warranty | service_notes | known_limitations | main_competitors |
-|---|---|---|---|---|---|---|
-| product_ovod_l25 | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | volatile; гарантийные условия не хранить как постоянную характеристику | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_surok_l15 | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | volatile; гарантийные условия не хранить как постоянную характеристику | Дальномер 1000m указан в source snapshot; field placement требует schema review перед публикацией | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+### `product_ovod_l25`
+
+| Field | Value |
+|---|---|
+| protection_class | IP67 |
+| operating_temperature | -20…+50 °C |
+| warranty | TODO: нет данных на rikanv.ru |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+### `product_lesnik2_650l`
+
+| Field | Value |
+|---|---|
+| protection_class | TODO: нет данных на rikanv.ru |
+| operating_temperature | TODO: нет данных на rikanv.ru |
+| warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+### `product_surok_l15`
+
+| Field | Value |
+|---|---|
+| protection_class | IP67 |
+| operating_temperature | -20…+50 °C |
+| warranty | TODO: нет данных на rikanv.ru |
+| service_notes | TODO: нет данных на rikanv.ru |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
+
+### `product_hypnose2_650l`
+
+| Field | Value |
+|---|---|
+| protection_class | TODO: нет данных на rikanv.ru |
+| operating_temperature | TODO: нет данных на rikanv.ru |
+| warranty | volatile; гарантийные условия не хранить как постоянную характеристику |
+| service_notes | Дальномер 1000m указан в source snapshot; field placement требует schema review перед публикацией |
+| known_limitations | TODO: нет данных на rikanv.ru |
+| main_competitors | TODO: нет данных на rikanv.ru |
 
 ## Riflescope-Only Fields
 

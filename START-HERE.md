@@ -43,7 +43,12 @@ Product Truth -> Evidence -> Claims -> Content -> AI Visibility.
 6. RikaNV Hypnose2 — `product_line`, актуальное поколение / подлинейка внутри направления RikaNV Hypnose.
 7. RikaNV Hypnose2 650L — выбранная базовая модель Hypnose2 для первого model-level Product Truth pilot.
 
-Линейка не равна модели. Verified specification claims создаются только для конкретных моделей, если характеристика явно подтверждена официальной страницей модели. Для `product_line` допустимы только line-level claims: назначение линейки, категория, список моделей, общая структура.
+Линейка не равна модели. Verified specification claims создаются только для
+конкретных моделей, если характеристика явно подтверждена официальной страницей
+модели.
+
+Для `product_line` допустимы только line-level claims: назначение линейки,
+категория, список моделей, общая структура.
 
 ## Human product decisions for pilot
 

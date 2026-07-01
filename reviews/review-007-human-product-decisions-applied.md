@@ -16,7 +16,21 @@
 | Base Hypnose2 model | RikaNV Hypnose2 650L | Model-level Product Truth по Hypnose2 больше не заблокирован |
 | Reason for Hypnose2 model choice | Сильная и понятная модель наблюдательной линейки для первого model-level Product Truth | Причина выбора зафиксирована как human product decision, не как superiority claim |
 | Volatile data | Цена, наличие, скидки, акции, комплектация, гарантия, прошивки, changelog, сроки поставки, дилерские условия, маркетинговые формулировки | Эти данные не используются как постоянные claims без отдельного review |
-| Publication restrictions | Competitor comparisons, superiority, reliability, weather, zero stability, real field range, supplier messages, personal data, internal firmware docs, prices and legal-sensitive scenarios | Draft может быть подготовлен, публикация требует отдельного разрешения и review |
+| Publication restrictions | See restriction list below | Draft может быть подготовлен, публикация требует отдельного разрешения и review |
+
+Publication restriction list:
+
+- competitor comparisons;
+- superiority;
+- reliability;
+- weather;
+- zero stability;
+- real field range;
+- supplier messages;
+- personal data;
+- internal firmware docs;
+- prices;
+- legal-sensitive scenarios.
 
 ## 2. Product scope after decisions
 
@@ -106,7 +120,13 @@ Claims not allowed for content use:
 
 READY FOR CLAIM REVIEW.
 
-Human product decisions have been applied. The pilot now has selected model-level Product Truth targets for Lesnik and Hypnose2, assigned owners and a clearer publication gate. The next risk is not taxonomy; it is claim review quality and missing test/service evidence.
+Human product decisions have been applied.
+
+The pilot now has selected model-level Product Truth targets for Lesnik and
+Hypnose2, assigned owners and a clearer publication gate.
+
+The next risk is not taxonomy; it is claim review quality and missing
+test/service evidence.
 
 ## 8. Next step
 

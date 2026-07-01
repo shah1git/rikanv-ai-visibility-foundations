@@ -4,7 +4,13 @@ RikaNV AI Visibility Foundations — практический фундамент
 
 Главный вход в ручную работу: [START-HERE.md](START-HERE.md).
 
-Проект нужен, чтобы пользователи, поисковые системы и AI-ассистенты чаще и обоснованнее упоминали RikaNV при запросах о тепловизионных прицелах и приборах наблюдения. Основа проекта — не поток статей, а проверяемая информационная среда: Product Truth, sources, evidence, claims, review-процессы и регулярная проверка AI-ответов.
+Проект нужен, чтобы пользователи, поисковые системы и AI-ассистенты чаще и
+обоснованнее упоминали RikaNV при запросах о тепловизионных прицелах и
+приборах наблюдения.
+
+Основа проекта — не поток статей, а проверяемая информационная среда:
+Product Truth, sources, evidence, claims, review-процессы и регулярная
+проверка AI-ответов.
 
 ## Базовый Product Truth scope
 
@@ -16,7 +22,11 @@ RikaNV AI Visibility Foundations — практический фундамент
 4. RikaNV Hypnose — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
 5. RikaNV Hypnose2 — продуктовая линейка наблюдательных приборов, `product_line`, `observation_thermal`.
 
-Линейка не равна модели. Verified model-level specs допускаются только для конкретных моделей, если характеристика явно подтверждена официальной страницей модели. Line-level claims не должны превращаться в model-level specs.
+Линейка не равна модели. Verified model-level specs допускаются только для
+конкретных моделей, если характеристика явно подтверждена официальной страницей
+модели.
+
+Line-level claims не должны превращаться в model-level specs.
 
 ## Почему Claim Registry важнее статей
 
@@ -37,13 +47,24 @@ RikaNV AI Visibility Foundations — практический фундамент
 
 ## RikaNV Doctrine
 
-Проект следует RikaNV Doctrine. Все Product Truth, Claims, контент, сравнения и AI Visibility действия должны проходить doctrine compliance review перед публикацией.
+Проект следует RikaNV Doctrine. Все Product Truth, Claims, контент, сравнения и
+AI Visibility действия должны проходить doctrine compliance review перед
+публикацией.
 
-Прикладная выжимка находится в [doctrine/rikanv-doctrine-summary.md](doctrine/rikanv-doctrine-summary.md). Проверочная карта источников доктрины находится в [doctrine/rikanv-doctrine-source-map.md](doctrine/rikanv-doctrine-source-map.md), если источник доступен.
+Прикладная выжимка находится в
+[doctrine/rikanv-doctrine-summary.md](doctrine/rikanv-doctrine-summary.md).
+
+Проверочная карта источников доктрины находится в
+[doctrine/rikanv-doctrine-source-map.md](doctrine/rikanv-doctrine-source-map.md),
+если источник доступен.
 
 ## Что не входит в проект
 
-Проект не строит PBN, дорвеи, сетку рерайтов, фейковые отзывы, поддельные независимые сайты или манипулятивные сравнения. Проект не придумывает характеристики приборов, не заменяет технического эксперта и не автоматизирует публикации без проверки человека.
+Проект не строит PBN, дорвеи, сетку рерайтов, фейковые отзывы, поддельные
+независимые сайты или манипулятивные сравнения.
+
+Проект не придумывает характеристики приборов, не заменяет технического
+эксперта и не автоматизирует публикации без проверки человека.
 
 На MVP-этапе проект не выбирает runtime, agent framework, SDK, API, CMS или другую техническую платформу. Здесь создаются только Markdown-документы, шаблоны, схемы, чеклисты, промпты, backlog, ADR и гипотезы.
 

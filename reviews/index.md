@@ -69,3 +69,8 @@
   Theme: Safe Exception Resolution Run 001
   Status: created
   Purpose: resolve human exceptions with safe defaults and prepare draft-safe claim set.
+
+- review-022-content-draft-run-001.md
+  Theme: Content Draft Run 001
+  Status: created
+  Purpose: create four draft_only materials from approved-for-draft safe claims.

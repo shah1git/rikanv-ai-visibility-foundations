@@ -2,7 +2,9 @@
 
 Hypnose — `product_line`. Не использовать как конкретную модель.
 
-Для specification claims требуется конкретная модель внутри линейки. Если модель не выбрана, все модельные характеристики остаются `N/A — product_line, model-level specs require concrete model.`
+Для specification claims требуется конкретная модель внутри линейки. В первом pilot для model-level Hypnose2 выбран RikaNV Hypnose2 650L.
+
+Характеристики Hypnose2 650L нельзя переносить на всю линейку Hypnose или Hypnose2.
 
 ## Официальное название
 
@@ -29,7 +31,7 @@ Line-level: линейка наблюдательных тепловизионн
 | Модель | Источник | Статус |
 |---|---|---|
 | RikaNV Hypnose2 335L | src_rikanv_ru_hypnose2_335l_20260701 | candidate |
-| RikaNV Hypnose2 650L | src_rikanv_ru_hypnose2_650l_20260701 | candidate |
+| RikaNV Hypnose2 650L | src_rikanv_ru_hypnose2_650l_20260701 | selected for pilot |
 | RikaNV Hypnose2 660D | src_rikanv_ru_hypnose2_660d_20260701 | candidate |
 
 ## Характеристики линейки
@@ -42,7 +44,7 @@ Line-level: линейка наблюдательных тепловизионн
 | Дисплей | N/A — product_line, model-level specs require concrete model. | N/A | N/A |
 | Дальность | N/A — product_line, model-level specs require concrete model. | N/A | N/A |
 | Видеозапись | Line-level mention requires model check before model-level use | src_rikanv_ru_hypnose_line_20260701 | draft |
-| Конкретная модель | TODO: выбрать модель Hypnose/Hypnose2 | TODO | draft |
+| Конкретная модель для pilot | RikaNV Hypnose2 650L | src_rikanv_ru_hypnose2_650l_20260701 | selected |
 | Баллистический калькулятор | N/A — не относится к категории прибора | N/A | N/A |
 | Пристрелка | N/A — не относится к категории прибора | N/A | N/A |
 

@@ -6,9 +6,11 @@ Baseline должен покрывать:
 
 - Ovod L25;
 - Lesnik;
+- Lesnik2 650L;
 - Surok L15;
 - Hypnose;
 - Hypnose2.
+- Hypnose2 650L.
 
 Категории:
 
@@ -45,8 +47,8 @@ Baseline должен покрывать:
 | aiq-rs-002 | какой тепловизионный прицел выбрать для охоты | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-rs-003 | RikaNV Ovod L25 отзывы | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-rs-004 | RikaNV Ovod L25 или Hikmicro | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| aiq-rs-005 | RikaNV Lesnik отзывы | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| aiq-rs-006 | RikaNV Lesnik или Pulsar | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+| aiq-rs-005 | RikaNV Lesnik2 650L отзывы | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+| aiq-rs-006 | RikaNV Lesnik2 650L или Pulsar | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-rs-007 | RikaNV Lesnik или Hikmicro | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-rs-008 | тепловизионный прицел цена качество | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-rs-009 | тепловизионный прицел с баллистикой | thermal_riflescope | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
@@ -69,7 +71,7 @@ Baseline должен покрывать:
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | aiq-hyp-001 | RikaNV Hypnose что это | hypnose_line | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-hyp-002 | RikaNV Hypnose2 что это | hypnose2_line | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
-| aiq-hyp-003 | RikaNV Hypnose отзывы | hypnose_line | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
+| aiq-hyp-003 | RikaNV Hypnose2 650L отзывы | observation_thermal | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 | aiq-hyp-004 | RikaNV Hypnose или Surok | observation_thermal | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 
 ## Метрики

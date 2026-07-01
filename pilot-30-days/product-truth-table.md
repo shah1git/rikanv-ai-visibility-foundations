@@ -21,71 +21,252 @@
 
 ## Required fields
 
-`product_id`, `official_name`, `product_kind`, `parent_line`, `product_category`, `product_line`, `model_status`, `current_or_legacy`, `short_positioning`, `primary_use`, `key_scenarios`, `not_recommended_for`, `sensor`, `lens`, `NETD`, `display`, `detection_range`, `recognition_range`, `identification_range`, `field_of_view`, `magnification`, `digital_zoom`, `video_recording`, `photo_recording`, `storage`, `Wi-Fi`, `app/connectivity`, `battery/power`, `protection_class`, `operating_temperature`, `warranty`, `service_notes`, `known_limitations`, `main_competitors`, `source_id`, `evidence_id`, `owner`, `reviewer`, `status`, `last_reviewed_at`, `notes`.
+Identity and classification:
 
-## Base Product Truth scope
+- `product_id`
+- `official_name`
+- `product_kind`
+- `parent_line`
+- `product_category`
+- `product_line`
+- `model_status`
+- `current_or_legacy`
 
-| product_id | official_name | product_kind | parent_line | product_category | product_line | model_status | current_or_legacy | short_positioning | primary_use | source_id | evidence_id | owner | reviewer | status | last_reviewed_at | notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| product_ovod_l25 | RikaNV Ovod L25 | product_model | RikaNV Ovod | thermal_riflescope | Ovod | current | current | Тепловизионный прицел линейки Ovod | TODO: нет данных на rikanv.ru | src_rikanv_ru_ovod_l25_20260701 | ev_rikanv_ru_ovod_l25_specs_20260701 | TODO | TODO | draft | 2026-07-01 | Цена и наличие volatile; проверять дату |
-| line_lesnik | RikaNV Lesnik | product_line | N/A | thermal_riflescope | Lesnik | line-level | current | Линейка тепловизионных прицелов RikaNV | TODO: нужна проверка RikaNV для сценариев пилота | src_rikanv_ru_lesnik_line_20260701 | ev_rikanv_ru_lesnik_line_20260701 | TODO | TODO | draft | 2026-07-01 | Базовый приоритет; нужна конкретная модель Lesnik для model-level claims |
-| product_surok_l15 | RikaNV Surok L15 | product_model | RikaNV Surok | observation_thermal | Surok | current | current | Тепловизор / камера для наблюдения | Наблюдение, поиск, видеозапись | src_rikanv_ru_surok_l15_20260701 | ev_rikanv_ru_surok_l15_specs_20260701 | TODO | TODO | draft | 2026-07-01 | Наблюдательный прибор; не заполнять оружейные поля без official source |
-| line_hypnose | RikaNV Hypnose | product_line | N/A | observation_thermal | Hypnose | line-level | current | Линейка наблюдательных тепловизионных приборов | Наблюдение, поиск, видеозапись | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose_line_20260701 | TODO | TODO | draft | 2026-07-01 | Product line; не использовать как конкретную модель |
-| line_hypnose2 | RikaNV Hypnose2 | product_line | N/A | observation_thermal | Hypnose2 | line-level | current | Линейка/поколение наблюдательных приборов внутри страницы Hypnose | Наблюдение, поиск, видеозапись | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose2_line_20260701 | TODO | TODO | draft | 2026-07-01 | Отдельная страница `/lines/hypnose2` не найдена; модели Hypnose2 перечислены на странице `/lines/hypnose` |
+Positioning:
 
-## Model-level specs for base model rows
+- `short_positioning`
+- `primary_use`
+- `key_scenarios`
+- `not_recommended_for`
 
-| product_id | sensor | lens | NETD | display | detection_range | recognition_range | identification_range | field_of_view | magnification | digital_zoom | video_recording | photo_recording | storage | Wi-Fi | app/connectivity | battery/power | protection_class | operating_temperature | warranty |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| product_ovod_l25 | 256×192 | 25 мм F/0.9 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 1300 м | 650 м | 433 м | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru |
-| line_lesnik | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. |
-| product_surok_l15 | 256×192 | 15 мм F/0.9 | ≤25 мК | AMOLED 1024×768 | 750 м | 375 м | 250 м | 11.7°×8.8° | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | Да, по official page | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru |
-| line_hypnose | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. |
-| line_hypnose2 | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. |
+Model-level specs:
 
-## Riflescope-only fields
+- `sensor`
+- `lens`
+- `NETD`
+- `display`
+- `detection_range`
+- `recognition_range`
+- `identification_range`
+- `field_of_view`
+- `magnification`
+- `digital_zoom`
+- `video_recording`
+- `photo_recording`
+- `storage`
+- `Wi-Fi`
+- `app/connectivity`
+- `battery/power`
+- `protection_class`
+- `operating_temperature`
+- `warranty`
 
-| product_id | reticle | zeroing_profiles | ballistic_calculator | LRF | recoil_rating | eye_relief | mount |
+Review and provenance:
+
+- `service_notes`
+- `known_limitations`
+- `main_competitors`
+- `source_id`
+- `evidence_id`
+- `owner`
+- `reviewer`
+- `status`
+- `last_reviewed_at`
+- `notes`
+
+## Base Scope: Identity
+
+| product_id | official_name | product_kind | parent_line | product_category | product_line | model_status | current_or_legacy |
 |---|---|---|---|---|---|---|---|
-| product_ovod_l25 | TODO: нет данных на rikanv.ru | 6 профилей пристрелки по official page | Указан на official page | TODO: нет данных на rikanv.ru | до 6000 Дж по official page | TODO: нет данных на rikanv.ru | Picatinny Rail в комплекте по official page |
-| line_lesnik | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | Line-level: расширенный баллистический контур указан на странице линии; model-level specs require concrete model. | Line-level: модели с LRF перечислены на странице линии; model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. |
-| product_surok_l15 | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора |
-| line_hypnose | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора |
-| line_hypnose2 | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора |
+| product_ovod_l25 | RikaNV Ovod L25 | product_model | RikaNV Ovod | thermal_riflescope | Ovod | current | current |
+| line_lesnik | RikaNV Lesnik | product_line | N/A | thermal_riflescope | Lesnik | line-level | current |
+| product_lesnik2_650l | RikaNV Lesnik2 650L | product_model | RikaNV Lesnik | thermal_riflescope | Lesnik | selected for pilot | current |
+| product_surok_l15 | RikaNV Surok L15 | product_model | RikaNV Surok | observation_thermal | Surok | current | current |
+| line_hypnose | RikaNV Hypnose | product_line | N/A | observation_thermal | Hypnose | line-level | current |
+| line_hypnose2 | RikaNV Hypnose2 | product_line | N/A | observation_thermal | Hypnose2 | line-level | current |
+| product_hypnose2_650l | RikaNV Hypnose2 650L | product_model | RikaNV Hypnose2 | observation_thermal | Hypnose2 | selected for pilot | current |
 
-## Observation-only fields
+## Base Scope: Positioning
 
-| product_id | handheld_use | tripod_mount | helmet_or_mounting_options | observation_mode | video_use_case | search_use_case | recording_format | internal_memory | target_audience_observation |
-|---|---|---|---|---|---|---|---|---|---|
-| product_ovod_l25 | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора |
-| line_lesnik | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора | N/A — не относится к категории прибора |
-| product_surok_l15 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | наблюдение / поиск | видеозапись наблюдения | поиск и наблюдение | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
-| line_hypnose | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | Line-level: наблюдение и поиск по странице линии | Line-level: видеозапись на встроенный носитель по странице линии | Line-level: разведка местности, наблюдение и поиск по странице линии | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
-| line_hypnose2 | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | Line-level: модели Hypnose2 перечислены на странице Hypnose | Line-level: TODO: нужна проверка RikaNV | Line-level: TODO: нужна проверка RikaNV | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
+| product_id | short_positioning | primary_use | key_scenarios | not_recommended_for |
+|---|---|---|---|---|
+| product_ovod_l25 | Тепловизионный прицел линейки Ovod | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| line_lesnik | Линейка тепловизионных прицелов RikaNV | TODO: нужна проверка RikaNV для сценариев пилота | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_lesnik2_650l | Выбранная базовая модель Lesnik для первого pilot | Тепловизионный прицел | TODO: нет данных на rikanv.ru для сценарного вывода | TODO: нет данных на rikanv.ru |
+| product_surok_l15 | Тепловизор / камера для наблюдения | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| line_hypnose | Линейка наблюдательных тепловизионных приборов | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| line_hypnose2 | Линейка/поколение наблюдательных приборов внутри страницы Hypnose | Наблюдение, поиск, видеозапись | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_hypnose2_650l | Выбранная базовая модель Hypnose2 для первого pilot | Наблюдательный тепловизор | TODO: нет данных на rikanv.ru для сценарного вывода | TODO: нет данных на rikanv.ru |
 
-## Found Lesnik product_model candidates on rikanv.ru
+## Base Scope: Source And Review
+
+| product_id | source_id | evidence_id | owner | reviewer | status | last_reviewed_at | notes |
+|---|---|---|---|---|---|---|---|
+| product_ovod_l25 | src_rikanv_ru_ovod_l25_20260701 | ev_rikanv_ru_ovod_l25_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Цена и наличие volatile; проверять дату |
+| line_lesnik | src_rikanv_ru_lesnik_line_20260701 | ev_rikanv_ru_lesnik_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Базовый приоритет; model-level pilot ведется по Lesnik2 650L |
+| product_lesnik2_650l | src_rikanv_ru_lesnik2_650l_20260701 | ev_rikanv_ru_lesnik2_650l_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Выбран человеком RikaNV для первого model-level Product Truth; PRO-версия требует отдельного решения |
+| product_surok_l15 | src_rikanv_ru_surok_l15_20260701 | ev_rikanv_ru_surok_l15_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Наблюдательный прибор; не заполнять оружейные поля без official source |
+| line_hypnose | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Product line; не использовать как конкретную модель |
+| line_hypnose2 | src_rikanv_ru_hypnose_line_20260701 | ev_rikanv_ru_hypnose2_line_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Hypnose2 = product_line; актуальное поколение / подлинейка внутри направления RikaNV Hypnose |
+| product_hypnose2_650l | src_rikanv_ru_hypnose2_650l_20260701 | ev_rikanv_ru_hypnose2_650l_specs_20260701 | Product Truth owner | Technical reviewer | draft | 2026-07-01 | Выбран человеком RikaNV для первого model-level Product Truth по Hypnose2 |
+
+## Product Line Defaults
+
+Для `product_line` все model-level spec поля получают значение:
+
+`N/A — product_line, model-level specs require concrete model.`
+
+Это правило применяется к:
+
+- `line_lesnik`
+- `line_hypnose`
+- `line_hypnose2`
+
+Исключение: line-level claims могут фиксировать категорию, назначение, список моделей или общую структуру линейки, если это прямо подтверждено official line page.
+
+## Model Specs: Thermal Core
+
+| product_id | sensor | lens | NETD | display |
+|---|---|---|---|---|
+| product_ovod_l25 | 256×192 | 25 мм F/0.9 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_lesnik2_650l | 640×512 | 50mm F1.0 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_surok_l15 | 256×192 | 15 мм F/0.9 | ≤25 мК | AMOLED 1024×768 |
+| product_hypnose2_650l | 640×512 | 50mm F0.9 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+## Model Specs: Ranges And Optics
+
+| product_id | detection_range | recognition_range | identification_range | field_of_view | magnification | digital_zoom |
+|---|---|---|---|---|---|---|
+| product_ovod_l25 | 1300 м | 650 м | 433 м | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_lesnik2_650l | 2600m | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_surok_l15 | 750 м | 375 м | 250 м | 11.7°×8.8° | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_hypnose2_650l | 2600m | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+## Model Specs: Recording And Connectivity
+
+| product_id | video_recording | photo_recording | storage | Wi-Fi | app/connectivity | battery/power |
+|---|---|---|---|---|---|---|
+| product_ovod_l25 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page |
+| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_surok_l15 | Да, по official page | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 18650; до 10 часов по official page |
+| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+## Model Specs: Service And Limits
+
+| product_id | protection_class | operating_temperature | warranty | service_notes | known_limitations | main_competitors |
+|---|---|---|---|---|---|---|
+| product_ovod_l25 | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | volatile; гарантийные условия не хранить как постоянную характеристику | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_surok_l15 | IP67 | -20…+50 °C | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | volatile; гарантийные условия не хранить как постоянную характеристику | Дальномер 1000m указан в source snapshot; field placement требует schema review перед публикацией | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+## Riflescope-Only Fields
+
+Для `observation_thermal` эти поля получают значение:
+
+`N/A — не относится к категории прибора`
+
+| product_id | reticle | zeroing_profiles | ballistic_calculator | LRF |
+|---|---|---|---|---|
+| product_ovod_l25 | TODO: нет данных на rikanv.ru | 6 профилей пристрелки по official page | Указан на official page | TODO: нет данных на rikanv.ru |
+| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | 1200m по official product page |
+
+| product_id | recoil_rating | eye_relief | mount |
+|---|---|---|---|
+| product_ovod_l25 | до 6000 Дж по official page | TODO: нет данных на rikanv.ru | Picatinny Rail в комплекте по official page |
+| product_lesnik2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+Line-level notes for `line_lesnik`:
+
+| field | value |
+|---|---|
+| reticle | N/A — product_line, model-level specs require concrete model. |
+| zeroing_profiles | N/A — product_line, model-level specs require concrete model. |
+| ballistic_calculator | Line-level: расширенный баллистический контур указан на странице линии; model-level specs require concrete model. |
+| LRF | Line-level: модели с LRF перечислены на странице линии; model-level specs require concrete model. |
+| recoil_rating | N/A — product_line, model-level specs require concrete model. |
+| eye_relief | N/A — product_line, model-level specs require concrete model. |
+| mount | N/A — product_line, model-level specs require concrete model. |
+
+## Observation-Only Fields
+
+Для `thermal_riflescope` эти поля получают значение:
+
+`N/A — не относится к категории прибора`
+
+| product_id | handheld_use | tripod_mount | helmet_or_mounting_options |
+|---|---|---|---|
+| product_surok_l15 | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+| product_id | observation_mode | video_use_case | search_use_case |
+|---|---|---|---|
+| product_surok_l15 | наблюдение / поиск | видеозапись наблюдения | поиск и наблюдение |
+| product_hypnose2_650l | наблюдение | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+
+Line-level observation notes:
+
+| product_id | field | value |
+|---|---|---|
+| line_hypnose | handheld_use | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose | tripod_mount | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose | observation_mode | Line-level: наблюдение и поиск по странице линии |
+| line_hypnose | video_use_case | Line-level: видеозапись на встроенный носитель по странице линии |
+| line_hypnose | search_use_case | Line-level: разведка местности, наблюдение и поиск по странице линии |
+| line_hypnose2 | handheld_use | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose2 | tripod_mount | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose2 | helmet_or_mounting_options | N/A — product_line, model-level specs require concrete model. |
+| line_hypnose2 | observation_mode | Line-level: модели Hypnose2 перечислены на странице Hypnose |
+| line_hypnose2 | video_use_case | Line-level: TODO: нужна проверка RikaNV |
+| line_hypnose2 | search_use_case | Line-level: TODO: нужна проверка RikaNV |
+
+| product_id | search_use_case | recording_format | internal_memory | target_audience_observation |
+|---|---|---|---|---|
+| product_surok_l15 | поиск и наблюдение | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| product_hypnose2_650l | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru | TODO: нет данных на rikanv.ru |
+| line_hypnose | see line-level observation notes | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
+| line_hypnose2 | see line-level observation notes | N/A — product_line, model-level specs require concrete model. | N/A — product_line, model-level specs require concrete model. | TODO: нужна проверка RikaNV |
+
+## Found Lesnik Product Model Candidates
 
 Эти модели найдены на `rikanv.ru`. До выбора базовой модели Lesnik для пилота они не заменяют line-level запись Lesnik.
 
-| product_id | official_name | product_kind | parent_line | product_category | source_id | first_specs_seen_on_rikanv_ru | pilot_status |
-|---|---|---|---|---|---|---|---|
-| product_lesnik2_335l | RikaNV Lesnik2 335L | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_335l_20260701 | 384×288; 35mm F1.0; обнаружение 1800m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_360l | RikaNV Lesnik2 360L | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_360l_20260701 | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_360l_pro | RikaNV Lesnik2 360L PRO | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_360l_pro_20260701 | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_650l | RikaNV Lesnik2 650L | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_650l_20260701 | 640×512; 50mm F1.0; обнаружение 2600m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_650l_pro | RikaNV Lesnik2 650L PRO | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_650l_pro_20260701 | 640×512; 50mm F1.0; обнаружение 2600m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_660l | RikaNV Lesnik2 660L | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_660l_20260701 | 640×512; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
-| product_lesnik2_660l_pro | RikaNV Lesnik2 660L PRO | product_model | RikaNV Lesnik | thermal_riflescope | src_rikanv_ru_lesnik2_660l_pro_20260701 | 640×512; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m | candidate; TODO: выбрать базовую модель Lesnik |
+| product_id | official_name | parent_line | source_id | pilot_status |
+|---|---|---|---|---|
+| product_lesnik2_335l | RikaNV Lesnik2 335L | RikaNV Lesnik | src_rikanv_ru_lesnik2_335l_20260701 | candidate; not selected for current pilot |
+| product_lesnik2_360l | RikaNV Lesnik2 360L | RikaNV Lesnik | src_rikanv_ru_lesnik2_360l_20260701 | candidate; not selected for current pilot |
+| product_lesnik2_360l_pro | RikaNV Lesnik2 360L PRO | RikaNV Lesnik | src_rikanv_ru_lesnik2_360l_pro_20260701 | candidate; not selected for current pilot |
+| product_lesnik2_650l | RikaNV Lesnik2 650L | RikaNV Lesnik | src_rikanv_ru_lesnik2_650l_20260701 | selected for pilot |
+| product_lesnik2_650l_pro | RikaNV Lesnik2 650L PRO | RikaNV Lesnik | src_rikanv_ru_lesnik2_650l_pro_20260701 | candidate; not selected for current pilot |
+| product_lesnik2_660l | RikaNV Lesnik2 660L | RikaNV Lesnik | src_rikanv_ru_lesnik2_660l_20260701 | candidate; not selected for current pilot |
+| product_lesnik2_660l_pro | RikaNV Lesnik2 660L PRO | RikaNV Lesnik | src_rikanv_ru_lesnik2_660l_pro_20260701 | candidate; not selected for current pilot |
 
-## Found Hypnose/Hypnose2 product_model candidates on rikanv.ru
+| product_id | product_kind | product_category | first_specs_seen_on_rikanv_ru |
+|---|---|---|---|
+| product_lesnik2_335l | product_model | thermal_riflescope | 384×288; 35mm F1.0; обнаружение 1800m; LRF 1200m |
+| product_lesnik2_360l | product_model | thermal_riflescope | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
+| product_lesnik2_360l_pro | product_model | thermal_riflescope | 384×288; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
+| product_lesnik2_650l | product_model | thermal_riflescope | 640×512; 50mm F1.0; обнаружение 2600m; LRF 1200m |
+| product_lesnik2_650l_pro | product_model | thermal_riflescope | 640×512; 50mm F1.0; обнаружение 2600m; LRF 1200m |
+| product_lesnik2_660l | product_model | thermal_riflescope | 640×512; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
+| product_lesnik2_660l_pro | product_model | thermal_riflescope | 640×512; 20/60mm F1.0; обнаружение 1000/3000m; LRF 1200m |
+
+## Found Hypnose/Hypnose2 Product Model Candidates
 
 Эти модели найдены на странице линии Hypnose и как отдельные product pages. До выбора конкретной модели они не позволяют переносить характеристики на `line_hypnose` или `line_hypnose2`.
 
-| product_id | official_name | product_kind | parent_line | product_category | source_id | first_specs_seen_on_rikanv_ru | pilot_status |
-|---|---|---|---|---|---|---|---|
-| product_hypnose2_335l | RikaNV Hypnose2 335L | product_model | RikaNV Hypnose2 | observation_thermal | src_rikanv_ru_hypnose2_335l_20260701 | 384×288; 35mm F0.8; обнаружение 1800m; дальномер 1000m | candidate; TODO: выбрать модель для model-level claims |
-| product_hypnose2_650l | RikaNV Hypnose2 650L | product_model | RikaNV Hypnose2 | observation_thermal | src_rikanv_ru_hypnose2_650l_20260701 | 640×512; 50mm F0.9; обнаружение 2600m; дальномер 1000m | candidate; TODO: выбрать модель для model-level claims |
-| product_hypnose2_660d | RikaNV Hypnose2 660D | product_model | RikaNV Hypnose2 | observation_thermal | src_rikanv_ru_hypnose2_660d_20260701 | 640×512; 20/60mm F0.9; обнаружение 1000/3000m | candidate; TODO: выбрать модель для model-level claims |
+| product_id | official_name | parent_line | source_id | pilot_status |
+|---|---|---|---|---|
+| product_hypnose2_335l | RikaNV Hypnose2 335L | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_335l_20260701 | candidate; not selected for current pilot |
+| product_hypnose2_650l | RikaNV Hypnose2 650L | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_650l_20260701 | selected for pilot |
+| product_hypnose2_660d | RikaNV Hypnose2 660D | RikaNV Hypnose2 | src_rikanv_ru_hypnose2_660d_20260701 | candidate; not selected for current pilot |
+
+| product_id | product_kind | product_category | first_specs_seen_on_rikanv_ru |
+|---|---|---|---|
+| product_hypnose2_335l | product_model | observation_thermal | 384×288; 35mm F0.8; обнаружение 1800m; дальномер 1000m |
+| product_hypnose2_650l | product_model | observation_thermal | 640×512; 50mm F0.9; обнаружение 2600m; дальномер 1000m |
+| product_hypnose2_660d | product_model | observation_thermal | 640×512; 20/60mm F0.9; обнаружение 1000/3000m |
 
 ## Rules
 

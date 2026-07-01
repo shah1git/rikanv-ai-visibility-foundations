@@ -7,10 +7,10 @@
 - Заполнен Product Truth по Ovod L25 хотя бы на 70%.
 - Заполнен Product Truth по Lesnik:
   - line-level минимум на 70%;
-  - concrete model-level, если модель выбрана.
+  - model-level по RikaNV Lesnik2 650L минимум на 70%.
 - Заполнен Product Truth по Surok L15 хотя бы на 70%.
 - Заполнен line-level Product Truth по Hypnose и Hypnose2.
-- Конкретные модели Hypnose/Hypnose2 добавлены, если найдены на `rikanv.ru`.
+- Заполнен Product Truth по RikaNV Hypnose2 650L минимум на 70%.
 - У каждого объекта указан `product_kind` и `product_category`.
 - Прицелы и наблюдательные тепловизоры не смешаны.
 - Создано 30 claims, из них минимум 10 `verified` или `verified line-level`.
@@ -18,16 +18,28 @@
 - Baseline покрывает прицелы и наблюдательные приборы.
 - Baseline фиксирует ошибки смешения `product_line` и `product_model`.
 - Создан gap analysis.
-- Подготовлены 4 priority content tasks:
+- Подготовлены 5 priority content tasks:
   1. Ovod L25.
-  2. Lesnik.
+  2. Lesnik2 650L.
   3. Surok L15.
-  4. Hypnose/Hypnose2.
+  4. Hypnose2 650L.
+- Подготовлен line-level content task по Hypnose/Hypnose2.
 - Минимум 2 материала прошли technical review.
 - Минимум 2 материала прошли doctrine compliance review.
 - Минимум 1-2 материала опубликованы или готовы к публикации.
 - Назначены owners.
 - Составлен отчет по результатам пилота.
+
+## Owners must be assigned
+
+| Роль | Owner |
+|---|---|
+| Pilot owner | Владелец проекта RikaNV AI Visibility / руководитель проекта |
+| Product Truth owner | Технический продуктовый ответственный RikaNV; временно владелец проекта + технический специалист по приборам |
+| Technical reviewer | Ведущий технический специалист / сервисный инженер RikaNV |
+| Doctrine compliance owner | Владелец проекта RikaNV AI Visibility |
+| Publication owner | Контент-ответственный / редактор RikaNV; final approval — владелец проекта |
+| AI visibility owner | Маркетолог-аналитик / контент-аналитик; если отдельного человека нет — контент-ответственный |
 
 ## Если Doctrine недоступна
 
@@ -40,6 +52,8 @@
 
 - Hypnose/Hypnose2 описаны как конкретные модели без подтверждения.
 - Lesnik оставлен в later.
+- Specs Lesnik2 650L перенесены на всю линейку Lesnik.
+- Specs Hypnose2 650L перенесены на всю линейку Hypnose2.
 - Claims без source/evidence опубликованы.
 - Line-level claims смешаны с model-level specs.
 - Материалы опубликованы без doctrine compliance review.
@@ -55,20 +69,19 @@
 ## Что может остановить пилот
 
 - Нет доступа к официальным страницам `rikanv.ru`.
-- Не выбрана базовая модель Lesnik для model-level Product Truth.
-- Не подтверждено, как RikaNV хочет описывать Hypnose2: отдельная линейка, поколение или подлинейка.
 - Нет технического reviewer.
 - Нет doctrine compliance reviewer.
 - Нет человека, который может дать human approval.
 - Сервисные данные нельзя использовать даже в обезличенном виде.
 - Сравнительные темы требуют данных, которых нет.
 - Команда пытается начать с публикаций, а не с Product Truth.
+- Команда хочет публиковать claims о надежности, влажности, тумане, дожде, стабильности СТП или реальной полевой дальности без тестов.
 
 ## Какие решения принять после 30 дней
 
 - Продолжать пилот еще на 30 дней или переходить к регулярному процессу.
-- Какую модель Lesnik сделать базовой для Product Truth.
-- Какие модели Hypnose/Hypnose2 вести как priority model profiles.
+- Оставить Lesnik2 650L базовой моделью Lesnik или оформить отдельное решение о переходе на PRO-версию.
+- Оставить Hypnose2 650L базовой моделью Hypnose2 или выбрать другую модель для следующего этапа.
 - Какие claims перевести в verified, disputed, outdated или rejected.
 - Какие материалы публиковать, какие оставить в draft.
 - Какие AI gaps закрывать следующими.

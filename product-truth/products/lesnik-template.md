@@ -2,7 +2,9 @@
 
 Lesnik — базовая линейка тепловизионных прицелов RikaNV для Product Truth. Lesnik не переносится в later.
 
-Для model-level claims нужно выбрать конкретную модель Lesnik. Если модель не выбрана, фиксируется blocker: `TODO: выбрать базовую модель Lesnik для первого Product Truth pilot`.
+Для первого model-level pilot человеком RikaNV выбрана конкретная модель: RikaNV Lesnik2 650L.
+
+Если коммерческий приоритет позже сместится на PRO-версию, это нужно оформить отдельным решением.
 
 ## Официальное название
 
@@ -31,7 +33,7 @@ Line-level: линейка тепловизионных прицелов RikaNV.
 | RikaNV Lesnik2 335L | src_rikanv_ru_lesnik2_335l_20260701 | candidate |
 | RikaNV Lesnik2 360L | src_rikanv_ru_lesnik2_360l_20260701 | candidate |
 | RikaNV Lesnik2 360L PRO | src_rikanv_ru_lesnik2_360l_pro_20260701 | candidate |
-| RikaNV Lesnik2 650L | src_rikanv_ru_lesnik2_650l_20260701 | candidate |
+| RikaNV Lesnik2 650L | src_rikanv_ru_lesnik2_650l_20260701 | selected for pilot |
 | RikaNV Lesnik2 650L PRO | src_rikanv_ru_lesnik2_650l_pro_20260701 | candidate |
 | RikaNV Lesnik2 660L | src_rikanv_ru_lesnik2_660l_20260701 | candidate |
 | RikaNV Lesnik2 660L PRO | src_rikanv_ru_lesnik2_660l_pro_20260701 | candidate |
@@ -55,11 +57,14 @@ Line-level: линейка тепловизионных прицелов RikaNV.
 | claim_id | Claim | Источник | Evidence | Status |
 |---|---|---|---|---|
 | claim-lesnik-line-001 | RikaNV Lesnik является линейкой тепловизионных прицелов RikaNV. | src_rikanv_ru_lesnik_line_20260701 | ev_rikanv_ru_lesnik_line_20260701 | verified line-level |
+| claim-lesnik2-650l-spec-002 | На странице rikanv.ru для RikaNV Lesnik2 650L указан сенсор 640×512. | src_rikanv_ru_lesnik2_650l_20260701 | ev_rikanv_ru_lesnik2_650l_specs_20260701 | verified |
+| claim-lesnik2-650l-spec-003 | На странице rikanv.ru для RikaNV Lesnik2 650L указан объектив 50mm F1.0. | src_rikanv_ru_lesnik2_650l_20260701 | ev_rikanv_ru_lesnik2_650l_specs_20260701 | verified |
+| claim-lesnik2-650l-spec-004 | На странице rikanv.ru для RikaNV Lesnik2 650L указана дальность обнаружения 2600m. | src_rikanv_ru_lesnik2_650l_20260701 | ev_rikanv_ru_lesnik2_650l_specs_20260701 | verified |
 
 ## Неподтвержденные claims
 
-- TODO: выбрать базовую модель Lesnik для Product Truth.
-- TODO: создать model-level claims по выбранной модели.
+- TODO: сценарные claims по Lesnik2 650L.
+- TODO: claims о надежности, влажности, тумане, дожде, стабильности СТП и реальной полевой дальности требуют тестов.
 
 ## Ограничения
 

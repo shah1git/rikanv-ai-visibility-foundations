@@ -64,3 +64,8 @@
   Theme: Agent Claim Review Run 001
   Status: created
   Purpose: review candidate claims from Site Import Run 001 and split draft-ready claims from human exceptions.
+
+- review-021-safe-exception-resolution-run-001.md
+  Theme: Safe Exception Resolution Run 001
+  Status: created
+  Purpose: resolve human exceptions with safe defaults and prepare draft-safe claim set.

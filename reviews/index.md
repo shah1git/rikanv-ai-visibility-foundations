@@ -79,3 +79,8 @@
   Theme: Technical and Doctrine Pre-Check Run 001
   Status: created
   Purpose: check draft_only materials before cleanup and publication package.
+
+- review-024-content-draft-cleanup-run-001.md
+  Theme: Content Draft Cleanup Run 001
+  Status: created
+  Purpose: create cleaned draft_only versions after technical and doctrine pre-check.

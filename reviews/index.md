@@ -99,3 +99,8 @@
   Theme: Approval Console MVP Design
   Status: created
   Purpose: define human-facing UI and data contracts for approval workflow.
+
+- review-028-approval-console-mvp-implementation.md
+  Theme: Approval Console MVP Implementation
+  Status: created
+  Purpose: implement deployable Next.js approval console MVP for VPS/Docker/Caddy.

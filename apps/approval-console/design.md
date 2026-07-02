@@ -77,9 +77,10 @@ The Console is a decision interface over exported data.
 ## 8. MVP Scope
 
 - No login.
-- No database.
+- Optional PostgreSQL persistence when `DATABASE_URL` is set.
 - No GitHub write integration.
 - Local/static `approval-data.json` in.
+- Export-only mode when database is unavailable.
 - Export `human-decisions.json` out.
 - Human-readable material previews.
 - Decision queue for HRD-style decisions.
@@ -88,7 +89,7 @@ The Console is a decision interface over exported data.
 ## 9. Later Scope
 
 - GitHub App integration;
-- PostgreSQL;
+- richer PostgreSQL-backed audit timeline;
 - user roles;
 - audit timeline;
 - AI Visibility dashboard;

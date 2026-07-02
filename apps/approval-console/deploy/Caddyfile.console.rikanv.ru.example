@@ -1,0 +1,17 @@
+# Example only. Do not overwrite the real Caddyfile without review.
+# Domain expected to point at this VPS: console.rikanv.ru
+# App host binding selected for this VPS: 127.0.0.1:3010
+# If the port becomes occupied, update this file and the Docker Compose snippet.
+
+console.rikanv.ru {
+  encode zstd gzip
+  header X-Robots-Tag "noindex, nofollow, noarchive"
+
+  # Recommended MVP protection. Generate a real hash on the VPS:
+  # caddy hash-password --plaintext 'CHANGE_ME'
+  # basicauth {
+  #   rikanv <HASH_FROM_CADDY_HASH_PASSWORD>
+  # }
+
+  reverse_proxy 127.0.0.1:3010
+}

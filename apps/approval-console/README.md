@@ -39,8 +39,78 @@ The Console should present only:
 - what happens if a decision is approved or rejected;
 - which publication gates remain closed.
 
-## MVP Boundary
+## MVP Implementation
 
-This folder contains design, wireframes, data contracts and sample data only.
+This is a deployable MVP for `console.rikanv.ru`.
 
-Do not add runtime code, dependencies, a framework or `package.json` in this MVP design step.
+- Locally it runs as a Next.js app.
+- In Docker it runs as a service behind Caddy.
+- It reads sample approval data from `sample-data/approval-data.run-001.sample.json`.
+- It shows Run 001, four materials, decision queue, risks and approval gates.
+- It lets humans choose decisions for the next agent run.
+- It saves decisions in PostgreSQL when `DATABASE_URL` is set.
+- If `DATABASE_URL` is absent, it works in export-only mode.
+- It exports `human-decisions.json` from the browser.
+- It does not write to GitHub.
+- It does not publish.
+- It never sets `final_publication_approval=true` in this MVP.
+- It does not remove approval gates.
+
+## Deployment Target
+
+- Domain: `console.rikanv.ru`.
+- Reverse proxy: Caddy.
+- App container port: `3000`.
+- Host binding: choose a free localhost port automatically.
+- Suggested port range: `127.0.0.1:3010-3099`.
+- Codex must check which ports are already in use before choosing.
+- Database: existing Docker PostgreSQL.
+- Auth for MVP: Caddy basic auth recommended.
+- Search indexing: disabled / noindex.
+
+## Selected Localhost Port
+
+Checked on this VPS with `ss -ltnH` and a Python bind probe across `127.0.0.1:3010-3099`.
+
+```text
+Selected host port: 127.0.0.1:3010
+Container port: 3000
+```
+
+If this port becomes occupied before deployment, choose a new free port and update both deployment snippets.
+
+
+## Local Development
+
+```bash
+cd apps/approval-console
+npm install
+npm run dev
+```
+
+The local app binds to `127.0.0.1` by default.
+
+## Docker Build
+
+```bash
+cd apps/approval-console
+docker build -t rikanv-approval-console:001 .
+docker run --rm --env-file .env -p 127.0.0.1:3010:3000 rikanv-approval-console:001
+```
+
+Do not put real secrets in `.env` in the repository.
+Use `.env.example` as a template only.
+
+## Deployment Snippets
+
+- Docker Compose snippet: `deploy/docker-compose.approval-console.snippet.yml`.
+- Caddy snippet: `deploy/Caddyfile.console.rikanv.ru.example`.
+- PostgreSQL migration: `apps/approval-console/db/001_init.sql`.
+
+The snippets are not intended to overwrite the live VPS configuration automatically.
+
+## Publication Boundary
+
+The Console has no publication API and no real publish button.
+
+The visible publish control is disabled until all gates pass, and this MVP still keeps final publication approval closed.

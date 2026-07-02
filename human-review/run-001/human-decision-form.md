@@ -19,10 +19,10 @@ Agent recommendation:
 A or B.
 
 Human decision:
-TODO
+C: allow explicit factual wording with claim/source reference.
 
 Notes:
-TODO
+No extra restriction needed. Use only as a neutral source-backed fact, not as a competitor comparison or negative marketing claim.
 
 ### HRD-002: Lesnik2 650L recoil rating
 
@@ -36,10 +36,10 @@ Agent recommendation:
 A until technical reviewer approves.
 
 Human decision:
-TODO
+B: allow as an official technical characteristic after normal technical reviewer confirmation.
 
 Notes:
-TODO
+No extra special restriction needed. Use as an official spec only; do not turn it into a field or safety guarantee.
 
 ### HRD-003: Hypnose2 line-source clarification
 
@@ -53,10 +53,10 @@ Agent recommendation:
 A or D until relation/source is confirmed.
 
 Human decision:
-TODO
+B: allow context that Hypnose is the first generation and Hypnose2 is the second generation.
 
 Notes:
-TODO
+Hypnose and Hypnose2 are first and second generation. Keep line/model separation; do not transfer model specs across generations.
 
 ### HRD-004: Official detection/LRF wording policy
 
@@ -69,10 +69,10 @@ Agent recommendation:
 A.
 
 Human decision:
-TODO
+A: use only official-spec wording.
 
 Notes:
-TODO
+Use wording like “на официальной странице указана заявленная дальность...”. Do not write field guarantees.
 
 ### HRD-005: Field-performance claims policy
 
@@ -85,10 +85,10 @@ Agent recommendation:
 A.
 
 Human decision:
-TODO
+A: exclude field-performance claims without field tests.
 
 Notes:
-TODO
+Meaning: do not claim real field results such as “confidently detects”, rain/fog performance or real measured range unless there is a test.
 
 ### HRD-006: Volatile commercial data policy
 
@@ -101,10 +101,10 @@ Agent recommendation:
 A.
 
 Human decision:
-TODO
+A: exclude volatile commercial data from the first publication package.
 
 Notes:
-TODO
+Meaning: do not include price, stock, discounts, bundle, delivery terms or firmware changelog in these stable materials.
 
 ### HRD-007: Move cleaned drafts to publication package after next cleanup?
 
@@ -117,20 +117,20 @@ Agent recommendation:
 A.
 
 Human decision:
-TODO
+B: allow the next package run for drafts with no unresolved P0/P1 issues.
 
 Notes:
-TODO
+Meaning: the agent may prepare the next package candidates, but publication still requires technical, doctrine and final human approval.
 
 ## Final approval
 
 Are these decisions approved for the next agent run?
 
 Human answer:
-TODO
+Yes, approved for the next agent run only. This is not final publication approval.
 
 Approver:
-TODO
+TODO: имя человека RikaNV
 
 Date:
-TODO
+2026-07-03

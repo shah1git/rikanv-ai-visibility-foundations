@@ -84,3 +84,8 @@
   Theme: Content Draft Cleanup Run 001
   Status: created
   Purpose: create cleaned draft_only versions after technical and doctrine pre-check.
+
+- review-025-human-review-package-run-001.md
+  Theme: Human Review Package Run 001
+  Status: created
+  Purpose: convert cleaned draft review into structured human decisions.

@@ -1,0 +1,337 @@
+{
+  "run_id": "run-001",
+  "run_status": "decision_applied",
+  "stage": "publication_package_prep_candidate",
+  "final_publication_approval": false,
+  "materials": [
+    {
+      "material_id": "mat-ovod-l25",
+      "title": "RikaNV Ovod L25 decision-applied draft",
+      "product": "RikaNV Ovod L25",
+      "status": "decision_applied",
+      "publication_ready": false,
+      "risk_level": "medium",
+      "claims_used": [
+        "candidate-run001-ovod-l25-spec-001",
+        "candidate-run001-ovod-l25-spec-002",
+        "candidate-run001-ovod-l25-spec-003",
+        "candidate-run001-ovod-l25-spec-004",
+        "candidate-run001-ovod-l25-limit-001"
+      ],
+      "sources_used": [
+        "src_rikanv_ru_ovod_l25_20260701",
+        "ev_rikanv_ru_ovod_l25_specs_20260701"
+      ],
+      "open_decisions": [],
+      "blockers": [
+        "technical review required",
+        "doctrine review required",
+        "final human publication approval required"
+      ],
+      "preview_path": "content-drafts/run-001-decision-applied/ovod-l25-decision-applied.md"
+    },
+    {
+      "material_id": "mat-lesnik2-650l",
+      "title": "RikaNV Lesnik2 650L decision-applied draft",
+      "product": "RikaNV Lesnik2 650L",
+      "status": "decision_applied",
+      "publication_ready": false,
+      "risk_level": "medium",
+      "claims_used": [
+        "candidate-run001-lesnik-line-001",
+        "candidate-run001-lesnik-line-002",
+        "candidate-run001-lesnik2-650l-spec-001",
+        "candidate-run001-lesnik2-650l-spec-002",
+        "candidate-run001-lesnik2-650l-spec-003",
+        "candidate-run001-lesnik2-650l-spec-004",
+        "candidate-run001-lesnik2-650l-spec-005"
+      ],
+      "sources_used": [
+        "src_rikanv_ru_lesnik_line_20260701",
+        "ev_rikanv_ru_lesnik_line_20260701",
+        "src_rikanv_ru_lesnik2_650l_20260701",
+        "ev_rikanv_ru_lesnik2_650l_specs_20260701"
+      ],
+      "open_decisions": [],
+      "blockers": [
+        "technical review required",
+        "doctrine review required",
+        "final human publication approval required"
+      ],
+      "preview_path": "content-drafts/run-001-decision-applied/lesnik2-650l-decision-applied.md"
+    },
+    {
+      "material_id": "mat-surok-l15",
+      "title": "RikaNV Surok L15 decision-applied draft",
+      "product": "RikaNV Surok L15",
+      "status": "decision_applied",
+      "publication_ready": false,
+      "risk_level": "low",
+      "claims_used": [
+        "candidate-run001-surok-l15-spec-001",
+        "candidate-run001-surok-l15-spec-002",
+        "candidate-run001-surok-l15-spec-003",
+        "candidate-run001-surok-l15-spec-004",
+        "candidate-run001-surok-l15-spec-005"
+      ],
+      "sources_used": [
+        "src_rikanv_ru_surok_l15_20260701",
+        "ev_rikanv_ru_surok_l15_specs_20260701"
+      ],
+      "open_decisions": [],
+      "blockers": [
+        "technical review required",
+        "doctrine review required",
+        "final human publication approval required"
+      ],
+      "preview_path": "content-drafts/run-001-decision-applied/surok-l15-decision-applied.md"
+    },
+    {
+      "material_id": "mat-hypnose2-650l",
+      "title": "RikaNV Hypnose2 650L decision-applied draft",
+      "product": "RikaNV Hypnose2 650L",
+      "status": "decision_applied",
+      "publication_ready": false,
+      "risk_level": "medium",
+      "claims_used": [
+        "HRD-003",
+        "candidate-run001-hypnose2-line-001",
+        "candidate-run001-hypnose2-650l-spec-001",
+        "candidate-run001-hypnose2-650l-spec-002",
+        "candidate-run001-hypnose2-650l-spec-003",
+        "candidate-run001-hypnose2-650l-spec-004",
+        "candidate-run001-hypnose2-650l-spec-005",
+        "candidate-run001-hypnose2-650l-spec-006"
+      ],
+      "sources_used": [
+        "human-review/run-001/human-decision-form.md",
+        "src_rikanv_ru_hypnose_line_20260701",
+        "ev_rikanv_ru_hypnose2_line_20260701",
+        "src_rikanv_ru_hypnose2_650l_20260701",
+        "ev_rikanv_ru_hypnose2_650l_specs_20260701"
+      ],
+      "open_decisions": [],
+      "blockers": [
+        "technical review required",
+        "doctrine review required",
+        "final human publication approval required"
+      ],
+      "preview_path": "content-drafts/run-001-decision-applied/hypnose2-650l-decision-applied.md"
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "HRD-001",
+      "topic": "Ovod L25 no-LRF limitation wording",
+      "priority": "P1 high",
+      "material_ids": [
+        "mat-ovod-l25"
+      ],
+      "issue": "Whether neutral source-backed no-LRF wording may be used.",
+      "agent_recommendation": "Use factual source-backed wording only.",
+      "options": [
+        "exclude",
+        "allow neutral wording",
+        "allow explicit factual wording",
+        "reject"
+      ],
+      "selected_option": "allow explicit factual wording",
+      "default_safe_action": "exclude until approved",
+      "risk_if_approved": "May read as negative claim if wording is not neutral.",
+      "risk_if_rejected": "Material omits a factual limitation.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-002",
+      "topic": "Lesnik2 650L recoil rating",
+      "priority": "P1 high",
+      "material_ids": [
+        "mat-lesnik2-650l"
+      ],
+      "issue": "Whether recoil rating may be prepared as official technical characteristic.",
+      "agent_recommendation": "Use only after technical reviewer confirmation.",
+      "options": [
+        "exclude",
+        "allow after technical confirmation",
+        "internal only",
+        "reject"
+      ],
+      "selected_option": "allow after technical confirmation",
+      "default_safe_action": "hold until technical reviewer confirms",
+      "risk_if_approved": "Could be read as safety guarantee if wording is too strong.",
+      "risk_if_rejected": "Technical table is less complete.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-003",
+      "topic": "Hypnose and Hypnose2 generation context",
+      "priority": "P1 high",
+      "material_ids": [
+        "mat-hypnose2-650l"
+      ],
+      "issue": "Whether generation context may be used.",
+      "agent_recommendation": "Use context without transferring model specs.",
+      "options": [
+        "do not use",
+        "allow generation context",
+        "require separate source",
+        "model facts only"
+      ],
+      "selected_option": "allow generation context",
+      "default_safe_action": "model facts only",
+      "risk_if_approved": "Line/model confusion if specs are transferred.",
+      "risk_if_rejected": "Material loses useful generation context.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-004",
+      "topic": "Official detection/LRF wording policy",
+      "priority": "P0 blocker",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ],
+      "issue": "How official range values may be written.",
+      "agent_recommendation": "Official-spec wording only.",
+      "options": [
+        "official-spec only",
+        "stronger wording with tests",
+        "remove ranges"
+      ],
+      "selected_option": "official-spec only",
+      "default_safe_action": "official-spec only",
+      "risk_if_approved": "Low if wording remains neutral.",
+      "risk_if_rejected": "Materials may omit important official specs.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-005",
+      "topic": "Field-performance claims policy",
+      "priority": "P0 blocker",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ],
+      "issue": "Whether field-performance claims may be used without tests.",
+      "agent_recommendation": "Exclude without field tests.",
+      "options": [
+        "exclude",
+        "allow with tests",
+        "internal only"
+      ],
+      "selected_option": "exclude",
+      "default_safe_action": "exclude",
+      "risk_if_approved": "Could overstate real field performance.",
+      "risk_if_rejected": "Materials remain conservative.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-006",
+      "topic": "Volatile commercial data policy",
+      "priority": "P1 high",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ],
+      "issue": "Whether commercial data can enter first package.",
+      "agent_recommendation": "Exclude volatile commercial data.",
+      "options": [
+        "exclude",
+        "dated owner-approved only",
+        "channel-specific later"
+      ],
+      "selected_option": "exclude",
+      "default_safe_action": "exclude",
+      "risk_if_approved": "Content can become outdated or commercially sensitive.",
+      "risk_if_rejected": "Materials stay stable.",
+      "requires_final_approval": true
+    },
+    {
+      "decision_id": "HRD-007",
+      "topic": "Move drafts to next package run",
+      "priority": "P0 blocker",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ],
+      "issue": "Whether limited package prep may proceed.",
+      "agent_recommendation": "Proceed only as limited candidates.",
+      "options": [
+        "all decisions answered",
+        "no unresolved P0/P1",
+        "stop until full review"
+      ],
+      "selected_option": "no unresolved P0/P1",
+      "default_safe_action": "hold until decisions answered",
+      "risk_if_approved": "May be mistaken for publication approval if UI is unclear.",
+      "risk_if_rejected": "Package prep waits for full review.",
+      "requires_final_approval": true
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "risk-final-approval-missing",
+      "level": "blocker",
+      "summary": "Final human publication approval is missing.",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ]
+    },
+    {
+      "risk_id": "risk-field-performance",
+      "level": "high",
+      "summary": "Field-performance claims remain excluded without tests.",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ]
+    },
+    {
+      "risk_id": "risk-volatile-data",
+      "level": "medium",
+      "summary": "Volatile commercial data is excluded from stable materials.",
+      "material_ids": [
+        "mat-ovod-l25",
+        "mat-lesnik2-650l",
+        "mat-surok-l15",
+        "mat-hypnose2-650l"
+      ]
+    }
+  ],
+  "required_approvals": [
+    {
+      "approval_id": "technical-review",
+      "label": "Technical reviewer approval",
+      "complete": false
+    },
+    {
+      "approval_id": "doctrine-review",
+      "label": "Doctrine compliance owner approval",
+      "complete": false
+    },
+    {
+      "approval_id": "final-owner-approval",
+      "label": "Final human publication approval",
+      "complete": false
+    },
+    {
+      "approval_id": "publication-channel",
+      "label": "Publication channel selected",
+      "complete": false
+    }
+  ],
+  "next_recommended_action": "Run Publication Package Prep Agent for limited candidates with final approval gate closed."
+}

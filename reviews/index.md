@@ -94,3 +94,8 @@
   Theme: Human Decisions Apply Run 001
   Status: created
   Purpose: apply human HRD decisions to cleaned drafts and prepare package candidates without publication approval.
+
+- review-027-approval-console-mvp-design.md
+  Theme: Approval Console MVP Design
+  Status: created
+  Purpose: define human-facing UI and data contracts for approval workflow.

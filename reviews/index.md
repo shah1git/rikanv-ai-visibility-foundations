@@ -89,3 +89,8 @@
   Theme: Human Review Package Run 001
   Status: created
   Purpose: convert cleaned draft review into structured human decisions.
+
+- review-026-human-decisions-apply-run-001.md
+  Theme: Human Decisions Apply Run 001
+  Status: created
+  Purpose: apply human HRD decisions to cleaned drafts and prepare package candidates without publication approval.

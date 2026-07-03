@@ -11,7 +11,7 @@ export default function SourceSettingsPanel({ settings, onChange }: Props) {
       <div className="section-heading compact">
         <p className="section-kicker">Источники Media Hub</p>
         <h3>Настройки источников</h3>
-        <p>Эти URL попадут в пакет для агента-писателя. Консоль не скачивает каталог в этом MVP.</p>
+        <p>Backend использует эти URL для получения каталога и схемы. Разрешен только host `media.rikanv.ru`.</p>
       </div>
 
       <label className="field-label" htmlFor="catalog-url">URL каталога товаров</label>

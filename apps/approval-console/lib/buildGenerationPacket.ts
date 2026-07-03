@@ -40,7 +40,7 @@ export function buildGenerationPacket(
     ],
     execution_notes: [
       'This packet is input for the article writer agent.',
-      'The Console MVP does not call an LLM.',
+      'The packet itself does not call an LLM.',
       'The Console MVP does not publish anything.',
       'Final publication approval remains closed.',
     ],

@@ -19,7 +19,7 @@ export default function GenerationTaskPanel({ products, task, onChange }: Props)
       <div className="section-heading compact">
         <p className="section-kicker">Постановка задачи</p>
         <h3>Что должен написать агент</h3>
-        <p>Сформируйте задачу. Консоль только собирает пакет и не вызывает модель.</p>
+        <p>Сформируйте задачу для генерации Markdown-статьи через настроенный LLM endpoint.</p>
       </div>
 
       <div className="generator-form-grid">

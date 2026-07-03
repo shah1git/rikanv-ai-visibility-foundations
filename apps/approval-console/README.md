@@ -149,12 +149,37 @@ The Console has an Article Generator settings module for the Media Hub based art
 
 - It exposes editable Media Hub URLs for catalog and spec schemas.
 - It loads the default Product Article Writer prompt from `prompts/product-article-writer.prompt.md`.
-- The prompt is editable in the UI for a local generation packet.
-- It assembles an Article Generation Packet JSON.
-- The packet is passed to an article writer agent.
-- The MVP does not call an LLM.
+- The prompt is editable in the UI before generation.
+- It assembles an Article Generation Packet JSON for technical details.
+- It can call a configured OpenAI-compatible LLM endpoint.
+- It shows generated Markdown in the Console.
 - The MVP does not publish.
 - `final_publication_approval` remains `false`.
+
+## Real Article Generation
+
+The Console can generate a Markdown article when an OpenAI-compatible LLM endpoint is configured.
+
+Required local environment variables:
+
+```bash
+ARTICLE_LLM_PROVIDER=openai_compatible
+ARTICLE_LLM_BASE_URL=https://api.openai.com/v1
+ARTICLE_LLM_API_KEY=...
+ARTICLE_LLM_MODEL=...
+ARTICLE_LLM_TIMEOUT_MS=120000
+```
+
+Rules:
+
+- Without `ARTICLE_LLM_API_KEY` or `ARTICLE_LLM_MODEL`, the generator UI still works but generation is unavailable.
+- The server calls `${ARTICLE_LLM_BASE_URL}/chat/completions`.
+- Source URLs are restricted to `media.rikanv.ru`.
+- Product facts are fetched from Media Hub catalog JSON and spec schema JSON.
+- The generator does not use `rikanv.ru`, `rikasale.ru`, Claim Registry or Product Truth tables as sources.
+- Generated Markdown is not automatically published.
+- Final publication approval remains closed.
+- API keys are read only server-side and must not be committed.
 
 ## UX Rescue Pass
 

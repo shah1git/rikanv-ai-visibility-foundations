@@ -71,11 +71,13 @@ Media Hub catalog URL
 → schema URL template
 → Product Article Writer prompt
 → generation task
-→ article generation packet JSON
-→ article writer agent
+→ server-side article generation endpoint
+→ configured OpenAI-compatible LLM
 → Markdown article
 → approval workflow
 ```
+
+The Article Generation Packet remains available as technical details, but the primary human-facing result is the generated Markdown article.
 
 Approval flow:
 
@@ -105,7 +107,9 @@ The Console is a decision interface over exported data.
 - Article Generator settings for Media Hub catalog and schema URLs.
 - Editable Product Article Writer prompt.
 - Export Article Generation Packet JSON.
-- No LLM call from the Console.
+- Server-side OpenAI-compatible LLM call when env variables are configured.
+- Generated Markdown preview and download.
+- No publication endpoint.
 
 ## 9. Later Scope
 

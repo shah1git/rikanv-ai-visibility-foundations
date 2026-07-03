@@ -107,3 +107,27 @@ export type ArticleGenerationPacket = {
   execution_notes: string[];
   final_publication_approval: false;
 };
+
+export type ArticleGenerationSuccess = {
+  ok: true;
+  article_markdown: string;
+  product_match: {
+    name: string;
+    article?: string;
+  };
+  spec_type: string;
+  schema_url: string;
+  warnings: string[];
+  publication_ready: false;
+  final_publication_approval: false;
+};
+
+export type ArticleGenerationError = {
+  ok: false;
+  error_code: string;
+  message: string;
+  publication_ready: false;
+  final_publication_approval: false;
+};
+
+export type ArticleGenerationResponse = ArticleGenerationSuccess | ArticleGenerationError;

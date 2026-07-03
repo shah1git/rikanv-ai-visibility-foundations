@@ -1,9 +1,15 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { articleGenerationDefaults, defaultArticleGoal } from '../lib/articleGenerationDefaults';
 import { buildGenerationPacket } from '../lib/buildGenerationPacket';
-import type { ArticleGenerationSettings, ArticleGenerationTask } from '../lib/types';
+import type {
+  ArticleGenerationResponse,
+  ArticleGenerationSettings,
+  ArticleGenerationTask,
+} from '../lib/types';
+import ArticleGenerationResult from './ArticleGenerationResult';
+import ArticleGeneratorStatus from './ArticleGeneratorStatus';
 import GenerationPacketPreview from './GenerationPacketPreview';
 import GenerationTaskPanel from './GenerationTaskPanel';
 import PromptSettingsEditor from './PromptSettingsEditor';
@@ -41,9 +47,35 @@ function makeDefaultTask(): ArticleGenerationTask {
 export default function ArticleGeneratorPanel({ defaultPrompt }: Props) {
   const [settings, setSettings] = useState(() => makeDefaultSettings(defaultPrompt));
   const [task, setTask] = useState(() => makeDefaultTask());
-  const [copyMessage, setCopyMessage] = useState('');
+  const [packetCopyMessage, setPacketCopyMessage] = useState('');
+  const [articleCopyMessage, setArticleCopyMessage] = useState('');
+  const [generationMessage, setGenerationMessage] = useState('Готово к генерации');
+  const [generationResult, setGenerationResult] = useState<ArticleGenerationResponse | null>(null);
+  const [generating, setGenerating] = useState(false);
+  const [llmConfigured, setLlmConfigured] = useState<boolean | null>(null);
 
   const packet = useMemo(() => buildGenerationPacket(settings, task), [settings, task]);
+
+  useEffect(() => {
+    let mounted = true;
+
+    fetch('/api/articles/generate')
+      .then((response) => response.json())
+      .then((payload) => {
+        if (mounted) {
+          setLlmConfigured(Boolean(payload?.llm?.configured));
+        }
+      })
+      .catch(() => {
+        if (mounted) {
+          setLlmConfigured(false);
+        }
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   function updateSettings(patch: Partial<ArticleGenerationSettings>) {
     setSettings((current) => ({
@@ -61,7 +93,7 @@ export default function ArticleGeneratorPanel({ defaultPrompt }: Props) {
 
   async function copyPacket() {
     await navigator.clipboard.writeText(JSON.stringify(packet, null, 2));
-    setCopyMessage('Пакет скопирован. Его можно передать агенту-писателю.');
+    setPacketCopyMessage('Пакет скопирован. Его можно передать агенту-писателю.');
   }
 
   function downloadPacket() {
@@ -74,20 +106,81 @@ export default function ArticleGeneratorPanel({ defaultPrompt }: Props) {
     URL.revokeObjectURL(url);
   }
 
+  async function generateArticle() {
+    setGenerating(true);
+    setGenerationMessage('Генерация идет...');
+    setGenerationResult(null);
+
+    try {
+      const response = await fetch('/api/articles/generate', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(packet),
+      });
+      const result = (await response.json()) as ArticleGenerationResponse;
+
+      setGenerationResult(result);
+
+      if (result.ok) {
+        setLlmConfigured(true);
+        setGenerationMessage('Статья готова');
+      } else {
+        if (result.error_code === 'LLM_NOT_CONFIGURED' || result.error_code === 'LLM_MODEL_NOT_CONFIGURED') {
+          setLlmConfigured(false);
+        }
+        setGenerationMessage(result.message);
+      }
+    } catch (error) {
+      setGenerationResult({
+        ok: false,
+        error_code: 'ARTICLE_GENERATION_REQUEST_FAILED',
+        message: error instanceof Error ? error.message : 'Не удалось выполнить запрос генерации.',
+        publication_ready: false,
+        final_publication_approval: false,
+      });
+      setGenerationMessage('Ошибка генерации');
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  async function copyArticle() {
+    if (!generationResult?.ok) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(generationResult.article_markdown);
+    setArticleCopyMessage('Markdown статьи скопирован.');
+  }
+
+  function downloadArticle() {
+    if (!generationResult?.ok) {
+      return;
+    }
+
+    const blob = new Blob([generationResult.article_markdown], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${packet.packet_id}.md`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <section className="article-generator-shell">
       <div className="generator-hero">
         <div>
           <p className="section-kicker">Генерация статей</p>
-          <h2>Соберите пакет для агента-писателя</h2>
+          <h2>Сгенерируйте Markdown-статью</h2>
           <p>
-            Этот модуль собирает настройки Media Hub, Product Article Writer prompt и постановку задачи.
-            Он не вызывает модель, не публикует статью и не меняет approval gates.
+            Выберите товар, проверьте Media Hub источники и нажмите “Сгенерировать статью”.
+            Консоль покажет готовый Markdown, но не публикует его.
           </p>
         </div>
         <div className="publication-lock">
-          <strong>Что произойдет дальше</strong>
-          <span>Вы скачаете или скопируете JSON-пакет и передадите его агенту для написания Markdown-статьи.</span>
+          <strong>Публикация закрыта</strong>
+          <span>Итоговый текст нужно отдельно проверить и утвердить перед публикацией.</span>
         </div>
       </div>
 
@@ -110,12 +203,47 @@ export default function ArticleGeneratorPanel({ defaultPrompt }: Props) {
           />
         </div>
 
-        <GenerationPacketPreview
-          copyMessage={copyMessage}
-          packet={packet}
-          onCopy={copyPacket}
-          onDownload={downloadPacket}
-        />
+        <div className="generator-stack">
+          <section className="generator-card primary-generation-card">
+            <div className="section-heading compact">
+              <p className="section-kicker">Основное действие</p>
+              <h3>Сгенерировать статью</h3>
+              <p>
+                Backend скачает Media Hub catalog/schema, найдет товар, соберет prompt и вызовет настроенный LLM.
+              </p>
+            </div>
+            <ArticleGeneratorStatus
+              configured={llmConfigured}
+              generating={generating}
+              message={generationMessage}
+            />
+            <button
+              className="primary large-action"
+              disabled={generating}
+              type="button"
+              onClick={generateArticle}
+            >
+              {generating ? 'Генерация идет...' : 'Сгенерировать статью'}
+            </button>
+            <p className="muted-note">
+              Если LLM не настроен, задайте `ARTICLE_LLM_API_KEY` и `ARTICLE_LLM_MODEL` в `.env`.
+            </p>
+          </section>
+
+          <ArticleGenerationResult
+            copyMessage={articleCopyMessage}
+            result={generationResult}
+            onCopy={copyArticle}
+            onDownload={downloadArticle}
+          />
+
+          <GenerationPacketPreview
+            copyMessage={packetCopyMessage}
+            packet={packet}
+            onCopy={copyPacket}
+            onDownload={downloadPacket}
+          />
+        </div>
       </div>
     </section>
   );

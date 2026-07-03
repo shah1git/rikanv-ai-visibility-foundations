@@ -53,15 +53,21 @@ apps/approval-console/db/001_init.sql
 This file creates decision and audit tables only.
 It does not create or modify the existing Docker PostgreSQL service.
 
-## Docker Snippet
+## Docker Compose File
 
-Use:
+Use for controlled VPS test deploy:
+
+```text
+apps/approval-console/deploy/docker-compose.approval-console.yml
+```
+
+Reference snippet retained for review:
 
 ```text
 apps/approval-console/deploy/docker-compose.approval-console.snippet.yml
 ```
 
-Review Docker network names on the VPS before applying the snippet.
+Review Docker network names on the VPS before applying any DB-enabled configuration.
 
 ## Caddy Snippet
 

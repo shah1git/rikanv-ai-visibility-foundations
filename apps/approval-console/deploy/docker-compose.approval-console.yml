@@ -1,0 +1,16 @@
+# Controlled VPS deploy file for Approval Console MVP.
+# Uses the image built from apps/approval-console/Dockerfile.
+# Selected host port checked on this VPS: 127.0.0.1:3010
+
+services:
+  approval-console:
+    image: rikanv-approval-console:latest
+    container_name: approval-console
+    restart: unless-stopped
+    env_file:
+      - ../.env
+    ports:
+      - "127.0.0.1:3010:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"

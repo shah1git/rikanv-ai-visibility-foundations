@@ -105,3 +105,4 @@
   Status: created
   Purpose: implement deployable Next.js approval console MVP for VPS/Docker/Caddy.
 | [review-029-repo-text-integrity-guardrail.md](review-029-repo-text-integrity-guardrail.md) | Repo Text Integrity Guardrail | created | Expand formatting guardrails to frontend, config and deployment files after Approval Console MVP. |
+| [review-030-vps-deployment-review-001.md](review-030-vps-deployment-review-001.md) | VPS Deployment Review 001 | created | Deploy/test Approval Console MVP on VPS without removing publication approval gates. |

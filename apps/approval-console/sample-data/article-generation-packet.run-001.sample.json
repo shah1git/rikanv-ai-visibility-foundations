@@ -1,0 +1,30 @@
+{
+  "packet_id": "article-generation-rikanv-ovod-l25",
+  "created_at": "2026-07-03T00:00:00.000Z",
+  "catalog_url": "https://media.rikanv.ru/snapshots/rikanv-full.json",
+  "schema_index_url": "https://media.rikanv.ru/snapshots/spec-schemas.json",
+  "schema_url_template": "https://media.rikanv.ru/snapshots/spec-schemas/{specType}.json",
+  "writer_prompt_ref": "repo:prompts/product-article-writer.prompt.md",
+  "task": {
+    "article_type": "model_article",
+    "product_name": "RikaNV Ovod L25",
+    "product_article": "RikaNV Ovod L25",
+    "article_goal": "Подготовить инженерную Markdown-статью о модели RikaNV Ovod L25 на основе Media Hub catalog JSON и spec schema guidance.",
+    "output_format": "markdown"
+  },
+  "instructions": [
+    "fetch catalog",
+    "find active product",
+    "resolve specType",
+    "fetch schema",
+    "read product_guidance / section_guidance / param_guidance",
+    "write Markdown article",
+    "run self-check"
+  ],
+  "execution_notes": [
+    "This sample packet is input for the article writer agent.",
+    "The Console MVP does not call an LLM.",
+    "The Console MVP does not publish anything."
+  ],
+  "final_publication_approval": false
+}

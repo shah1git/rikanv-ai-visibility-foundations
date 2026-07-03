@@ -75,3 +75,35 @@ export type HumanDecisionExport = {
   comments: string;
   created_at: string;
 };
+
+export type ArticleGenerationSettings = {
+  catalog_url: string;
+  schema_index_url: string;
+  schema_url_template: string;
+  writer_prompt: string;
+  prompt_version: string;
+  updated_at: string;
+  updated_by: string;
+  notes: string;
+};
+
+export type ArticleGenerationTask = {
+  article_type: 'model_article' | 'rikanv_comparison' | 'practical_guide' | 'technology_explainer';
+  product_name: string;
+  product_article: string;
+  article_goal: string;
+  output_format: 'markdown';
+};
+
+export type ArticleGenerationPacket = {
+  packet_id: string;
+  created_at: string;
+  catalog_url: string;
+  schema_index_url: string;
+  schema_url_template: string;
+  writer_prompt: string;
+  task: ArticleGenerationTask;
+  instructions: string[];
+  execution_notes: string[];
+  final_publication_approval: false;
+};

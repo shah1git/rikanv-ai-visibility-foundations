@@ -112,3 +112,4 @@
 | [review-034-approval-console-ux-rescue-001.md](review-034-approval-console-ux-rescue-001.md) | Approval Console UX Rescue 001 | created | Replace technical decision UI with guided human approval workflow. |
 | [review-035-approval-console-material-preview-rescue-002.md](review-035-approval-console-material-preview-rescue-002.md) | Approval Console Material Preview Rescue 002 | created | Make actual material text visible inside the console. |
 | [review-036-material-preview-click-fix.md](review-036-material-preview-click-fix.md) | Material Preview Click Fix | created | Make “Посмотреть текст” scroll directly to the selected material preview. |
+| [review-036-article-generator-settings-mvp-001.md](review-036-article-generator-settings-mvp-001.md) | Article Generator Settings MVP 001 | created | Add configurable Media Hub URLs and editable Product Article Writer Prompt to the console. |

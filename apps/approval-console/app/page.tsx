@@ -1,6 +1,7 @@
 import ApprovalConsole from '../components/ApprovalConsole';
 import { getApprovalData } from '../lib/sampleData';
 import { databaseMode } from '../lib/decisionStore';
+import { loadDefaultArticlePrompt } from '../lib/defaultArticlePrompt';
 import { loadMaterialPreviews } from '../lib/loadMaterialPreviews';
 import type { ApprovalData } from '../lib/types';
 
@@ -65,11 +66,13 @@ function addMaterialPreviews(data: ApprovalData): ApprovalData {
 export default function Home() {
   const data = addMaterialPreviews(loadSafeApprovalData());
   const mode = databaseMode();
+  const defaultArticlePrompt = loadDefaultArticlePrompt();
 
   return (
     <ApprovalConsole
       data={data}
       databaseMode={mode}
+      defaultArticlePrompt={defaultArticlePrompt}
     />
   );
 }

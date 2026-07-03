@@ -1,0 +1,8 @@
+{
+  "catalog_url": "https://media.rikanv.ru/snapshots/rikanv-full.json",
+  "schema_index_url": "https://media.rikanv.ru/snapshots/spec-schemas.json",
+  "schema_url_template": "https://media.rikanv.ru/snapshots/spec-schemas/{specType}.json",
+  "prompt_version": "repo:prompts/product-article-writer.prompt.md",
+  "updated_by": "system",
+  "notes": "Default article generation settings."
+}

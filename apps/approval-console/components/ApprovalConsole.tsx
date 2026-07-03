@@ -5,6 +5,7 @@ import type { ApprovalData, DecisionAnswer } from '../lib/types';
 import { buildHumanDecisionExport } from '../lib/exportDecisions';
 import { humanizeDecisions, safeRecommendationAnswers } from '../lib/humanizeDecisions';
 import ApprovalGatePanel from './ApprovalGatePanel';
+import ArticleGeneratorPanel from './ArticleGeneratorPanel';
 import DecisionExportPanel from './DecisionExportPanel';
 import ExpertDetails from './ExpertDetails';
 import GuidedWorkflow from './GuidedWorkflow';
@@ -16,6 +17,7 @@ import RecommendationSummary from './RecommendationSummary';
 type Props = {
   data: ApprovalData;
   databaseMode: 'postgres' | 'export_only';
+  defaultArticlePrompt: string;
 };
 
 function makeInitialAnswers(data: ApprovalData): Record<string, DecisionAnswer> {
@@ -31,7 +33,8 @@ function makeInitialAnswers(data: ApprovalData): Record<string, DecisionAnswer> 
   );
 }
 
-export default function ApprovalConsole({ data, databaseMode }: Props) {
+export default function ApprovalConsole({ data, databaseMode, defaultArticlePrompt }: Props) {
+  const [activePanel, setActivePanel] = useState<'article-generator' | 'approval'>('article-generator');
   const [answers, setAnswers] = useState(() => makeInitialAnswers(data));
   const [approverName, setApproverName] = useState('');
   const [comments, setComments] = useState('');
@@ -125,98 +128,122 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
       <header className="topbar">
         <div className="brand">
           <h1>RikaNV AI Console</h1>
-          <p>Панель подтверждения безопасного следующего шага.</p>
+          <p>Генерация статей и согласование материалов.</p>
         </div>
         <div className="badge-row">
           <span className="badge danger">Публикация запрещена</span>
-          <span className="badge">Следующий шаг: подготовка пакета</span>
+          <span className="badge">Главный поток: Media Hub → Article Writer</span>
         </div>
       </header>
 
-      <GuidedWorkflow
-        answeredCount={answeredCount}
-        materialCount={data.materials.length}
-        totalDecisions={data.decisions.length}
-      />
+      <nav className="console-tabs" aria-label="Разделы консоли">
+        <button
+          className={activePanel === 'article-generator' ? 'active' : ''}
+          type="button"
+          onClick={() => setActivePanel('article-generator')}
+        >
+          Генерация статей
+        </button>
+        <button
+          className={activePanel === 'approval' ? 'active' : ''}
+          type="button"
+          onClick={() => setActivePanel('approval')}
+        >
+          Согласование материалов
+        </button>
+      </nav>
 
-      <RecommendationSummary onAcceptSafeRecommendations={acceptSafeRecommendations} />
-      {workflowMessage ? <p className="workflow-message">{workflowMessage}</p> : null}
+      {activePanel === 'article-generator' ? (
+        <ArticleGeneratorPanel defaultPrompt={defaultArticlePrompt} />
+      ) : (
+        <>
 
-      <section className="workflow-section" id="materials">
-        <div className="section-heading">
-          <p className="section-kicker">Материалы</p>
-          <h2>Что подготовила система</h2>
-          <p>
-            Выберите карточку, чтобы посмотреть текст. Материалы подготовлены для review и не готовы к публикации.
-          </p>
-        </div>
-        <div className="material-grid">
-          {data.materials.map((material) => (
-            <MaterialCard
-              key={material.material_id}
-              material={material}
-              selected={material.material_id === selectedMaterialId}
-              onSelect={selectMaterialForPreview}
-            />
-          ))}
-        </div>
-      </section>
+          <GuidedWorkflow
+            answeredCount={answeredCount}
+            materialCount={data.materials.length}
+            totalDecisions={data.decisions.length}
+          />
 
-      <section className="workflow-section preview-card" id="preview">
-        {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
-      </section>
+          <RecommendationSummary onAcceptSafeRecommendations={acceptSafeRecommendations} />
+          {workflowMessage ? <p className="workflow-message">{workflowMessage}</p> : null}
 
-      <section className="workflow-section" id="decisions">
-        <div className="section-heading">
-          <p className="section-kicker">Что нужно подтвердить</p>
-          <h2>Ответьте на вопросы обычным языком</h2>
-          <p>
-            Если сомневаетесь, нажмите “Принять безопасные рекомендации” выше. Отдельные пункты можно изменить.
-          </p>
-        </div>
-        <div className="question-list">
-          {humanDecisions.map((humanDecision, index) => (
-            <HumanQuestionCard
-              answer={answers[humanDecision.decision.decision_id]}
-              humanDecision={humanDecision}
-              index={index}
-              key={humanDecision.decision.decision_id}
-              onChange={updateAnswer}
-              total={humanDecisions.length}
-            />
-          ))}
-        </div>
-      </section>
+          <section className="workflow-section" id="materials">
+            <div className="section-heading">
+              <p className="section-kicker">Материалы</p>
+              <h2>Что подготовила система</h2>
+              <p>
+                Выберите карточку, чтобы посмотреть текст. Материалы подготовлены для review и не готовы к публикации.
+              </p>
+            </div>
+            <div className="material-grid">
+              {data.materials.map((material) => (
+                <MaterialCard
+                  key={material.material_id}
+                  material={material}
+                  selected={material.material_id === selectedMaterialId}
+                  onSelect={selectMaterialForPreview}
+                />
+              ))}
+            </div>
+          </section>
 
-      <section className="workflow-section export-section" id="export">
-        <div className="export-grid">
-          <div className="card">
-            <DecisionExportPanel
-              approverName={approverName}
-              comments={comments}
-              copyMessage={copyMessage}
-              databaseMode={databaseMode}
+          <section className="workflow-section preview-card" id="preview">
+            {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
+          </section>
+
+          <section className="workflow-section" id="decisions">
+            <div className="section-heading">
+              <p className="section-kicker">Что нужно подтвердить</p>
+              <h2>Ответьте на вопросы обычным языком</h2>
+              <p>
+                Если сомневаетесь, нажмите “Принять безопасные рекомендации” выше. Отдельные пункты можно изменить.
+              </p>
+            </div>
+            <div className="question-list">
+              {humanDecisions.map((humanDecision, index) => (
+                <HumanQuestionCard
+                  answer={answers[humanDecision.decision.decision_id]}
+                  humanDecision={humanDecision}
+                  index={index}
+                  key={humanDecision.decision.decision_id}
+                  onChange={updateAnswer}
+                  total={humanDecisions.length}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section className="workflow-section export-section" id="export">
+            <div className="export-grid">
+              <div className="card">
+                <DecisionExportPanel
+                  approverName={approverName}
+                  comments={comments}
+                  copyMessage={copyMessage}
+                  databaseMode={databaseMode}
+                  jsonText={jsonText}
+                  remainingCount={remainingCount}
+                  saveMessage={saveMessage}
+                  totalDecisions={data.decisions.length}
+                  onApproverNameChange={setApproverName}
+                  onCommentsChange={setComments}
+                  onCopy={copyDecisions}
+                  onSave={saveDecisions}
+                  onDownload={downloadDecisions}
+                />
+              </div>
+              <div className="card">
+                <ApprovalGatePanel approvals={data.required_approvals} />
+              </div>
+            </div>
+            <ExpertDetails
+              answers={answers}
+              data={data}
               jsonText={jsonText}
-              remainingCount={remainingCount}
-              saveMessage={saveMessage}
-              totalDecisions={data.decisions.length}
-              onApproverNameChange={setApproverName}
-              onCommentsChange={setComments}
-              onCopy={copyDecisions}
-              onSave={saveDecisions}
-              onDownload={downloadDecisions}
             />
-          </div>
-          <div className="card">
-            <ApprovalGatePanel approvals={data.required_approvals} />
-          </div>
-        </div>
-        <ExpertDetails
-          answers={answers}
-          data={data}
-          jsonText={jsonText}
-        />
-      </section>
+          </section>
+        </>
+      )}
     </main>
   );
 }

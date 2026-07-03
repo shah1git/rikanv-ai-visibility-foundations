@@ -143,6 +143,19 @@ The Console shows material text from bundled preview files inside the app.
 - `publication_ready` remains `false`.
 - `final_publication_approval` remains `false`.
 
+## Article Generator Settings
+
+The Console has an Article Generator settings module for the Media Hub based article flow.
+
+- It exposes editable Media Hub URLs for catalog and spec schemas.
+- It loads the default Product Article Writer prompt from `prompts/product-article-writer.prompt.md`.
+- The prompt is editable in the UI for a local generation packet.
+- It assembles an Article Generation Packet JSON.
+- The packet is passed to an article writer agent.
+- The MVP does not call an LLM.
+- The MVP does not publish.
+- `final_publication_approval` remains `false`.
+
 ## UX Rescue Pass
 
 The Console was changed from a technical artifact dashboard into a guided workflow.

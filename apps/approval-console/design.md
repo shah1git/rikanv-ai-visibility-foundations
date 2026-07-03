@@ -23,6 +23,7 @@ Markdown artifacts remain available as references, but they should not be the pr
 
 ## 4. Main Screens
 
+- Article Generator Settings: assemble Media Hub source URLs, writer prompt and task into a generation packet.
 - Runs: list agent runs and their status.
 - Run Dashboard: summarize one run, materials, decisions, risks and next action.
 - Decision Queue: present decisions that need human input.
@@ -62,6 +63,22 @@ It requires technical approval, doctrine approval and final owner approval.
 
 ## 7. Data Flow
 
+Article generation flow:
+
+```text
+Media Hub catalog URL
+→ schema index URL
+→ schema URL template
+→ Product Article Writer prompt
+→ generation task
+→ article generation packet JSON
+→ article writer agent
+→ Markdown article
+→ approval workflow
+```
+
+Approval flow:
+
 ```text
 GitHub artifacts
 → approval-data.json
@@ -85,6 +102,10 @@ The Console is a decision interface over exported data.
 - Human-readable material previews.
 - Decision queue for HRD-style decisions.
 - Final approval screen with disabled publish action until gates pass.
+- Article Generator settings for Media Hub catalog and schema URLs.
+- Editable Product Article Writer prompt.
+- Export Article Generation Packet JSON.
+- No LLM call from the Console.
 
 ## 9. Later Scope
 

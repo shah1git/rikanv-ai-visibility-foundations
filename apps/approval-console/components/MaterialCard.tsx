@@ -10,6 +10,7 @@ type Props = {
 
 export default function MaterialCard({ material, selected, onSelect }: Props) {
   const canMoveNext = material.open_decisions.length === 0;
+  const hasPreview = material.preview_found === true && Boolean(material.preview_markdown?.trim());
 
   return (
     <button
@@ -26,6 +27,9 @@ export default function MaterialCard({ material, selected, onSelect }: Props) {
 
       <div className="badge-row">
         <span className="badge">Статус: {statusLabel(material.status)}</span>
+        <span className={hasPreview ? 'badge ok' : 'badge danger'}>
+          {hasPreview ? 'Текст загружен' : 'Текст не найден'}
+        </span>
         <RiskBadge level={material.risk_level} />
       </div>
 

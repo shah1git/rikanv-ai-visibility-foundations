@@ -24,6 +24,9 @@ export type Material = {
   blockers: string[];
   preview_path: string;
   preview_markdown?: string;
+  preview_found?: boolean;
+  preview_file_name?: string;
+  preview_error?: string;
 };
 
 export type Decision = {

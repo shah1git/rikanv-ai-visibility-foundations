@@ -775,6 +775,24 @@ code {
   gap: 8px;
 }
 
+.preview-load-state {
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0 0 12px;
+  padding: 9px 12px;
+}
+
+.preview-load-state.ok {
+  background: #e9f7ef;
+  color: var(--ok);
+}
+
+.preview-load-state.danger {
+  background: #ffebe8;
+  color: var(--danger);
+}
+
 .anchor-row {
   display: flex;
   flex-wrap: wrap;

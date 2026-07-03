@@ -92,6 +92,14 @@ function renderFrontmatter(lines: string[], key: string) {
   );
 }
 
+function renderCodeBlock(lines: string[], key: string) {
+  return (
+    <pre className="markdown-frontmatter" key={key}>
+      {lines.join('\n')}
+    </pre>
+  );
+}
+
 export function renderSimpleMarkdown(markdown: string): ReactNode[] {
   const lines = markdown.replace(/\r\n/g, '\n').split('\n');
   const nodes: ReactNode[] = [];
@@ -121,6 +129,23 @@ export function renderSimpleMarkdown(markdown: string): ReactNode[] {
       }
 
       nodes.push(renderFrontmatter(frontmatter, key));
+      continue;
+    }
+
+    if (trimmed.startsWith('```')) {
+      const codeLines: string[] = [line];
+      index += 1;
+
+      while (index < lines.length) {
+        codeLines.push(lines[index]);
+        if (lines[index].trim().startsWith('```')) {
+          index += 1;
+          break;
+        }
+        index += 1;
+      }
+
+      nodes.push(renderCodeBlock(codeLines, key));
       continue;
     }
 

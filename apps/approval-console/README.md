@@ -133,6 +133,8 @@ Main workflow:
 The Console shows material text from bundled preview files inside the app.
 
 - Preview files are copied from agent artifacts into `sample-data/material-previews/`.
+- The Docker runner image explicitly copies `sample-data` so previews exist at runtime.
+- Material cards and preview blocks show whether text was loaded.
 - The UI does not read GitHub directly.
 - The UI does not fetch external URLs for previews.
 - The preview loader reads only an internal allowlist of bundled preview files.

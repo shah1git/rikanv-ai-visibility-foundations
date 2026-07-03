@@ -54,7 +54,10 @@ function addMaterialPreviews(data: ApprovalData): ApprovalData {
     ...data,
     materials: data.materials.map((material) => ({
       ...material,
-      preview_markdown: previews[material.material_id],
+      preview_error: previews[material.material_id]?.error,
+      preview_file_name: previews[material.material_id]?.fileName,
+      preview_found: previews[material.material_id]?.found ?? false,
+      preview_markdown: previews[material.material_id]?.markdown,
     })),
   };
 }

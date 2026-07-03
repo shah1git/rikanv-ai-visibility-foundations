@@ -8,22 +8,30 @@ type Props = {
 };
 
 export default function MaterialPreview({ material }: Props) {
+  const hasPreview = material.preview_found === true && Boolean(material.preview_markdown?.trim());
   const previewMarkdown =
-    material.preview_markdown ??
-    [
-      '# Предпросмотр не найден',
-      '',
-      `Артефакт: ${material.preview_path}`,
-      '',
-      'Предпросмотр не был загружен. Откройте исходный artifact path только как fallback.',
-    ].join('\n');
+    hasPreview && material.preview_markdown
+      ? material.preview_markdown
+      : [
+          '# Предпросмотр не найден',
+          '',
+          `Артефакт: ${material.preview_path}`,
+          '',
+          material.preview_error
+            ? `Причина: ${material.preview_error}`
+            : 'Предпросмотр не был загружен. Откройте исходный artifact path только как fallback.',
+        ].join('\n');
 
   return (
     <section className="material-preview">
       <div className="preview-header">
         <div>
           <p className="section-kicker">Предпросмотр материала</p>
-          <h2>{material.product}</h2>
+          <h2>Текст выбранного материала</h2>
+          <p className={hasPreview ? 'preview-load-state ok' : 'preview-load-state danger'}>
+            {hasPreview ? 'Текст материала загружен' : 'Текст материала не найден'}
+          </p>
+          <h3>{material.product}</h3>
           <p>
             Это текст, который агент подготовил. Сейчас вы не редактируете его вручную.
             Вы только принимаете решения выше, а агент сам применит их в следующем шаге.
@@ -37,6 +45,9 @@ export default function MaterialPreview({ material }: Props) {
         <div className="preview-badges">
           <span className="badge">Статус: {statusLabel(material.status)}</span>
           <span className="badge danger">Публикация запрещена</span>
+          <span className={hasPreview ? 'badge ok' : 'badge danger'}>
+            {hasPreview ? 'Текст загружен' : 'Текст не найден'}
+          </span>
           <RiskBadge level={material.risk_level} />
         </div>
       </div>
@@ -58,6 +69,14 @@ export default function MaterialPreview({ material }: Props) {
             <div>
               <dt>Источник артефакта</dt>
               <dd><code>{material.preview_path}</code></dd>
+            </div>
+            <div>
+              <dt>Bundled preview file</dt>
+              <dd><code>{material.preview_file_name ?? 'not-mapped.md'}</code></dd>
+            </div>
+            <div>
+              <dt>Статус текста</dt>
+              <dd>{hasPreview ? 'загружен' : 'не найден'}</dd>
             </div>
             <div>
               <dt>Публикация</dt>

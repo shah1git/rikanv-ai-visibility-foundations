@@ -3,12 +3,15 @@
 import { useMemo, useState } from 'react';
 import type { ApprovalData, DecisionAnswer } from '../lib/types';
 import { buildHumanDecisionExport } from '../lib/exportDecisions';
-import { databaseModeLabel, statusLabel } from '../lib/labels';
+import { humanizeDecisions, safeRecommendationAnswers } from '../lib/humanizeDecisions';
 import ApprovalGatePanel from './ApprovalGatePanel';
-import DecisionCard from './DecisionCard';
 import DecisionExportPanel from './DecisionExportPanel';
+import ExpertDetails from './ExpertDetails';
+import GuidedWorkflow from './GuidedWorkflow';
+import HumanQuestionCard from './HumanQuestionCard';
 import MaterialCard from './MaterialCard';
 import MaterialPreview from './MaterialPreview';
+import RecommendationSummary from './RecommendationSummary';
 
 type Props = {
   data: ApprovalData;
@@ -21,7 +24,7 @@ function makeInitialAnswers(data: ApprovalData): Record<string, DecisionAnswer> 
       decision.decision_id,
       {
         decision_id: decision.decision_id,
-        selected_option: decision.selected_option ?? decision.default_safe_action,
+        selected_option: '',
         comment: '',
       },
     ]),
@@ -35,11 +38,14 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
   const [selectedMaterialId, setSelectedMaterialId] = useState(data.materials[0]?.material_id ?? '');
   const [saveMessage, setSaveMessage] = useState('');
   const [copyMessage, setCopyMessage] = useState('');
+  const [workflowMessage, setWorkflowMessage] = useState('');
 
   const selectedMaterial = useMemo(
     () => data.materials.find((material) => material.material_id === selectedMaterialId) ?? data.materials[0],
     [data.materials, selectedMaterialId],
   );
+
+  const humanDecisions = useMemo(() => humanizeDecisions(data.decisions), [data.decisions]);
 
   const exportPayload = useMemo(
     () => buildHumanDecisionExport(data, answers, approverName, comments),
@@ -48,8 +54,7 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
 
   const jsonText = useMemo(() => JSON.stringify(exportPayload, null, 2), [exportPayload]);
   const answeredCount = Object.values(answers).filter((answer) => answer.selected_option).length;
-  const publicationReadyCount = data.materials.filter((material) => material.publication_ready).length;
-  const blockerCount = data.risks.filter((risk) => risk.level === 'blocker').length;
+  const remainingCount = Math.max(data.decisions.length - answeredCount, 0);
 
   function updateAnswer(decisionId: string, patch: Partial<DecisionAnswer>) {
     setAnswers((current) => ({
@@ -97,145 +102,109 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
     );
   }
 
+  function acceptSafeRecommendations() {
+    setAnswers(safeRecommendationAnswers(data.decisions));
+    setWorkflowMessage(
+      'Безопасные рекомендации выбраны. Это разрешает только следующий агентный шаг; публикация по-прежнему запрещена.',
+    );
+  }
+
   return (
     <main className="console-shell">
       <header className="topbar">
         <div className="brand">
           <h1>RikaNV AI Console</h1>
-          <p>Панель решений для агентного процесса RikaNV.</p>
+          <p>Панель подтверждения безопасного следующего шага.</p>
         </div>
         <div className="badge-row">
-          <span className="badge">Запуск: {data.run_id}</span>
-          <span className="badge warning">Этап: {statusLabel(data.run_status)}</span>
-          <span className="badge danger">Публикация закрыта</span>
-          <span className="badge">Режим хранения: {databaseModeLabel(databaseMode)}</span>
+          <span className="badge danger">Публикация запрещена</span>
+          <span className="badge">Следующий шаг: подготовка пакета</span>
         </div>
       </header>
 
-      <section className="hero-panel">
-        <div>
-          <h2>Что делать сейчас</h2>
-          <ol>
-            <li>Посмотрите список решений ниже.</li>
-            <li>Для каждого решения выберите вариант.</li>
-            <li>При необходимости оставьте комментарий.</li>
-            <li>Нажмите “Сохранить решения” или “Скачать JSON”.</li>
-            <li>Передайте JSON агенту для следующего шага.</li>
-            <li>Это НЕ разрешение на публикацию.</li>
-          </ol>
-        </div>
-        <p className="notice danger">
-          Материалы не готовы к публикации. Консоль не публикует материалы; здесь вы разрешаете только
-          следующий агентный шаг. Финальная публикация будет отдельным решением.
-        </p>
-      </section>
+      <GuidedWorkflow
+        answeredCount={answeredCount}
+        materialCount={data.materials.length}
+        totalDecisions={data.decisions.length}
+      />
 
-      <section className="approval-levels">
-        <h2>Важно: это не публикация</h2>
-        <div className="level-grid">
-          <div>
-            <h3>1. Разрешить следующий агентный шаг</h3>
-            <p>Агент может продолжить подготовку материала: cleanup, package prep или следующий review.</p>
-          </div>
-          <div>
-            <h3>2. Разрешить публикацию</h3>
-            <p>Материал можно публиковать от имени RikaNV только после отдельного финального approval.</p>
-          </div>
+      <RecommendationSummary onAcceptSafeRecommendations={acceptSafeRecommendations} />
+      {workflowMessage ? <p className="workflow-message">{workflowMessage}</p> : null}
+
+      <section className="workflow-section" id="materials">
+        <div className="section-heading">
+          <p className="section-kicker">Материалы</p>
+          <h2>Что подготовила система</h2>
+          <p>
+            Выберите карточку, чтобы посмотреть текст. Материалы подготовлены для review и не готовы к публикации.
+          </p>
         </div>
-        <div className="badge-row">
-          <span className="badge ok">Текущий уровень: решения для следующего агентного шага</span>
-          <span className="badge danger">Финальная публикация: закрыта</span>
+        <div className="material-grid">
+          {data.materials.map((material) => (
+            <MaterialCard
+              key={material.material_id}
+              material={material}
+              selected={material.material_id === selectedMaterialId}
+              onSelect={setSelectedMaterialId}
+            />
+          ))}
         </div>
       </section>
 
-      <section className="main-grid">
-        <div>
-          <div className="stats">
-            <div className="stat">
-              <strong>{data.materials.length}</strong>
-              <span>материала</span>
-            </div>
-            <div className="stat">
-              <strong>{answeredCount}/{data.decisions.length}</strong>
-              <span>решений заполнено</span>
-            </div>
-            <div className="stat">
-              <strong>{blockerCount}</strong>
-              <span>блокер риска</span>
-            </div>
-            <div className="stat danger-stat">
-              <strong>{publicationReadyCount}</strong>
-              <span>готово к публикации</span>
-            </div>
-          </div>
-
-          <section className="card">
-            <h2>Материалы</h2>
-            <p>
-              Этот материал можно передать на следующий агентный шаг, но нельзя публиковать без технической
-              проверки, проверки по доктрине и финального разрешения человека.
-            </p>
-            <div className="material-grid">
-              {data.materials.map((material) => (
-                <MaterialCard
-                  key={material.material_id}
-                  material={material}
-                  selected={material.material_id === selectedMaterialId}
-                  onSelect={setSelectedMaterialId}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="card preview-card" style={{ marginTop: 18 }}>
-            {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
-          </section>
+      <section className="workflow-section" id="decisions">
+        <div className="section-heading">
+          <p className="section-kicker">Что нужно подтвердить</p>
+          <h2>Ответьте на вопросы обычным языком</h2>
+          <p>
+            Если сомневаетесь, нажмите “Принять безопасные рекомендации” выше. Отдельные пункты можно изменить.
+          </p>
         </div>
+        <div className="question-list">
+          {humanDecisions.map((humanDecision, index) => (
+            <HumanQuestionCard
+              answer={answers[humanDecision.decision.decision_id]}
+              humanDecision={humanDecision}
+              index={index}
+              key={humanDecision.decision.decision_id}
+              onChange={updateAnswer}
+              total={humanDecisions.length}
+            />
+          ))}
+        </div>
+      </section>
 
-        <aside>
-          <section className="card">
-            <h2>Очередь решений</h2>
-            <p className="help-text">
-              Нужно решение по каждому пункту. Выбор здесь разрешает только следующий агентный шаг.
-            </p>
-            {data.decisions.map((decision) => (
-              <DecisionCard
-                key={decision.decision_id}
-                decision={decision}
-                answer={answers[decision.decision_id]}
-                onChange={updateAnswer}
-              />
-            ))}
-          </section>
+      <section className="workflow-section preview-card" id="preview">
+        {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
+      </section>
 
-          <section className="card" style={{ marginTop: 18 }}>
-            <ApprovalGatePanel approvals={data.required_approvals} />
-          </section>
-
-          <section className="card" style={{ marginTop: 18 }}>
+      <section className="workflow-section export-section" id="export">
+        <div className="export-grid">
+          <div className="card">
             <DecisionExportPanel
               approverName={approverName}
               comments={comments}
               copyMessage={copyMessage}
               databaseMode={databaseMode}
               jsonText={jsonText}
+              remainingCount={remainingCount}
               saveMessage={saveMessage}
+              totalDecisions={data.decisions.length}
               onApproverNameChange={setApproverName}
               onCommentsChange={setComments}
               onCopy={copyDecisions}
               onSave={saveDecisions}
               onDownload={downloadDecisions}
             />
-          </section>
-        </aside>
-      </section>
-
-      <section className="footer-panel">
-        <div className="card">
-          <h2>Граница системы</h2>
-          <p>Консоль читает подготовленные данные, сохраняет решения или экспортирует JSON.</p>
-          <p>Она не пишет в GitHub, не создает publication-ready контент и не публикует материалы.</p>
+          </div>
+          <div className="card">
+            <ApprovalGatePanel approvals={data.required_approvals} />
+          </div>
         </div>
+        <ExpertDetails
+          answers={answers}
+          data={data}
+          jsonText={jsonText}
+        />
       </section>
     </main>
   );

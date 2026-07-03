@@ -25,9 +25,14 @@ export default function MaterialPreview({ material }: Props) {
           <p className="section-kicker">Предпросмотр материала</p>
           <h2>{material.product}</h2>
           <p>
-            Ниже показан текст, который агент подготовил. Его можно читать и оценивать,
-            но нельзя публиковать без финального approval.
+            Это текст, который агент подготовил. Сейчас вы не редактируете его вручную.
+            Вы только принимаете решения выше, а агент сам применит их в следующем шаге.
           </p>
+          <div className="anchor-row">
+            <a href="#decisions">К решениям</a>
+            <a href="#materials">К списку материалов</a>
+            <a href="#export">К экспорту JSON</a>
+          </div>
         </div>
         <div className="preview-badges">
           <span className="badge">Статус: {statusLabel(material.status)}</span>
@@ -48,22 +53,22 @@ export default function MaterialPreview({ material }: Props) {
         </article>
 
         <aside className="preview-side">
-          <h3>Контроль публикации</h3>
+          <h3>Что важно помнить</h3>
           <dl>
             <div>
               <dt>Источник артефакта</dt>
               <dd><code>{material.preview_path}</code></dd>
             </div>
             <div>
-              <dt>publication_ready</dt>
-              <dd>false</dd>
+              <dt>Публикация</dt>
+              <dd>запрещена</dd>
             </div>
             <div>
-              <dt>Claims использованы</dt>
+              <dt>Фактов в тексте</dt>
               <dd>{material.claims_used.length}</dd>
             </div>
             <div>
-              <dt>Источники использованы</dt>
+              <dt>Источников использовано</dt>
               <dd>{material.sources_used.length}</dd>
             </div>
             <div>
@@ -71,7 +76,7 @@ export default function MaterialPreview({ material }: Props) {
               <dd>{material.open_decisions.length || 'нет'}</dd>
             </div>
             <div>
-              <dt>Можно публиковать сейчас</dt>
+              <dt>Можно публиковать</dt>
               <dd>Нет</dd>
             </div>
           </dl>
@@ -83,12 +88,12 @@ export default function MaterialPreview({ material }: Props) {
             ))}
           </ul>
 
-          <h4>Что нельзя публиковать без approval</h4>
+          <h4>Что нельзя публиковать без отдельного разрешения</h4>
           <ul>
-            <li>field-performance claims без тестов;</li>
-            <li>volatile commercial data;</li>
-            <li>competitor comparisons;</li>
-            <li>материал без финального human publication approval.</li>
+            <li>полевые обещания без тестов;</li>
+            <li>цены, наличие и комплектацию;</li>
+            <li>сравнения с конкурентами;</li>
+            <li>материал без финального разрешения на публикацию.</li>
           </ul>
         </aside>
       </div>

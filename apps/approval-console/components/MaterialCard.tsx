@@ -22,7 +22,7 @@ export default function MaterialCard({ material, selected, onSelect }: Props) {
         <span className="badge danger">Публикация запрещена</span>
       </div>
 
-      <p className="material-title">{material.title}</p>
+      <p className="material-title">Материал подготовлен системой.</p>
 
       <div className="badge-row">
         <span className="badge">Статус: {statusLabel(material.status)}</span>
@@ -30,11 +30,11 @@ export default function MaterialCard({ material, selected, onSelect }: Props) {
       </div>
 
       <div className="meta-list">
-        <span>Можно двигать дальше: {canMoveNext ? 'Да, только на следующий агентный шаг' : 'Нет'}</span>
-        <span>Можно публиковать сейчас: Нет</span>
+        <span>Можно двигать дальше: {canMoveNext ? 'Да, с ограничениями' : 'Нет'}</span>
+        <span>Можно публиковать: нет</span>
         <span>Открытые решения: {material.open_decisions.length || 'нет'}</span>
-        <span>Claims: {material.claims_used.length}</span>
-        <span>Sources: {material.sources_used.length}</span>
+        <span>Фактов в тексте: {material.claims_used.length}</span>
+        <span>Источников: {material.sources_used.length}</span>
       </div>
 
       <div className="material-requirements">
@@ -46,7 +46,7 @@ export default function MaterialCard({ material, selected, onSelect }: Props) {
         </ul>
       </div>
 
-      <span className="open-preview-hint">Открыть текст материала</span>
+      <span className="open-preview-hint">Посмотреть текст</span>
     </button>
   );
 }

@@ -141,6 +141,18 @@ The Console shows material text from bundled preview files inside the app.
 - `publication_ready` remains `false`.
 - `final_publication_approval` remains `false`.
 
+## UX Rescue Pass
+
+The Console was changed from a technical artifact dashboard into a guided workflow.
+
+- The user does not need to read Markdown files.
+- The user does not need to understand HRD IDs, claims, source IDs or evidence IDs.
+- The main scenario is to accept safe recommendations or adjust individual decisions.
+- Technical details are collapsed by default.
+- JSON export is available, but it is not the main screen focus.
+- Publication remains impossible in the MVP.
+- `final_publication_approval` remains `false`.
+
 ## Publication Boundary
 
 The Console has no publication API and no real publish button.

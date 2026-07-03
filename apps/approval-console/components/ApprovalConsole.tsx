@@ -1,19 +1,17 @@
-
 'use client';
 
 import { useMemo, useState } from 'react';
-import type { ApprovalData, DecisionAnswer, HumanDecisionExport, Material } from '../lib/types';
+import type { ApprovalData, DecisionAnswer } from '../lib/types';
+import { buildHumanDecisionExport } from '../lib/exportDecisions';
+import ApprovalGatePanel from './ApprovalGatePanel';
+import DecisionCard from './DecisionCard';
+import DecisionExportPanel from './DecisionExportPanel';
+import MaterialCard from './MaterialCard';
 
 type Props = {
   data: ApprovalData;
   databaseMode: 'postgres' | 'export_only';
 };
-
-function riskBadge(level: Material['risk_level']) {
-  if (level === 'low') return 'badge ok';
-  if (level === 'blocker' || level === 'high') return 'badge danger';
-  return 'badge warning';
-}
 
 function makeInitialAnswers(data: ApprovalData): Record<string, DecisionAnswer> {
   return Object.fromEntries(
@@ -26,26 +24,6 @@ function makeInitialAnswers(data: ApprovalData): Record<string, DecisionAnswer> 
       },
     ]),
   );
-}
-
-function buildExport(
-  data: ApprovalData,
-  answers: Record<string, DecisionAnswer>,
-  approverName: string,
-  comments: string,
-): HumanDecisionExport {
-  return {
-    run_id: data.run_id,
-    decision_scope: 'next_agent_run',
-    final_publication_approval: false,
-    approver: {
-      name: approverName || 'TODO: RikaNV approver',
-      role: 'human reviewer',
-    },
-    decisions: Object.values(answers),
-    comments,
-    created_at: new Date().toISOString(),
-  };
 }
 
 export default function ApprovalConsole({ data, databaseMode }: Props) {
@@ -74,7 +52,7 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
   }
 
   function downloadDecisions() {
-    const payload = buildExport(data, answers, approverName, comments);
+    const payload = buildHumanDecisionExport(data, answers, approverName, comments);
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
@@ -86,7 +64,7 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
 
   async function saveDecisions() {
     setSaveMessage('Saving decisions...');
-    const payload = buildExport(data, answers, approverName, comments);
+    const payload = buildHumanDecisionExport(data, answers, approverName, comments);
     const response = await fetch('/api/decisions', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -124,10 +102,22 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
       <section className="main-grid">
         <div>
           <div className="stats">
-            <div className="stat"><strong>{data.materials.length}</strong><span>materials</span></div>
-            <div className="stat"><strong>{data.decisions.length}</strong><span>decisions</span></div>
-            <div className="stat"><strong>{blockerCount}</strong><span>blocker risks</span></div>
-            <div className="stat"><strong>{publicationReadyCount}</strong><span>publication ready</span></div>
+            <div className="stat">
+              <strong>{data.materials.length}</strong>
+              <span>materials</span>
+            </div>
+            <div className="stat">
+              <strong>{data.decisions.length}</strong>
+              <span>decisions</span>
+            </div>
+            <div className="stat">
+              <strong>{blockerCount}</strong>
+              <span>blocker risks</span>
+            </div>
+            <div className="stat">
+              <strong>{publicationReadyCount}</strong>
+              <span>publication ready</span>
+            </div>
           </div>
 
           <section className="card">
@@ -135,23 +125,11 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
             <p>{data.next_recommended_action}</p>
             <div className="material-grid">
               {data.materials.map((material) => (
-                <button
-                  className="material-card"
+                <MaterialCard
                   key={material.material_id}
-                  onClick={() => setSelectedMaterialId(material.material_id)}
-                  type="button"
-                >
-                  <h3>{material.product}</h3>
-                  <div className="badge-row">
-                    <span className="badge">{material.status}</span>
-                    <span className={riskBadge(material.risk_level)}>risk: {material.risk_level}</span>
-                  </div>
-                  <div className="meta-list">
-                    <span>Claims: {material.claims_used.length}</span>
-                    <span>Sources: {material.sources_used.length}</span>
-                    <span>Publication ready: {String(material.publication_ready)}</span>
-                  </div>
-                </button>
+                  material={material}
+                  onSelect={setSelectedMaterialId}
+                />
               ))}
             </div>
           </section>
@@ -164,7 +142,9 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
                   <h3>{selectedMaterial.title}</h3>
                   <p>Product: {selectedMaterial.product}</p>
                   <p>Status: {selectedMaterial.status}</p>
-                  <p>Preview artifact: <code>{selectedMaterial.preview_path}</code></p>
+                  <p>
+                    Preview artifact: <code>{selectedMaterial.preview_path}</code>
+                  </p>
                   <p className="notice danger">This Console does not publish materials.</p>
                 </div>
                 <div className="risk-panel">
@@ -172,7 +152,9 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
                   <p>Claims used: {selectedMaterial.claims_used.length}</p>
                   <p>Sources used: {selectedMaterial.sources_used.length}</p>
                   <ul>
-                    {selectedMaterial.blockers.map((blocker) => <li key={blocker}>{blocker}</li>)}
+                    {selectedMaterial.blockers.map((blocker) => (
+                      <li key={blocker}>{blocker}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -184,60 +166,26 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
           <section className="card">
             <h2>Decision Queue</h2>
             {data.decisions.map((decision) => (
-              <div className="decision-card" key={decision.decision_id}>
-                <div className="decision-head">
-                  <div>
-                    <div className="decision-title">{decision.decision_id}: {decision.topic}</div>
-                    <p>{decision.issue}</p>
-                  </div>
-                  <span className={decision.priority.includes('P0') ? 'badge danger' : 'badge warning'}>
-                    {decision.priority}
-                  </span>
-                </div>
-                <p><strong>Agent recommendation:</strong> {decision.agent_recommendation}</p>
-                <label htmlFor={`${decision.decision_id}-option`}>Selected option</label>
-                <select
-                  id={`${decision.decision_id}-option`}
-                  value={answers[decision.decision_id]?.selected_option ?? ''}
-                  onChange={(event) => updateAnswer(decision.decision_id, { selected_option: event.target.value })}
-                >
-                  {decision.options.map((option) => <option key={option} value={option}>{option}</option>)}
-                </select>
-                <label htmlFor={`${decision.decision_id}-comment`}>Comment</label>
-                <textarea
-                  id={`${decision.decision_id}-comment`}
-                  value={answers[decision.decision_id]?.comment ?? ''}
-                  onChange={(event) => updateAnswer(decision.decision_id, { comment: event.target.value })}
-                />
-              </div>
+              <DecisionCard
+                key={decision.decision_id}
+                decision={decision}
+                answer={answers[decision.decision_id]}
+                onChange={updateAnswer}
+              />
             ))}
           </section>
 
           <section className="card" style={{ marginTop: 18 }}>
-            <h2>Final Approval Gate</h2>
-            <p className="notice danger">Final publication approval is disabled in MVP.</p>
-            {data.required_approvals.map((approval) => (
-              <p key={approval.approval_id}>□ {approval.label}: {approval.complete ? 'complete' : 'open'}</p>
-            ))}
-            <label htmlFor="approver-name">Approver name for next-agent-run export</label>
-            <input
-              id="approver-name"
-              value={approverName}
-              onChange={(event) => setApproverName(event.target.value)}
-              placeholder="TODO: RikaNV approver"
+            <ApprovalGatePanel approvals={data.required_approvals} />
+            <DecisionExportPanel
+              approverName={approverName}
+              comments={comments}
+              saveMessage={saveMessage}
+              onApproverNameChange={setApproverName}
+              onCommentsChange={setComments}
+              onSave={saveDecisions}
+              onExport={downloadDecisions}
             />
-            <label htmlFor="global-comments">Comments</label>
-            <textarea
-              id="global-comments"
-              value={comments}
-              onChange={(event) => setComments(event.target.value)}
-            />
-            <div className="actions">
-              <button className="primary" onClick={saveDecisions} type="button">Save decisions</button>
-              <button onClick={downloadDecisions} type="button">Export JSON</button>
-              <button disabled type="button">Publish disabled</button>
-            </div>
-            {saveMessage ? <p className="notice">{saveMessage}</p> : null}
           </section>
         </aside>
       </section>

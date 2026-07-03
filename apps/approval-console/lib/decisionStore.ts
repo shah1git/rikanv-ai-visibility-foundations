@@ -1,26 +1,7 @@
-
-import { Pool } from 'pg';
+import { databaseMode, getPool } from './db';
 import type { HumanDecisionExport } from './types';
 
-let pool: Pool | null = null;
-
-function getPool(): Pool | null {
-  const databaseUrl = process.env.DATABASE_URL;
-
-  if (!databaseUrl) {
-    return null;
-  }
-
-  if (!pool) {
-    pool = new Pool({ connectionString: databaseUrl });
-  }
-
-  return pool;
-}
-
-export function databaseMode(): 'postgres' | 'export_only' {
-  return process.env.DATABASE_URL ? 'postgres' : 'export_only';
-}
+export { databaseMode };
 
 export async function saveHumanDecisions(payload: HumanDecisionExport) {
   if (payload.final_publication_approval !== false) {

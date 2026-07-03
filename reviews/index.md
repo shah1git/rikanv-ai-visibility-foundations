@@ -104,3 +104,4 @@
   Theme: Approval Console MVP Implementation
   Status: created
   Purpose: implement deployable Next.js approval console MVP for VPS/Docker/Caddy.
+| [review-029-repo-text-integrity-guardrail.md](review-029-repo-text-integrity-guardrail.md) | Repo Text Integrity Guardrail | created | Expand formatting guardrails to frontend, config and deployment files after Approval Console MVP. |

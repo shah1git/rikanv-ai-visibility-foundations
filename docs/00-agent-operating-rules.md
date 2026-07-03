@@ -19,15 +19,29 @@ Agents must not start Site Import Agent, import `rikanv.ru`, write articles,
 change claims, change product taxonomy, change source/evidence IDs, create
 runtime or choose a framework unless explicitly instructed.
 
-## Markdown Integrity Rule
+## Repo Text Integrity Rule
 
-Markdown integrity is a release gate for documentation work.
+Repo text integrity is a release gate for documentation, frontend and deploy-config work.
 
-A Markdown task is not complete until:
+A Markdown, frontend or deploy-config text task is not complete until:
 
 1. `python tools/validate-markdown-integrity.py` passes.
 2. `git diff --check` passes.
 3. If pushed, remote raw validation by exact commit hash passes.
+
+## Frontend / Config Formatting
+
+Application and deployment text must remain readable in GitHub raw and blob views.
+
+Rules:
+
+- App code must be readable and multiline.
+- Route handlers must not be one-line files.
+- `package.json` should be pretty-printed.
+- Caddyfile snippets must be multiline and copy-safe.
+- Docker and YAML deploy snippets must be readable.
+- SQL migrations must keep one statement block per readable section.
+- `package-lock.json` may be generated, but must remain valid JSON.
 
 ## Required Markdown Properties
 
@@ -63,7 +77,7 @@ Path("FILE.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 ## Remote Raw Validation
 
-When a Markdown formatting fix is pushed, validate raw GitHub by exact commit
+When a Markdown, frontend or deploy-config formatting fix is pushed, validate raw GitHub by exact commit
 hash, not by branch name.
 
 Example:

@@ -23,6 +23,7 @@ export type Material = {
   open_decisions: string[];
   blockers: string[];
   preview_path: string;
+  preview_markdown?: string;
 };
 
 export type Decision = {

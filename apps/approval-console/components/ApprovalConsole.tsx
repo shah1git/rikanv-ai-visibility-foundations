@@ -8,6 +8,7 @@ import ApprovalGatePanel from './ApprovalGatePanel';
 import DecisionCard from './DecisionCard';
 import DecisionExportPanel from './DecisionExportPanel';
 import MaterialCard from './MaterialCard';
+import MaterialPreview from './MaterialPreview';
 
 type Props = {
   data: ApprovalData;
@@ -186,27 +187,8 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
             </div>
           </section>
 
-          <section className="card" style={{ marginTop: 18 }}>
-            <h2>Предпросмотр выбранного материала</h2>
-            {selectedMaterial ? (
-              <div className="preview-layout">
-                <div className="preview-box">
-                  <h3>{selectedMaterial.product}</h3>
-                  <p>Название: {selectedMaterial.title}</p>
-                  <p>Статус: {statusLabel(selectedMaterial.status)}</p>
-                  <p>material_id: <code>{selectedMaterial.material_id}</code></p>
-                  <p>Артефакт: <code>{selectedMaterial.preview_path}</code></p>
-                  <p className="notice danger">Публикация запрещена до финального approval.</p>
-                </div>
-                <div className="risk-panel">
-                  <h3>Claims / sources / risks</h3>
-                  <p>Claims used: {selectedMaterial.claims_used.length}</p>
-                  <p>Sources used: {selectedMaterial.sources_used.length}</p>
-                  <p>Открытые решения: {selectedMaterial.open_decisions.length || 'нет'}</p>
-                  <p>Можно публиковать сейчас: Нет</p>
-                </div>
-              </div>
-            ) : null}
+          <section className="card preview-card" style={{ marginTop: 18 }}>
+            {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
           </section>
         </div>
 

@@ -45,6 +45,8 @@ export default function MaterialCard({ material, selected, onSelect }: Props) {
           ))}
         </ul>
       </div>
+
+      <span className="open-preview-hint">Открыть текст материала</span>
     </button>
   );
 }

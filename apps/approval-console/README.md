@@ -128,6 +128,19 @@ Main workflow:
 4. Save or download JSON.
 5. Pass JSON to the agent for the next step.
 
+## Material Preview
+
+The Console shows material text from bundled preview files inside the app.
+
+- Preview files are copied from agent artifacts into `sample-data/material-previews/`.
+- The UI does not read GitHub directly.
+- The UI does not fetch external URLs for previews.
+- The preview loader reads only an internal allowlist of bundled preview files.
+- Preview is for review only.
+- Publication remains disabled.
+- `publication_ready` remains `false`.
+- `final_publication_approval` remains `false`.
+
 ## Publication Boundary
 
 The Console has no publication API and no real publish button.

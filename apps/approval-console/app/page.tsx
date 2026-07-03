@@ -1,6 +1,7 @@
 import ApprovalConsole from '../components/ApprovalConsole';
 import { getApprovalData } from '../lib/sampleData';
 import { databaseMode } from '../lib/decisionStore';
+import { loadMaterialPreviews } from '../lib/loadMaterialPreviews';
 import type { ApprovalData } from '../lib/types';
 
 function assertFinalApprovalGateClosed(data: ApprovalData) {
@@ -46,8 +47,20 @@ function loadSafeApprovalData() {
   return data;
 }
 
+function addMaterialPreviews(data: ApprovalData): ApprovalData {
+  const previews = loadMaterialPreviews(data.materials);
+
+  return {
+    ...data,
+    materials: data.materials.map((material) => ({
+      ...material,
+      preview_markdown: previews[material.material_id],
+    })),
+  };
+}
+
 export default function Home() {
-  const data = loadSafeApprovalData();
+  const data = addMaterialPreviews(loadSafeApprovalData());
   const mode = databaseMode();
 
   return (

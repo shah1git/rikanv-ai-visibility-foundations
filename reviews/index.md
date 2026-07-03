@@ -108,3 +108,4 @@
 | [review-030-vps-deployment-review-001.md](review-030-vps-deployment-review-001.md) | VPS Deployment Review 001 | created | Deploy/test Approval Console MVP on VPS without removing publication approval gates. |
 | [review-031-caddy-console-route-001.md](review-031-caddy-console-route-001.md) | Caddy Console Route 001 | created | Enable console.rikanv.ru route with basic auth and noindex headers. |
 | [review-032-approval-console-russian-ux-pass-001.md](review-032-approval-console-russian-ux-pass-001.md) | Approval Console Russian UX Pass 001 | created | Make console understandable for Russian-speaking human approval workflow. |
+| [review-033-approval-console-material-preview-001.md](review-033-approval-console-material-preview-001.md) | Approval Console Material Preview 001 | created | Show actual draft material text in the console instead of only preview_path metadata. |

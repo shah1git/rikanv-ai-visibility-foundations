@@ -109,6 +109,25 @@ Use `.env.example` as a template only.
 
 The snippets are not intended to overwrite the live VPS configuration automatically.
 
+
+## Russian UX Pass
+
+The visible interface is translated for Russian-speaking business users.
+
+- The user works with a decision queue, not raw Markdown files.
+- The Console explains what to do now before showing the cards.
+- The Console separates next-agent approval from publication approval.
+- There is no publication action in the MVP.
+- Final publication approval is unavailable in the MVP.
+
+Main workflow:
+
+1. Open the Console.
+2. Choose decision options.
+3. Add comments if needed.
+4. Save or download JSON.
+5. Pass JSON to the agent for the next step.
+
 ## Publication Boundary
 
 The Console has no publication API and no real publish button.

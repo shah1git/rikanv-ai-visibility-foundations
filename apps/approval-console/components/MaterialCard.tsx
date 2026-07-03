@@ -1,27 +1,49 @@
 import type { Material } from '../lib/types';
+import { blockerLabel, statusLabel } from '../lib/labels';
 import RiskBadge from './RiskBadge';
 
 type Props = {
   material: Material;
+  selected: boolean;
   onSelect: (materialId: string) => void;
 };
 
-export default function MaterialCard({ material, onSelect }: Props) {
+export default function MaterialCard({ material, selected, onSelect }: Props) {
+  const canMoveNext = material.open_decisions.length === 0;
+
   return (
     <button
-      className="material-card"
+      className={`material-card ${selected ? 'selected' : ''}`}
       onClick={() => onSelect(material.material_id)}
       type="button"
     >
-      <h3>{material.product}</h3>
+      <div className="material-card-header">
+        <h3>{material.product}</h3>
+        <span className="badge danger">Публикация запрещена</span>
+      </div>
+
+      <p className="material-title">{material.title}</p>
+
       <div className="badge-row">
-        <span className="badge">{material.status}</span>
+        <span className="badge">Статус: {statusLabel(material.status)}</span>
         <RiskBadge level={material.risk_level} />
       </div>
+
       <div className="meta-list">
+        <span>Можно двигать дальше: {canMoveNext ? 'Да, только на следующий агентный шаг' : 'Нет'}</span>
+        <span>Можно публиковать сейчас: Нет</span>
+        <span>Открытые решения: {material.open_decisions.length || 'нет'}</span>
         <span>Claims: {material.claims_used.length}</span>
         <span>Sources: {material.sources_used.length}</span>
-        <span>Publication ready: {String(material.publication_ready)}</span>
+      </div>
+
+      <div className="material-requirements">
+        <strong>Что нужно для публикации:</strong>
+        <ul>
+          {material.blockers.map((blocker) => (
+            <li key={blocker}>{blockerLabel(blocker)}</li>
+          ))}
+        </ul>
       </div>
     </button>
   );

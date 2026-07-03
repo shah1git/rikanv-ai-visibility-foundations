@@ -1,4 +1,5 @@
 import type { Material } from '../lib/types';
+import { riskLabel } from '../lib/labels';
 
 type Props = {
   level: Material['risk_level'];
@@ -18,5 +19,5 @@ export function riskBadgeClass(level: Material['risk_level']) {
 }
 
 export default function RiskBadge({ level, label }: Props) {
-  return <span className={riskBadgeClass(level)}>{label ?? `risk: ${level}`}</span>;
+  return <span className={riskBadgeClass(level)}>{label ?? `Риск: ${riskLabel(level)}`}</span>;
 }

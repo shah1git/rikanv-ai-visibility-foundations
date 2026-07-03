@@ -109,6 +109,17 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
     );
   }
 
+  function selectMaterialForPreview(materialId: string) {
+    setSelectedMaterialId(materialId);
+
+    window.setTimeout(() => {
+      document.getElementById('preview')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 0);
+  }
+
   return (
     <main className="console-shell">
       <header className="topbar">
@@ -145,10 +156,14 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
               key={material.material_id}
               material={material}
               selected={material.material_id === selectedMaterialId}
-              onSelect={setSelectedMaterialId}
+              onSelect={selectMaterialForPreview}
             />
           ))}
         </div>
+      </section>
+
+      <section className="workflow-section preview-card" id="preview">
+        {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
       </section>
 
       <section className="workflow-section" id="decisions">
@@ -171,10 +186,6 @@ export default function ApprovalConsole({ data, databaseMode }: Props) {
             />
           ))}
         </div>
-      </section>
-
-      <section className="workflow-section preview-card" id="preview">
-        {selectedMaterial ? <MaterialPreview material={selectedMaterial} /> : null}
       </section>
 
       <section className="workflow-section export-section" id="export">

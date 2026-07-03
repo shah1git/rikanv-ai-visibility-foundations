@@ -111,3 +111,4 @@
 | [review-033-approval-console-material-preview-001.md](review-033-approval-console-material-preview-001.md) | Approval Console Material Preview 001 | created | Show actual draft material text in the console instead of only preview_path metadata. |
 | [review-034-approval-console-ux-rescue-001.md](review-034-approval-console-ux-rescue-001.md) | Approval Console UX Rescue 001 | created | Replace technical decision UI with guided human approval workflow. |
 | [review-035-approval-console-material-preview-rescue-002.md](review-035-approval-console-material-preview-rescue-002.md) | Approval Console Material Preview Rescue 002 | created | Make actual material text visible inside the console. |
+| [review-036-material-preview-click-fix.md](review-036-material-preview-click-fix.md) | Material Preview Click Fix | created | Make “Посмотреть текст” scroll directly to the selected material preview. |
